@@ -1,0 +1,3 @@
+- [Getting Started](/?id=main)
+- **Links**
+- [Github](https://github.com/GramAddict/bot)

@@ -1,6 +1,6 @@
 # GramAddict Instagram Bot
 
-> Completely free and open source human-like Instagram bot.  and  - real or emulated. 
+> Completely free and open source human-like Instagram bot.
 
 - 100% free - always and forever
 - Powered by UIAutomator2

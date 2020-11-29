@@ -13,6 +13,11 @@ Full list of command line arguments:
   --hashtag-likers-recent hashtag1 [hashtag2 ...]
         list of hashtags in recent results with whose likers you want to interact
 
+  --posts-from-file posts.txt
+        provide the path to a text file of posts that should be interacted with.
+        Presently, this will only like posts. More actions coming in the future.
+        Useful for engagement groups.
+
   --likes-count 2-4
         number of likes for each interacted user, 2 by default. It 
         can be a number (e.g. 2) or a range (e.g. 2-4)

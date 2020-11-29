@@ -1,4 +1,4 @@
-- [Introduction](/)
+- [Introduction](/?id=main)
 - [Quick Start](quickstart.md)
 - [Configuration](configuration.md)
 - [Sensible Examples](examples.md)

@@ -104,58 +104,69 @@ Full list of command line arguments:
 We know that you want to make sure that you only interact with a specific set of users. When you leave it up to a bot, you never know what will happen. We try to make this easier for you by giving you a wide subset of filters to help weed out the undesirables. The full list is below, but if you need some inspiration - there is a filter.example file included with some sensible defaults. You can either rename this to `filter.json` and modify as desired or create a new file named `filter.json` and add only the disired filters in a json dictionary format.
 
 ```
-  "skip_business"             If it is true, business acounts won't be interacted.
-                              (e.g. "skip_business": true)
-  "skip_non_business"         If it is true, private accounts and public accounts 
-                              won't be interacted.
-                              (e.g. "skip_non_business": true)
+  "skip_business"             
+        If it is true, business acounts won't be interacted.
+        (e.g. "skip_business": true)
+  "skip_non_business"         
+        If it is true, private accounts and public accounts 
+        won't be interacted.
+        (e.g. "skip_non_business": true)
 
-  "min_followers"             It is the lower follower bound for an account that can 
-                              be interacted. If an account has less followers than 
-                              this amount, it wont be interacted. 
-                              (e.g. "min_followers": 100)
+  "min_followers"             
+        It is the lower follower bound for an account that can 
+        be interacted. If an account has less followers than 
+        this amount, it wont be interacted. 
+        (e.g. "min_followers": 100)
 
-  "max_followers"             It is the upper follower bound for an account that can 
-                              be interacted. If an account has more followers than 
-                              this amount, it wont be interacted. 
-                              (e.g "max_followers": 1000)
+  "max_followers"             
+        It is the upper follower bound for an account that can 
+        be interacted. If an account has more followers than 
+        this amount, it wont be interacted. 
+        (e.g "max_followers": 1000)
 
-  "min_followings"            It is the lower following bound for an account that can 
-                              be interacted. If an account has less followings than 
-                              this amount, it wont be interacted. 
-                              (e.g. "min_followings": 300)
+  "min_followings"            
+        It is the lower following bound for an account that can 
+        be interacted. If an account has less followings than 
+        this amount, it wont be interacted. 
+        (e.g. "min_followings": 300)
   
-  "max_followings"            It is the upper following bound for an account that can 
-                              be interacted. If an account has more followings than 
-                              this amount, it wont be interacted. 
-                              (e.g. "max_followings": 800)
+  "max_followings"            
+        It is the upper following bound for an account that can 
+        be interacted. If an account has more followings than 
+        this amount, it wont be interacted. 
+        (e.g. "max_followings": 800)
 
-  "min_potency_ratio"         If an account's followers/following ratio is not above 
-                              this ratio, then they will not be interacted with. 
-                              Combine with "max_potency_ratio" to specify a range.
-                              Example: username has 500 followers and 1000 
-                              followings. That means its ratio is 0.5 If you set your 
-                              "min_potency_ratio": 0.2 it will be interacted with. 
-                              (e.g. "min_potency_ratio": 1)
+  "min_potency_ratio"         
+        If an account's followers/following ratio is not above 
+        this ratio, then they will not be interacted with. 
+        Combine with "max_potency_ratio" to specify a range.
+        Example: username has 500 followers and 1000 
+        followings. That means its ratio is 0.5 If you set your 
+        "min_potency_ratio": 0.2 it will be interacted with. 
+        (e.g. "min_potency_ratio": 1)
 
-  "max_potency_ratio"         If an account's followers/following ratio is not below 
-                              this ratio, then they will not be interacted with. 
-                              Combine with "min_potency_ratio" to specify a range.
-                              Example: username has 500 followers and 1000 
-                              followings. That means its ratio is 0.5 If you set your 
-                              "max_potency_ratio": 0.7 it will be interacted with.
-                              (e.g. "max_potency_ratio": 2)
+  "max_potency_ratio"         
+        If an account's followers/following ratio is not below 
+        this ratio, then they will not be interacted with. 
+        Combine with "min_potency_ratio" to specify a range.
+        Example: username has 500 followers and 1000 
+        followings. That means its ratio is 0.5 If you set your 
+        "max_potency_ratio": 0.7 it will be interacted with.
+        (e.g. "max_potency_ratio": 2)
                               
-  "follow_private_or_empty"   If it is false, private accounts or public accounts 
-                              that have no posts will not be interacted with. 
-                              (e.g. "follow_private_or_empty": false)
+  "follow_private_or_empty"   
+        If it is false, private accounts or public accounts 
+        that have no posts will not be interacted with. 
+        (e.g. "follow_private_or_empty": false)
 
-  "interact_only_private"     If it is set to true, only private accounts will be    
-                              interacted with. No public accounts will be interacted 
-                              with.
-                              (e.g. "interact_only_private": true)
+  "interact_only_private"     
+        If it is set to true, only private accounts will be    
+        interacted with. No public accounts will be interacted 
+        with.
+        (e.g. "interact_only_private": true)
 
-  "min_posts"                 You can specify the minumum post number that an account 
-                              should have. 
-                              (e.g. "min_posts": 7)
+  "min_posts"                 
+        You can specify the minumum post number that an account 
+        should have. 
+        (e.g. "min_posts": 7)
 ```

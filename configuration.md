@@ -7,9 +7,12 @@ Full list of command line arguments:
   --blogger-followers username1 [username2 ...]
         list of usernames with whose followers you want to interact
   
-  --hashtag-likers hashtag1 [hashtag2 ...]
-        list of hashtags with whose post likers you want to interact
+  --hashtag-likers-top hashtag1 [hashtag2 ...]
+        list of hashtags in top results with whose likers you want to interact
   
+  --hashtag-likers-recent hashtag1 [hashtag2 ...]
+        list of hashtags in recent results with whose likers you want to interact
+
   --likes-count 2-4
         number of likes for each interacted user, 2 by default. It 
         can be a number (e.g. 2) or a range (e.g. 2-4)

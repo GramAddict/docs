@@ -22,3 +22,20 @@ There already is [InstaPy](https://github.com/timgrossmann/InstaPy), which works
 There is also [Insomniac](https://github.com/alexal1/Insomniac/) which is the origin of this project, but there were issues that cropped up when the project organizers decided to monetize it. We wanted to keep this project completely free and open source so we forked it! Now this project is the better option. 😇
 
 Our objective is to make a free solution for mobile devices. Instagram can't distinguish bot from a human when it comes to your phone. However, even a human can reach limits when using the app, so make sure you are careful with your limits. Always set `--total-likes-limit` to 300 or less. Also it's better to use `--repeat` to act periodically for 2-3 hours, because Instagram keeps track of how long the app works.
+
+
+## Features
+
+- Works without rooting
+- Works with both emulators and physical devices
+- Includes realistic random human-like delays and actions
+- Supports multiple actions in one session
+- Loads of customizable limits to keep your account safe from soft bans
+- Available interactions
+    - interact with a users followers
+    - interact with a top hashtag's post likers
+    - interact with a recent hashtag's post likers
+    - unfollow any followers
+    - unfollow any followers, followed by bot
+    - unfollow any followers, followed by bot, who don't follow you
+- Loads of available filters to customize who you interact with

@@ -1,3 +1,15 @@
+## Multiple Action Support
+
+As of v1.1.0, GramAddict can have multiple actions specified in one command. This means you can interact with @justinbieber's followers, following 50% of them. Then afterwards, unfollow the same amount of followers. All in the same session. This allows you to use the native repeat ability instead of building a custom cron job. 
+
+> Note: if you do the method outlined above, make sure you have a buffer of followers so you aren't unfollowing the people you just followed. Typically you want to wait at least a couple days before you unfollow to increase the chance people will follow you back.
+
+When using multi-action system, the actions are executed in the order they are specified in the command. Meaning in the above sequence your command would look similar to:
+
+`python3 run.py --blogger-followers justinbieber --interactions-count 50 --follow-percentage 20 --unfollow 10 --repeat 200-260`
+
+This command would interact with 50 of @justinbieber's followers, following 20% of them (~10 follows). Once complete it would then unfollow 10 people in order of oldest to newest. It will repeat this session every 200-260 minutes.
+
 ## Command Line Arguments
 
 GramAddict can do many things and the list is constantly growing. This is a full list of the command line arguments that can be provided in order for you to get started using it. We know this is a crazy long list, so if you need help getting started - check out our [sensible examples](/?id=sensible-examples).

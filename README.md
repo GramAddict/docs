@@ -29,6 +29,7 @@ Our objective is to make a free solution for mobile devices. Instagram can't dis
 - Works without rooting
 - Works with both emulators and physical devices
 - Includes realistic random human-like delays and actions
+- (Optionally) Watches stories while interacting
 - Supports multiple actions in one session
 - Loads of customizable limits to keep your account safe from soft bans
 - Available interactions
@@ -37,5 +38,5 @@ Our objective is to make a free solution for mobile devices. Instagram can't dis
     - interact with a recent hashtag's post likers
     - unfollow any followers
     - unfollow any followers, followed by bot
-    - unfollow any followers, followed by bot, who don't follow you
+    - unfollow any followers, followed by bot, who don't follow you back
 - Loads of available filters to customize who you interact with

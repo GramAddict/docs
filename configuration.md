@@ -6,13 +6,57 @@ As of v1.1.0, GramAddict can have multiple actions specified in one command. Thi
 
 When using multi-action system, the actions are executed in the order they are specified in the command. Meaning in the above sequence your command would look similar to:
 
-```python3 run.py --blogger-followers justinbieber --interactions-count 50 --follow-percentage 20 --unfollow 10 --repeat 200-260```
+```
+python3 run.py --blogger-followers justinbieber --interactions-count 50 --follow-percentage 20 --unfollow 10 --repeat 200-260
+```
 
-This command would interact with 50 of @justinbieber's followers, following 20% of them (~10 follows). Once complete it would then unfollow 10 people in order of oldest to newest. It will repeat this session every 200-260 minutes.
+This command would:
+- Interact with 50 of @justinbieber's followers, following 20% of them (~10 follows). 
+- Unfollow 10 people in order of oldest to newest. 
+- The above will repeat the above steps every 200-260 minutes.
+
+As an added note, you can also do things like interact with multiple followers and hashtags in the same run. When doing this, you want to be careful to not exceed sensible limits. To help with this, there were "Total" session limits introduced. The following total limits are available:
+
+```
+  --total-likes-limit 300
+        limit on total amount of likes during the session across all
+        actions, 300 by default
+
+  --total-follows-limit 50
+        limit on total amount of likes during the session across all
+        actions, 50 by default
+
+  --total-watches-limit 50
+        limit on total amount of likes during the session across all
+        actions, 50 by default
+
+  --total-successful-interactions-limit 100
+        limit on total amount of likes during the session across all
+        actions, 100 by default
+
+  --total-interactions-limit 1000
+        limit on total amount of likes during the session across all
+        actions, 1000 by default
+```
+
+So if you wanted to interact with multiple bloggers, multiple hashtags, unfollow followers, and generate a report after - you can do a command similar to below:
+
+```
+python3 run.py --blogger-followers justinbieber selenagomez --hashtag-likers-top popmusic bestartists --interactions-count 20 --follow-percentage 20 --total-successful-interactions-limit 80 --total-interactions-limit 700 --total-likes-limit 160 --total-follows-limit 20 --unfollow 16 --analytics myusername --repeat 200-260
+```
+
+This command would:
+- Interact with 20 each of @justinbieber's and @selenagomez's followers, following 20% of them (~4 follows each, ~8 total). The order of @justinbieber and @selenagomez will be randomized each time. 
+- Interact with 20 each of likers of posts in top results of #popmusic and #bestartists, following 20% of them (~4 follows each, ~8 total). The order of #popmusic and #bestartists will be randomized each time. 
+- Unfollow 16 people in order of oldest to newest. 
+- Generate a PDF report for @myusername using the session data from previous runs
+- The above will repeat the above steps every 200-260 minutes.
+
+
 
 ## Command Line Arguments
 
-GramAddict can do many things and the list is constantly growing. This is a full list of the command line arguments that can be provided in order for you to get started using it. We know this is a crazy long list, so if you need help getting started - check out our [sensible examples](/?id=sensible-examples).
+GramAddict can do many things and the list is constantly growing. This is a full list of the command line arguments that can be provided in order for you to get started using it. We know this is a crazy long list, so if you need help getting started - check out our [sensible examples](/examples).
 
 Full list of command line arguments:
 ```
@@ -41,7 +85,7 @@ Full list of command line arguments:
 
   --stories-percentage 30-40
         chance of watching stories on a particular profile, 30-40 by 
-        default. It can be a number (e.g. 2) or a range (e.g. 2-4) 
+        default. It can be a number (e.g. 30) or a range (e.g. 30-40) 
         Supported by plugins: hashtag-likers, blogger-followers
 
   --interactions-count 60-80
@@ -127,6 +171,7 @@ We know that you want to make sure that you only interact with a specific set of
   "skip_business"             
         If it is true, business acounts won't be interacted.
         (e.g. "skip_business": true)
+
   "skip_non_business"         
         If it is true, private accounts and public accounts 
         won't be interacted.

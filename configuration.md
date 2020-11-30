@@ -6,7 +6,7 @@ As of v1.1.0, GramAddict can have multiple actions specified in one command. Thi
 
 When using multi-action system, the actions are executed in the order they are specified in the command. Meaning in the above sequence your command would look similar to:
 
-`python3 run.py --blogger-followers justinbieber --interactions-count 50 --follow-percentage 20 --unfollow 10 --repeat 200-260`
+```python3 run.py --blogger-followers justinbieber --interactions-count 50 --follow-percentage 20 --unfollow 10 --repeat 200-260```
 
 This command would interact with 50 of @justinbieber's followers, following 20% of them (~10 follows). Once complete it would then unfollow 10 people in order of oldest to newest. It will repeat this session every 200-260 minutes.
 

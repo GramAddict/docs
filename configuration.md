@@ -35,7 +35,7 @@ As an added note, you can also do things like interact with multiple followers a
         session across all sources, 100 by default
 
   --total-interactions-limit 1000
-        limit on total amount of successful and non-sucessful interactions
+        limit on total amount of successful and non-successful interactions
         during the session across all sources, 1000 by default
 ```
 
@@ -131,7 +131,7 @@ Full list of command line arguments:
         session across all sources, 100 by default
 
   --total-interactions-limit 1000
-        limit on total amount of successful and non-sucessful interactions
+        limit on total amount of successful and non-successful interactions
         during the session across all sources, 1000 by default
 
   --repeat 120-180

@@ -20,23 +20,23 @@ As an added note, you can also do things like interact with multiple followers a
 ```
   --total-likes-limit 300
         limit on total amount of likes during the session across all
-        actions, 300 by default
+        sources, 300 by default
 
   --total-follows-limit 50
-        limit on total amount of likes during the session across all
-        actions, 50 by default
+        limit on total amount of follows during the session across all
+        sources, 50 by default
 
   --total-watches-limit 50
-        limit on total amount of likes during the session across all
-        actions, 50 by default
+        limit on total amount of story watches during the session across 
+        all sources, 50 by default
 
   --total-successful-interactions-limit 100
-        limit on total amount of likes during the session across all
-        actions, 100 by default
+        limit on total amount of successful interactions during the
+        session across all sources, 100 by default
 
   --total-interactions-limit 1000
-        limit on total amount of likes during the session across all
-        actions, 1000 by default
+        limit on total amount of successful and non-sucessful interactions
+        during the session across all sources, 1000 by default
 ```
 
 So if you wanted to interact with multiple bloggers, multiple hashtags, unfollow followers, and generate a report after - you can do a command similar to below:

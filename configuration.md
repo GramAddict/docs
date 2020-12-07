@@ -58,6 +58,27 @@ This command would:
 
 GramAddict can do many things and the list is constantly growing. This is a full list of the command line arguments that can be provided in order for you to get started using it. We know this is a crazy long list, so if you need help getting started - check out our [sensible examples](/examples).
 
+### Argument Glossary
+
+- **Source**: The *thing* being interacted with, primarily usernames or hashtags 
+- **Interaction**: Any profile that is interacted with for a particular **source** (successful or unsuccessful)
+- **Successful Interaction**: Any profile that was actioned (e.g. like or follow) for a particular **source**
+- **Unsuccessful Interaction**: Any profile that was opened, but not actioned (e.g. like or follow) for a particular **source**
+
+- **Total Interactions**: Number of profiles with **successful interactions** or **unsuccessful interactions** across all **sources**
+- **Total Successful Interactions**: Number of profiles with **successful interactions** with across all **sources**
+- **Other "Total" Limits**: Number of *item* done, across all **sources**
+
+### Limit Logic
+
+When honoring limits, the bot uses the following priority:
+
+- **Total Interactions or Total Successful Interactions**:  If either of these are met, the current run will stop without interating through any additional sources. If no repeat is enabled, the script will stop.
+- **Total *Type* Limit**: If a total *type* limit is met, no more of that *type* will be done. If possible, the bot will continue running.
+- **Individual Limits (e.g. interaction-count, unfollow, follow)**: If the limit is met, but the total limits are not met, the bot will continue on another source (if possible) or possibly continue until the other individual limits are met.
+
+### Arguments:
+
 Full list of command line arguments:
 ```
   --blogger-followers username1 [username2 ...]
@@ -95,23 +116,23 @@ Full list of command line arguments:
 
   --total-likes-limit 300
         limit on total amount of likes during the session across all
-        actions, 300 by default
+        sources, 300 by default
 
   --total-follows-limit 50
-        limit on total amount of likes during the session across all
-        actions, 50 by default
+        limit on total amount of follows during the session across all
+        sources, 50 by default
 
   --total-watches-limit 50
-        limit on total amount of likes during the session across all
-        actions, 50 by default
+        limit on total amount of story watches during the session across 
+        all sources, 50 by default
 
   --total-successful-interactions-limit 100
-        limit on total amount of likes during the session across all
-        actions, 100 by default
+        limit on total amount of successful interactions during the
+        session across all sources, 100 by default
 
   --total-interactions-limit 1000
-        limit on total amount of likes during the session across all
-        actions, 1000 by default
+        limit on total amount of successful and non-sucessful interactions
+        during the session across all sources, 1000 by default
 
   --repeat 120-180
         repeat the same session again after N minutes after 

@@ -77,7 +77,7 @@ When honoring limits, the bot uses the following priority:
 - **Total *Type* Limit**: If a total *type* limit is met, no more of that *type* will be done. If possible, the bot will continue running.
 - **Individual Limits (e.g. interaction-count, unfollow, follow)**: If the limit is met, but the total limits are not met, the bot will continue on another source (if possible) or possibly continue until the other individual limits are met.
 
-### Arguments:
+### Arguments
 
 Full list of command line arguments:
 ```

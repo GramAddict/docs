@@ -81,7 +81,6 @@ What an "interaction" is depends on your [source limits](#source-limits), but ge
 | interact-percentage | Chance to interact with user/hashtag when applicable. Supported by plugins: hashtag-posts". | `50` |
 | min-following | Minimum amount of followings, after reaching this amount unfollowing stops | `0` |
 
-
 <br />
 
 ## Total Limits
@@ -249,4 +248,3 @@ This command would:
 - Unfollow 16 people in order of oldest to newest. 
 - Generate a PDF report for @myusername using the session data from previous runs
 - The above will repeat the above steps every 200-260 minutes.
-

@@ -35,15 +35,16 @@ What an "interaction" is depends on your [source limits](#source-limits), but ge
 
 ### Interaction
 
-| Argument              | Description | Example |
-|---                    |---          |---      |
-| blogger-followers     | List of usernames with whose followers you want to interact. | `[username1, username2 ]` |
-| hashtag-likers-top    | List of hashtags in top results with whose likers you want to interact. | `[ hashtag1, hashtag2 ]` |
-| hashtag-likers-recent | List of hashtags in recent results with whose likers you want to interact.  | `[ hashtag1, hashtag2 ]` |
-| hashtag-posts-top     | List of hashtags in top results with whose posts you want to interact. | `[ hashtag1, hashtag2 ]` |
-| hashtag-posts-recent  | List of hashtags in recent results with whose posts you want to interact. | `[ hashtag1, hashtag2 ]` |
-| interact-from-file    | Path to a text file of posts that will be liked. More actions will come in the future. Useful for engagement groups. | `usernames.txt` |
-| posts-from-file       | Path to a text file of usernames that will be interacted with. | `posts.txt` |
+| Argument                | Description | Example |
+|---                      |---          |---      |
+| blogger-followers       | List of usernames with whose followers you want to interact. | `[username1, username2 ]` |
+| hashtag-likers-top      | List of hashtags in top results with whose likers you want to interact. | `[ hashtag1, hashtag2 ]` |
+| hashtag-likers-recent   | List of hashtags in recent results with whose likers you want to interact.  | `[ hashtag1, hashtag2 ]` |
+| hashtag-posts-top       | List of hashtags in top results with whose posts you want to interact. | `[ hashtag1, hashtag2 ]` |
+| hashtag-posts-recent    | List of hashtags in recent results with whose posts you want to interact. | `[ hashtag1, hashtag2 ]` |
+| interact-from-file      | Path to a text file of posts that will be liked. More actions will come in the future. Useful for engagement groups. | `usernames.txt` |
+| posts-from-file         | Path to a text file of usernames that will be interacted with. | `posts.txt` |
+| delete-interacted-users | Not actually an action, but a option for `interact-from-file` and `posts-from-file` to remove users/urls from file after they are interacted with | ` ` |
 
 <br />
 
@@ -135,6 +136,17 @@ We know that you want to make sure that you only interact with a specific set of
         If it is true, private accounts and public accounts 
         won't be interacted.
         (e.g. "skip_non_business": true)
+  
+  "skip_following"
+        If it is true, accounts that you follow won't be interacted
+        with. 
+        (e.g. "skip_following": true)
+        
+  "skip_follower"
+        If it is true, accounts that follow you won't be interacted
+        with. Note, if you follow someone, the filter won't be able
+        to tell if that person follows you.
+        (e.g. "skip_following": true)
 
   "min_followers"             
         It is the lower follower bound for an account that can 
@@ -188,6 +200,26 @@ We know that you want to make sure that you only interact with a specific set of
         interacted with. No public accounts will be interacted 
         with.
         (e.g. "interact_only_private": true)
+        
+  "blacklist_words"     
+        Checks a biography for specified words. If any one word 
+        is found in the bio, the user will not be interacted with.
+        Otherwise the user will be interacted with. 
+        (e.g. "blacklist": ["sex", "furry", "biden"])
+       
+  "mandatory_words"     
+        Checks a biography for specified words. If any one word 
+        is found in the bio, the user will be interacted with.
+        Otherwise the user will not be interacted with. 
+        (e.g. "mandatory_words": ["cat", "kitten", "meow"])
+        
+  "specific_alphabet"     
+        If a type is specified, the bio will be inspected and
+        the primary character type will be matched against the
+        one specified. If they do not match, you will not interact
+        with them. This is commonly used to avoid people whose
+        biographys don't match your language.
+        (e.g. "specific_alphabet": "LATIN")
 
   "min_posts"                 
         You can specify the minumum post number that an account 

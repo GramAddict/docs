@@ -1,3 +1,7 @@
+<p style="text-align: center;"><img alt="GramAddict Logo" src="logo.png" height="400px" ></p>
+
+<br /><br />
+
 # GramAddict Instagram Bot
 
 > Completely free and open source human-like Instagram bot.

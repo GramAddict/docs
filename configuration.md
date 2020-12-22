@@ -1,64 +1,109 @@
-## Multiple Action Support
+# Configuration File
 
-As of v1.1.0, GramAddict can have multiple actions specified in one command. This means you can interact with @justinbieber's followers, following 50% of them. Then afterwards, unfollow the same amount of followers. All in the same session. This allows you to use the native repeat ability instead of building a custom cron job. 
+As of v1.2.0, GramAdict supports a configuration file and **it is 100% recommended**. Let me repeat, if you use GramAddict, you should be using a configuration file. You should not be using arguments anymore. *You technically can, but we have nearly 30 arguments now... so it's a lot easier if you use the configuration file.*
 
-> Note: if you do the method outlined above, make sure you have a buffer of followers so you aren't unfollowing the people you just followed. Typically you want to wait at least a couple days before you unfollow to increase the chance people will follow you back.
+To make it easy, to get started... we have a configuration file with every single option argument available in it. You just need to comment out any lines that you don't want to use with a `#`. You can [download that file here](https://raw.githubusercontent.com/GramAddict/bot/master/config-examples/all-parameters.yml). This file should be placed in a folder within your **GramAddict** folder, named after your username. e.g `username/config.yml` You can have multiple configuration files per user and are encouraged to do so. For example, I use one that is my normal "interaction" config and another that is a "clean up" config. e.g `username/interact.yml` and `username/unfollow.yml`
 
-When using multi-action system, the actions are executed in the order they are specified in the command. Meaning in the above sequence your command would look similar to:
+<br/>
 
-```
-python3 run.py --blogger-followers justinbieber --interactions-count 50 --follow-percentage 20 --unfollow 10 --repeat 200-260
-```
+# Available Arguments
 
-This command would:
-- Interact with 50 of @justinbieber's followers, following 20% of them (~10 follows). 
-- Unfollow 10 people in order of oldest to newest. 
-- The above will repeat the above steps every 200-260 minutes.
+GramAddict can do many things and the list is constantly growing. This is a full list of the command line arguments that can be provided in order for you to get started using it.
 
-As an added note, you can also do things like interact with multiple followers and hashtags in the same run. When doing this, you want to be careful to not exceed sensible limits. To help with this, there were "Total" session limits introduced. The following total limits are available:
+## General Configuration
 
-```
-  --total-likes-limit 300
-        limit on total amount of likes during the session across all
-        sources, 300 by default
+| Argument     | Type     | Description | Default |
+| ------------ | :------: | ---         |---      |
+| username     | Required | The username for which you are running the script | `None` |
+| device       | Optional | Device identifier. Should be used only when multiple devices are connected at once | `None` |
+| app-id       | Optional | Allows you to specify a custom app name for cloned apps | `com.instagram.android` |
+| screen-sleep | Optional | Turns on the phone screen when the script is running and off when when it's ended or sleeping | `False` |
+| uia-version  | Optional | **This should not be used right now**. This will allow you to switch back to using UIAutomator 1 | `2` |
+| debug        | Optional | For troubleshooting. Debug is already sent to log file, this shows it in console. | `False` |
 
-  --total-follows-limit 50
-        limit on total amount of follows during the session across all
-        sources, 50 by default
+<br />
 
-  --total-watches-limit 50
-        limit on total amount of story watches during the session across 
-        all sources, 50 by default
+## Actions
 
-  --total-successful-interactions-limit 100
-        limit on total amount of successful interactions during the
-        session across all sources, 100 by default
+No particular action is required, but at least one action is required. If you specify multiple actions, the actions will be executed in the order specified. The logistics of multiple action support is discussed [below](#multiple-action-support) with examples.
 
-  --total-interactions-limit 1000
-        limit on total amount of successful and non-successful interactions
-        during the session across all sources, 1000 by default
-```
+What an "interaction" is depends on your [source limits](#source-limits), but generally the following types are supported at this time:
 
-So if you wanted to interact with multiple bloggers, multiple hashtags, unfollow followers, and generate a report after - you can do a command similar to below:
+- Like Photos
+- Follow
+- Watch Stories
 
-```
-python3 run.py --blogger-followers justinbieber selenagomez --hashtag-likers-top popmusic bestartists --interactions-count 20 --follow-percentage 20 --total-successful-interactions-limit 80 --total-interactions-limit 700 --total-likes-limit 160 --total-follows-limit 20 --unfollow 16 --analytics myusername --repeat 200-260
-```
+### Interaction
 
-This command would:
-- Interact with 20 each of @justinbieber's and @selenagomez's followers, following 20% of them (~4 follows each, ~8 total). The order of @justinbieber and @selenagomez will be randomized each time. 
-- Interact with 20 each of likers of posts in top results of #popmusic and #bestartists, following 20% of them (~4 follows each, ~8 total). The order of #popmusic and #bestartists will be randomized each time. 
-- Unfollow 16 people in order of oldest to newest. 
-- Generate a PDF report for @myusername using the session data from previous runs
-- The above will repeat the above steps every 200-260 minutes.
+| Argument              | Description | Example |
+|---                    |---          |---      |
+| blogger-followers     | List of usernames with whose followers you want to interact. | `[username1, username2 ]` |
+| hashtag-likers-top    | List of hashtags in top results with whose likers you want to interact. | `[ hashtag1, hashtag2 ]` |
+| hashtag-likers-recent | List of hashtags in recent results with whose likers you want to interact.  | `[ hashtag1, hashtag2 ]` |
+| hashtag-posts-top     | List of hashtags in top results with whose posts you want to interact. | `[ hashtag1, hashtag2 ]` |
+| hashtag-posts-recent  | List of hashtags in recent results with whose posts you want to interact. | `[ hashtag1, hashtag2 ]` |
+| interact-from-file    | Path to a text file of posts that will be liked. More actions will come in the future. Useful for engagement groups. | `usernames.txt` |
+| posts-from-file       | Path to a text file of usernames that will be interacted with. | `posts.txt` |
 
+<br />
 
+### Unfollow
 
-## Command Line Arguments
+| Argument                   | Description | Example |
+|---                         |---          |---      |
+| unfollow                   | Unfollow at most the given number of users. Only users followed by this script will be unfollowed. | `10-20` |
+| unfollow-any               | Unfollow at most the given number of users. Any user is eligible to be unfollowed regardless of if this script followed them. | `10-20` |
+| unfollow-non-followers     | Unfollow at most the given number of users, that don't follow you back. Only users followed by this script will be unfollowed. | `10-20` |
+| unfollow-any-non-followers | Unfollow at most the given number of users, that don't follow you back. Any user is eligible to be unfollowed regardless of if this script followed them. | `10-20` |
 
-GramAddict can do many things and the list is constantly growing. This is a full list of the command line arguments that can be provided in order for you to get started using it. We know this is a crazy long list, so if you need help getting started - check out our [sensible examples](/examples).
+<br />
+
+### Post Processing
+
+| Argument  | Description | Example |
+|---        |---          |---      |
+| analytics | Generates a PDF analytics report of specified usernames session data | `username` |
+
+<br />
+
+## Source Limits
+
+| Argument            | Description | Default |
+|---                  |---          |---      |
+| interactions-count  | Number of interactions per source in each action. | `70` |
+| likes-count         | Number of likes for each interacted user. | `2` |
+| stories-count       | Number of stories for each interacted user. | `0` |
+| stories-percentage  | Chance of watching stories on a particular profile. Supported by plugins: hashtag-likers, hashtag-posts, blogger-followers. | `30` |
+| follow-percentage   | Follow the given percentage of interacted users. | `0` |
+| follow-limit        | Limit on amount of follows per source in each action. |   |
+| skipped-list-limit  | Limit how many scrolls tried, with already interacted users, until we move to next source. Does not apply for unfollows. | `10-15` |
+| fling-when-skipped  | Fling (instead of scroll) after "X" many scrolls tried, with already interacted users. (not recommended - disabled by default) | `0` |
+| interact-percentage | Chance to interact with user/hashtag when applicable. Supported by plugins: hashtag-posts". | `50` |
+| min-following | Minimum amount of followings, after reaching this amount unfollowing stops | `0` |
+
+<br />
+
+## Total Limits
+
+| Argument                            | Description | Default |
+|---                                  |---          |---      |
+| total-likes-limit                   | Limit on total amount of likes during the session across all sources. | `300` |
+| total-follows-limit                 | Limit on total amount of follows during the session across all sources. | `50` |
+| total-watches-limit                 | Limit on total amount of story watches during the session across all sources. | `50` |
+| total-successful-interactions-limit | Limit on total amount of successful interactions during the session across all sources. | `100` |
+| total-interactions-limit            | Limit on total amount of successful and non-sucessful interactions during the session across all sources. | `1000` |
+
+<br />
+
+## Scheduling
+
+| Argument | Description | Example |
+|---       |---          |---      |
+| repeat   | Repeat the same session again after N minutes after completion, disabled by default. | `120-180` |
 
 ### Argument Glossary
+
+Because there are some words that have special meaning to GramAddict, here is a glossary to reference back to if you run into any questions while reading about the options. 
 
 - **Source**: The *thing* being interacted with, primarily usernames or hashtags 
 - **Interaction**: Any profile that is interacted with for a particular **source** (successful or unsuccessful)
@@ -69,120 +114,13 @@ GramAddict can do many things and the list is constantly growing. This is a full
 - **Total Successful Interactions**: Number of profiles with **successful interactions** with across all **sources**
 - **Other "Total" Limits**: Number of *item* done, across all **sources**
 
-### Limit Logic
+## Limit Logic
 
 When honoring limits, the bot uses the following priority:
 
 - **Total Interactions or Total Successful Interactions**:  If either of these are met, the current run will stop without interating through any additional sources. If no repeat is enabled, the script will stop.
 - **Total *Type* Limit**: If a total *type* limit is met, no more of that *type* will be done. If possible, the bot will continue running.
 - **Individual Limits (e.g. interaction-count, unfollow, follow)**: If the limit is met, but the total limits are not met, the bot will continue on another source (if possible) or possibly continue until the other individual limits are met.
-
-### Arguments
-
-Full list of command line arguments:
-```
-  --blogger-followers username1 [username2 ...]
-        list of usernames with whose followers you want to interact
-  
-  --hashtag-likers-top hashtag1 [hashtag2 ...]
-        list of hashtags in top results with whose likers you want to interact
-  
-  --hashtag-likers-recent hashtag1 [hashtag2 ...]
-        list of hashtags in recent results with whose likers you want to interact
-
-  --posts-from-file posts.txt
-        provide the path to a text file of posts that should be interacted with.
-        Presently, this will only like posts. More actions coming in the future.
-        Useful for engagement groups.
-
-  --likes-count 2-4
-        number of likes for each interacted user, 2 by default. It 
-        can be a number (e.g. 2) or a range (e.g. 2-4)
-
-  --stories-count 2-4   
-        number of stories for each interacted user, 0 by default. It 
-        can be a number (e.g. 2) or a range (e.g. 2-4). Supported 
-        by plugins: hashtag-likers, blogger-followers
-
-  --stories-percentage 30-40
-        chance of watching stories on a particular profile, 30-40 by 
-        default. It can be a number (e.g. 30) or a range (e.g. 30-40) 
-        Supported by plugins: hashtag-likers, blogger-followers
-
-  --interactions-count 60-80
-        number of interactions per each blogger, 70 by default. It 
-        can be a number (e.g. 70) or a range (e.g. 60-80). Only 
-        successful interactions count.
-
-  --total-likes-limit 300
-        limit on total amount of likes during the session across all
-        sources, 300 by default
-
-  --total-follows-limit 50
-        limit on total amount of follows during the session across all
-        sources, 50 by default
-
-  --total-watches-limit 50
-        limit on total amount of story watches during the session across 
-        all sources, 50 by default
-
-  --total-successful-interactions-limit 100
-        limit on total amount of successful interactions during the
-        session across all sources, 100 by default
-
-  --total-interactions-limit 1000
-        limit on total amount of successful and non-successful interactions
-        during the session across all sources, 1000 by default
-
-  --repeat 120-180
-        repeat the same session again after N minutes after 
-        completion, disabled by default. It can be a number of 
-        minutes (e.g. 180) or a range (e.g. 120-180)
-
-  --follow-percentage 50
-        follow given percentage of interacted users, 0 by default
-
-  --follow-limit 50
-        limit on amount of follows during interaction with each one 
-        user's followers, disabled by default
-
-  --unfollow 100-200    
-        unfollow at most given number of users. Only users followed 
-        by this script will be unfollowed. The order is from oldest 
-        to newest followings. It can be a number (e.g. 100) or a 
-        range (e.g. 100-200)
-
-  --unfollow-non-followers 100-200
-        unfollow at most given number of users, that don't follow you
-        back. Only users followed by this script will be unfollowed.
-        The order is from oldest to newest followings. It can be a 
-        number (e.g. 100) or a range (e.g. 100-200)
-
-  --unfollow-any 100-200
-        unfollow at most given number of users. The order is from 
-        oldest to newest followings. It can be a number (e.g. 100) 
-        or a range (e.g. 100-200)
-
-  --min-following 100   
-        minimum amount of followings, after reaching this amount 
-        unfollowing stops
-
-  --device 2443de990e017ece
-        device identifier. Should be used only when multiple
-        devices are connected at once
-
-  --screen-sleep        
-        turns on the phone screen when the script is running and 
-        off when when it's ended or sleeping (e.g. when using with
-        --repeat) - disable the passcode for unlocking the phone
-        if you want to use this function!
-
-  --analytics username1
-        Generates a PDF analytics report of specified usernames
-        session data
-
-
-```
 
 ## Available Filters
 
@@ -256,3 +194,57 @@ We know that you want to make sure that you only interact with a specific set of
         should have. 
         (e.g. "min_posts": 7)
 ```
+
+# Multiple Action Support
+
+As of v1.1.0, GramAddict can have multiple actions specified in one command. This means you can interact with @justinbieber's followers, following 50% of them. Then afterwards, unfollow the same amount of followers. All in the same session. This allows you to use the native repeat ability instead of building a custom cron job. 
+
+> Note: if you do the method outlined above, make sure you have a buffer of followers so you aren't unfollowing the people you just followed. Typically you want to wait at least a couple days before you unfollow to increase the chance people will follow you back.
+
+When using multi-action system, the actions are executed in the order they are specified in the command. Meaning in the above sequence your command would look similar to:
+
+```
+python3 run.py --blogger-followers justinbieber --interactions-count 50 --follow-percentage 20 --unfollow 10 --repeat 200-260
+```
+
+This command would:
+- Interact with 50 of @justinbieber's followers, following 20% of them (~10 follows). 
+- Unfollow 10 people in order of oldest to newest. 
+- The above will repeat the above steps every 200-260 minutes.
+
+As an added note, you can also do things like interact with multiple followers and hashtags in the same run. When doing this, you want to be careful to not exceed sensible limits. To help with this, there were "Total" session limits introduced. The following total limits are available:
+
+```
+  --total-likes-limit 300
+        limit on total amount of likes during the session across all
+        actions, 300 by default
+
+  --total-follows-limit 50
+        limit on total amount of likes during the session across all
+        actions, 50 by default
+
+  --total-watches-limit 50
+        limit on total amount of likes during the session across all
+        actions, 50 by default
+
+  --total-successful-interactions-limit 100
+        limit on total amount of likes during the session across all
+        actions, 100 by default
+
+  --total-interactions-limit 1000
+        limit on total amount of likes during the session across all
+        actions, 1000 by default
+```
+
+So if you wanted to interact with multiple bloggers, multiple hashtags, unfollow followers, and generate a report after - you can do a command similar to below:
+
+```
+python3 run.py --blogger-followers justinbieber selenagomez --hashtag-likers-top popmusic bestartists --interactions-count 20 --follow-percentage 20 --total-successful-interactions-limit 80 --total-interactions-limit 700 --total-likes-limit 160 --total-follows-limit 20 --unfollow 16 --analytics myusername --repeat 200-260
+```
+
+This command would:
+- Interact with 20 each of @justinbieber's and @selenagomez's followers, following 20% of them (~4 follows each, ~8 total). The order of @justinbieber and @selenagomez will be randomized each time. 
+- Interact with 20 each of likers of posts in top results of #popmusic and #bestartists, following 20% of them (~4 follows each, ~8 total). The order of #popmusic and #bestartists will be randomized each time. 
+- Unfollow 16 people in order of oldest to newest. 
+- Generate a PDF report for @myusername using the session data from previous runs
+- The above will repeat the above steps every 200-260 minutes.

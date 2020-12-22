@@ -42,8 +42,8 @@ What an "interaction" is depends on your [source limits](#source-limits), but ge
 | hashtag-likers-recent   | List of hashtags in recent results with whose likers you want to interact.  | `[ hashtag1, hashtag2 ]` |
 | hashtag-posts-top       | List of hashtags in top results with whose posts you want to interact. | `[ hashtag1, hashtag2 ]` |
 | hashtag-posts-recent    | List of hashtags in recent results with whose posts you want to interact. | `[ hashtag1, hashtag2 ]` |
-| interact-from-file      | Path to a text file of posts that will be liked. More actions will come in the future. Useful for engagement groups. | `usernames.txt` |
-| posts-from-file         | Path to a text file of usernames that will be interacted with. | `posts.txt` |
+| interact-from-file      | Path to a text file of usernames that will be interacted with. | `usernames.txt` |
+| posts-from-file         | Path to a text file of posts that will be liked. More actions will come in the future. Useful for engagement groups. | `posts.txt` |
 | delete-interacted-users | Not actually an action, but a option for `interact-from-file` and `posts-from-file` to remove users/urls from file after they are interacted with | ` ` |
 
 <br />

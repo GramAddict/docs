@@ -43,6 +43,7 @@ Regardless of which method you user, if you are familiar with `virtualenv` or if
 3. (Optionally) Use virtualenv or similar to make a virtual environment `virtualenv -p python3 .venv` and enter the virtual environment `source .venv/bin/activate`/`.venv/bin/activate`
 4. Install GramAddict with **pip**: `pip3 install gramaddict`
 5. Create a file named `run.py` with the following content in it (or [download it here](https://raw.githubusercontent.com/GramAddict/bot/master/run.py)): 
+
 ```
 import GramAddict
 

@@ -1,4 +1,4 @@
-<p style="text-align: center;"><img alt="GramAddict Logo" src="logo.png" height="400px" ></p>
+<p style="text-align: center;"><img alt="GramAddict Logo" src="logo.png" style="min-width: 150px; max-width: 400px"></p>
 
 <br /><br />
 

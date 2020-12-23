@@ -110,7 +110,7 @@ A0B1CD2345678901	device
 4. Proceed to set up your [configuration](configuration.md) (important).
 5. Finally, you can run the script: 
 ```
-python3 run.py --config username/config.py
+python3 run.py --config username/config.yml
 ```
 
 ### Subsequent Runs:

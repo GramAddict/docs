@@ -118,7 +118,7 @@ python3 run.py --config username/config.py
 2. (optionally) If you installed the script with **virtualenv**, be sure to activate your environment before running: `source .venv/bin/activate`/`.venv/bin/activate`
 3. run the script: 
 ```
-python3 run.py --config username/config.py
+python3 run.py --config username/config.yml
 ```
 
 > Note: If you have a screen lock pin or swipe, you will need to unlock the script before each use. Otherwise - the script will do it for you each run. Additionally, the script also handles opening Instagram for you and choosing the correct account among the ones logged into the app.

@@ -40,7 +40,7 @@ Regardless of which method you user, if you are familiar with `virtualenv` or if
 
 1. Create a new folder in the directory of your choice. A reccomentation would be in your user folder or documents folder.
 2. Go into that folder: `cd gramaddict`
-3. (Optionally) Use virtualenv or similar to make a virtual environment `virtualenv -p python3 .venv` and enter the virtual environment `source .venv/bin/activate`/`.venv/bin/activate`
+3. (Optionally) Use virtualenv or similar to make a virtual environment `virtualenv -p python3 .venv` and enter the virtual environment `source .venv/bin/activate`/`.venv\Scripts\activate.bat` (on windows)
 4. Install GramAddict with **pip**: `pip3 install gramaddict`
 5. Create a file named `run.py` with the following content in it (or [download it here](https://raw.githubusercontent.com/GramAddict/bot/master/run.py)): 
 
@@ -55,7 +55,7 @@ GramAddict.run()
 
 1. Clone project: `git clone https://github.com/GramAddict/bot.git gramaddict`
 2. Go to GramAddict folder: `cd gramaddict`
-3. (Optionally) Use virtualenv or similar to make a virtual environment `virtualenv -p python3 .venv` and enter the virtual environment `source .venv/bin/activate`
+3. (Optionally) Use virtualenv or similar to make a virtual environment `virtualenv -p python3 .venv` and enter the virtual environment `source .venv/bin/activate`/`.venv\Scripts\activate.bat` (on windows)
 4. Install required libraries: `pip3 install -r requirements.txt`
 
 <br /><br />
@@ -115,7 +115,7 @@ python3 run.py --config username/config.yml
 
 ### Subsequent Runs:
 1. Connect Android device to your computer with a USB cable
-2. (optionally) If you installed the script with **virtualenv**, be sure to activate your environment before running: `source .venv/bin/activate`/`.venv/bin/activate`
+2. (optionally) If you installed the script with **virtualenv**, be sure to activate your environment before running: `source .venv/bin/activate`/`.venv\Scripts\activate.bat` (on windows)
 3. run the script: 
 ```
 python3 run.py --config username/config.yml

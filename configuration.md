@@ -102,6 +102,8 @@ What an "interaction" is depends on your [source limits](#source-limits), but ge
 | skipped-list-limit  | Limit how many scrolls tried, with already interacted users, until we move to next source. Does not apply for unfollows. | `10-15` |
 | fling-when-skipped  | Fling (instead of scroll) after "X" many scrolls tried, with already interacted users. (not recommended - disabled by default) | `0` |
 | min-following       | Minimum amount of followings, after reaching this amount unfollowing stops | `0` |
+| blogger-post-limits | Limit of blogger post which likers you are interacting (`--blogger-post-likers`) before ending job. | `2` |
+
 
 <br />
 
@@ -125,7 +127,9 @@ What an "interaction" is depends on your [source limits](#source-limits), but ge
 
 | Argument | Description | Example |
 |---       |---          |---      |
-
+| shuffle-jobs                  | Instead of follow the order of the jobs you write, that argument will allow the bot to shuffle the jobs | `300` |
+| truncate-sources              | If you have a lot of sources, with this argument you're able to pick n random from the list and interact only with them, for that session | `2-3` |
+| watch-video-time       | Instead of liking video without watching them, you can fake it and pause the bot for a given time (in seconds). Set to 0 to disable it. | `15-35` |
 
 <br />
 
@@ -136,27 +140,6 @@ What an "interaction" is depends on your [source limits](#source-limits), but ge
 | repeat   | Repeat the same session again after N minutes after completion, disabled by default. | `120-180` |
 | working-hours   | Scheduler for bot activity. You can specify the interval (one or more) of time in which you want the bot to run. You must use the time notation 0-24. You can use with the above argument `--repeat` for have a never stop bot.  | `[10.15-16.40, 18.15-22.46]` |
 | time-delta   | This is intended to be used with `working-hours` and allows to change the start and the end point of each interval. A random value, positive or negative, will be generated. | `10-15` |
-
-### Argument Glossary
-
-Because there are some words that have special meaning to GramAddict, here is a glossary to reference back to if you run into any questions while reading about the options. 
-
-- **Source**: The *thing* being interacted with, primarily usernames or hashtags 
-- **Interaction**: Any profile that is interacted with for a particular **source** (successful or unsuccessful)
-- **Successful Interaction**: Any profile that was actioned (e.g. like or follow) for a particular **source**
-- **Unsuccessful Interaction**: Any profile that was opened, but not actioned (e.g. like or follow) for a particular **source**
-
-- **Total Interactions**: Number of profiles with **successful interactions** or **unsuccessful interactions** across all **sources**
-- **Total Successful Interactions**: Number of profiles with **successful interactions** with across all **sources**
-- **Other "Total" Limits**: Number of *item* done, across all **sources**
-
-## Limit Logic
-
-When honoring limits, the bot uses the following priority:
-
-- **Total Interactions or Total Successful Interactions**:  If either of these are met, the current run will stop without interating through any additional sources. If no repeat is enabled, the script will stop.
-- **Total *Type* Limit**: If a total *type* limit is met, no more of that *type* will be done. If possible, the bot will continue running.
-- **Individual Limits (e.g. interaction-count, unfollow, follow)**: If the limit is met, but the total limits are not met, the bot will continue on another source (if possible) or possibly continue until the other individual limits are met.
 
 ## Available Filters
 
@@ -254,13 +237,91 @@ We know that you want to make sure that you only interact with a specific set of
         one specified. If they do not match, you will not interact
         with them. This is commonly used to avoid people whose
         biographys don't match your language.
-        (e.g. "specific_alphabet": "LATIN")
+        From version 2.0 you can set more then one.
+        (e.g. "specific_alphabet": ["LATIN", "ARABIAN"])
 
   "min_posts"                 
         You can specify the minumum post number that an account 
         should have. 
         (e.g. "min_posts": 7)
+   
+  "comment_hashtag_likers_top"
+  "comment_hashtag_likers_top"
+  "comment_hashtag_likers_recent"
+  "comment_hashtag_posts_top"
+  "comment_hashtag_posts_recent"
+  "comment_place_likers_top"
+  "comment_place_likers_recent"
+  "comment_place_posts_top"
+  "comment_place_posts_recent"
+  "comment_blogger_followers"
+  "comment_interact_usernames"
+  "comment_blogger_post_likers"
+  "comment_interact_from_file"
+  "comment_feed"
+        You can specify for which job you want to comment.
+        Every interaction type has his own filter.
+        For example if you set your comments_list.txt with 
+        text that fits place posts, you don't want to say 
+        something about Rome in other circumstances.
+        
+  "comment_photos":
+  "comment_videos":
+        You can also turn on/off commenting videos or photos.
 ```
+
+### Comments
+In order to comment post, you have also to set your comments_list.txt which is located inside the folder with your nickname. Every username has his own comments_list.txt file.
+I've dived that file in 3 sections: %PHOTO, %VIDEO and %CAROUSEL. The reason of that is for allow you to have 3 different type of comment in relation of what you're effectively commenting. A lot of time other bots commented on my videos with "nice photo!". In this way you will be less detectable.
+I also made possibile to use emoji [look here for emoji list supported](https://www.webfx.com/tools/emoji-cheat-sheet/).
+
+For example:
+```
+%PHOTO
+Very nice picture!
+Love that photo!
+
+%VIDEO
+Incredible video!
+:smile: very nice!
+
+%CAROUSEL
+I love that collection! :heart:
+```
+When interacting a photo, for example, you will use one (randomly) of the comments you specified in the %PHOTO section.
+Ps. you can use emoji even for hashtag searches.
+
+### Private message
+You can send private message to people you're interacting with. You just have to set your pm_list.txt file, always in the folder with your nickname. Every username has his own pm_list.txt file. Emoji are supported.
+
+For example:
+```
+Hello there! I'm bla bla consider follow me! :smile:
+Sorry for bothering you, can you pls take part of my survey? 
+:fu:
+```
+A random one will be picked each time.
+
+### Argument Glossary
+
+Because there are some words that have special meaning to GramAddict, here is a glossary to reference back to if you run into any questions while reading about the options. 
+
+- **Source**: The *thing* being interacted with, primarily usernames or hashtags 
+- **Interaction**: Any profile that is interacted with for a particular **source** (successful or unsuccessful)
+- **Successful Interaction**: Any profile that was actioned (e.g. like or follow) for a particular **source**
+- **Unsuccessful Interaction**: Any profile that was opened, but not actioned (e.g. like or follow) for a particular **source**
+
+- **Total Interactions**: Number of profiles with **successful interactions** or **unsuccessful interactions** across all **sources**
+- **Total Successful Interactions**: Number of profiles with **successful interactions** with across all **sources**
+- **Other "Total" Limits**: Number of *item* done, across all **sources**
+
+## Limit Logic
+
+When honoring limits, the bot uses the following priority:
+
+- **Total Interactions or Total Successful Interactions**:  If either of these are met, the current run will stop without interating through any additional sources. If no repeat is enabled, the script will stop.
+- **Total *Type* Limit**: If a total *type* limit is met, no more of that *type* will be done. If possible, the bot will continue running.
+- **Individual Limits (e.g. interaction-count, unfollow, follow)**: If the limit is met, but the total limits are not met, the bot will continue on another source (if possible) or possibly continue until the other individual limits are met.
 
 # Multiple Action Support
 
@@ -306,12 +367,13 @@ As an added note, you can also do things like interact with multiple followers a
 So if you wanted to interact with multiple bloggers, multiple hashtags, unfollow followers, and generate a report after - you can do a command similar to below:
 
 ```
-python3 run.py --blogger-followers justinbieber selenagomez --hashtag-likers-top popmusic bestartists --interactions-count 20 --follow-percentage 20 --total-successful-interactions-limit 80 --total-interactions-limit 700 --total-likes-limit 160 --total-follows-limit 20 --unfollow 16 --analytics myusername --repeat 200-260
+python3 run.py --blogger-followers justinbieber selenagomez --hashtag-likers-top popmusic bestartists --interactions-count 20 --follow-percentage 20 --total-successful-interactions-limit 80 --total-interactions-limit 700 --total-likes-limit 160 --total-follows-limit 20 --unfollow 16 --analytics --repeat 200-260 --working-hours [8.07-16.33]
+--time-delta 10-15
 ```
 
 This command would:
 - Interact with 20 each of @justinbieber's and @selenagomez's followers, following 20% of them (~4 follows each, ~8 total). The order of @justinbieber and @selenagomez will be randomized each time. 
 - Interact with 20 each of likers of posts in top results of #popmusic and #bestartists, following 20% of them (~4 follows each, ~8 total). The order of #popmusic and #bestartists will be randomized each time. 
 - Unfollow 16 people in order of oldest to newest. 
-- Generate a PDF report for @myusername using the session data from previous runs
-- The above will repeat the above steps every 200-260 minutes.
+- Generate a PDF report for current user using the session data from previous runs.
+- The above will repeat the above steps every 200-260 minutes when inside working hours.

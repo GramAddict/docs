@@ -7,6 +7,8 @@ Getting started is easy. Follow the directions below to get GramAddict installed
 - Python 3.6+
 - PIP
 - ADB
+- Only devices with Android 4.4+ (SDK 19) are supported.
+  There are few emulators you can use instead: google for them. e.g. Memu, LDPlayer, Android Studio and so on.
 
 <br /><br />
 
@@ -15,11 +17,12 @@ Getting started is easy. Follow the directions below to get GramAddict installed
 ### Windows
 
 1. Open the Python website in your web browser and navigate to: [https://www.python.org/downloads/windows/](https://www.python.org/downloads/windows/).
-2. Download the latest Python 3 release. At this time, that release is [3.9.1](https://www.python.org/downloads/release/python-391/).
+2. Download the latest Python 3 release. At this time, that release is [3.9.4](https://www.python.org/downloads/release/python-394/).
 3. Run the setup file. Make sure you select the "Install launcher for all users" option as well as "Add Python 3.9 to PATH" checkboxes.
 4. (If prompted) Choose to "Disable path length limit".
-5. Test to make sure it's working. Open up **cmd** or **powershell** (if they are already open, close them first) and run `python3 –V`.
-6. Test to make sure **pip** is installed by running `pip3 -V`. If it is not installed, download the [get-pip.py](https://bootstrap.pypa.io/get-pip.py) file and run `python3 get-pip.py`.
+5. Test to make sure it's working. Open up **cmd** or **powershell** (if they are already open, close them first) and run `python –V` or `python3 –V`.
+   (Multiple versions of Python can be installed alongside each other and which version of Python to use can be selected by the user. So refer to python/python3 according to the result of the version check above. Remember that the version must be 3.6+)
+7. Test to make sure **pip** is installed by running `pip3 -V`. If it is not installed, download the [get-pip.py](https://bootstrap.pypa.io/get-pip.py) file and run `python3 get-pip.py` from the folder that contains the file you just downloaded.
 
 
 ### Mac
@@ -108,7 +111,7 @@ List of devices attached
 A0B1CD2345678901	device
 ```
 4. Proceed to set up your [configuration](configuration.md) (important).
-5. Finally, you can run the script: 
+5. Finally, you can run the script from the location where you put the run.py file: 
 ```
 python3 run.py --config username/config.yml
 ```
@@ -121,4 +124,4 @@ python3 run.py --config username/config.yml
 python3 run.py --config username/config.yml
 ```
 
-> Note: If you have a screen lock pin or swipe, you will need to unlock the script before each use. Otherwise - the script will do it for you each run. Additionally, the script also handles opening Instagram for you and choosing the correct account among the ones logged into the app.
+> Note: If you have a screen lock pin or swipe, you will need to unlock the script before each use. Otherwise - the script will do it for you each run. Additionally, the script also handles opening Instagram for you and choosing the correct account among the ones logged into the app. Disable notifications will allow the bot to run smootly without interferences.

@@ -1,8 +1,8 @@
 # Configuration File
 
-As of v1.2.0, GramAdict supports a configuration file and **it is 100% recommended**. Let me repeat, if you use GramAddict, you should be using a configuration file. You should not be using arguments anymore. *You technically can, but we have nearly 30 arguments now... so it's a lot easier if you use the configuration file.*
+As of v1.2.0, GramAdict supports a configuration file and **it is 100% recommended**. Let me repeat, if you use GramAddict, you should be using a configuration file. You should not be using arguments anymore. *You technically can, but we up to 63 arguments now... so it's a lot easier if you use the configuration file.*
 
-To make it easy, to get started... we have a configuration file with every single option argument available in it. You just need to comment out any lines that you don't want to use with a `#`. You can [download that file here](https://raw.githubusercontent.com/GramAddict/bot/master/config-examples/all-parameters.yml). This file should be placed in a folder within your **GramAddict** folder, named after your username. e.g `username/config.yml` You can have multiple configuration files per user and are encouraged to do so. For example, I use one that is my normal "interaction" config and another that is a "clean up" config. e.g `username/interact.yml` and `username/unfollow.yml`
+To make it easy, to get started... we have a configuration file with every single option argument available in it. You just need to comment out any lines that you don't want to use with a `#`. You can [download that file here](https://raw.githubusercontent.com/GramAddict/bot/master/config-examples/all-parameters.yml). This file should be placed in a folder within your **GramAddict** folder, named after your username. e.g `username/config.yml` You can have multiple configuration files per user and are encouraged to do so. For example, I use one that is my normal "interaction" config and another that is a "clean up" config. e.g `username/interact.yml` and `username/unfollow.yml`.
 
 <br/>
 
@@ -12,50 +12,66 @@ GramAddict can do many things and the list is constantly growing. This is a full
 
 ## General Configuration
 
-| Argument     | Type     | Description | Default |
-| ------------ | :------: | ---         |---      |
-| username     | Required | The username for which you are running the script | `None` |
-| device       | Optional | Device identifier. Should be used only when multiple devices are connected at once | `None` |
-| app-id       | Optional | Allows you to specify a custom app name for cloned apps | `com.instagram.android` |
-| screen-sleep | Optional | Turns on the phone screen when the script is running and off when when it's ended or sleeping | `False` |
-| uia-version  | Optional | **This should not be used right now**. This will allow you to switch back to using UIAutomator 1 | `2` |
-| debug        | Optional | For troubleshooting. Debug is already sent to log file, this shows it in console. | `False` |
+| Argument         | Type     | Description | Default |
+| -----------------| :------: | ---         |---      |
+| username         | Required | The username for which you are running the script | `None` |
+| device           | Optional | Device identifier. Should be used only when multiple devices are connected at once | `None` |
+| app-id           | Optional | Allows you to specify a custom app name for cloned apps | `com.instagram.android` |
+| screen-sleep     | Optional | Turns on the phone screen when the script is running and off when when it's ended or sleeping | `False` |
+| screen-record    | Optional | Record the screen while using the bot. This is intended only for debug purposes | `False` |
+| debug            | Optional | For troubleshooting. Debug is already sent to log file, this shows it in console | `False` |
+| speed-multiplier | Optional | You can set the speed of the bot. > 1 will increase the speed, < 1 will slow down | `1` |
+| close-apps       | Optional | Whith that you can tell the bot to close all the background apps for avoid interferences | `true` |
+| disable-filters  | Optional | Instead of deleting/renaming your filter.json file, you can ignore it with that argument | `false` |
+| scrape-to-file   | Optional | The bot will no longer interact anyone, but it will collect and store in a file usernames that fits your filters. That is usually done by a fake account. The generated list will be used by your main account with the argument `--interact-from-file`  | `false` |
+
 
 <br />
 
 ## Actions
 
-No particular action is required, but at least one action is required. If you specify multiple actions, the actions will be executed in the order specified. The logistics of multiple action support is discussed [below](#multiple-action-support) with examples.
+No particular action is required, but at least one action is required. If you specify multiple actions, the actions will be executed in the order specified or shuffled with `--shuffle-jobs`. The logistics of multiple action support is discussed [below](#multiple-action-support) with examples.
 
 What an "interaction" is depends on your [source limits](#source-limits), but generally the following types are supported at this time:
 
-- Like Photos
+- Like Photos/Videos
 - Follow
+- Comment a post
+- Send a PM
 - Watch Stories
 
 ### Interaction
 
-| Argument                | Description | Example |
-|---                      |---          |---      |
-| blogger-followers       | List of usernames with whose followers you want to interact. | `[username1, username2 ]` |
-| hashtag-likers-top      | List of hashtags in top results with whose likers you want to interact. | `[ hashtag1, hashtag2 ]` |
-| hashtag-likers-recent   | List of hashtags in recent results with whose likers you want to interact.  | `[ hashtag1, hashtag2 ]` |
-| hashtag-posts-top       | List of hashtags in top results with whose posts you want to interact. | `[ hashtag1, hashtag2 ]` |
-| hashtag-posts-recent    | List of hashtags in recent results with whose posts you want to interact. | `[ hashtag1, hashtag2 ]` |
-| interact-from-file      | Path to a text file of usernames that will be interacted with. | `usernames.txt` |
-| posts-from-file         | Path to a text file of posts that will be liked. More actions will come in the future. Useful for engagement groups. | `posts.txt` |
-| delete-interacted-users | Not actually an action, but a option for `interact-from-file` and `posts-from-file` to remove users/urls from file after they are interacted with | ` ` |
+| Argument                  | Description | Example |
+|-------------------------  |---          |---      |
+| blogger-followers         | List of usernames with whose followers you want to interact. | `[username1, username2 ]` |
+| blogger-following         | List of usernames with whose following you want to interact. | `[username1, username2 ]` |
+| blogger-post-likers       | List of usernames with whose post likers you want to interact. | `[username1, username2 ]` |
+| blogger                   | List of usernames with whose you want to interact. | `[username1, username2 ]` |
+| hashtag-likers-top        | List of hashtags in top results with whose likers you want to interact. | `[ hashtag1, hashtag2 ]` |
+| hashtag-likers-recent     | List of hashtags in recent results with whose likers you want to interact.  | `[ hashtag1, hashtag2 ]` |
+| hashtag-posts-top         | List of hashtags in top results with whose posts you want to interact. | `[ hashtag1, hashtag2 ]` |
+| hashtag-posts-recent      | List of hashtags in recent results with whose posts you want to interact. | `[ hashtag1, hashtag2 ]` |
+| place-likers-top          | List of places in top results with whose likers you want to interact. | `[ hashtag1, hashtag2 ]` |
+| place-likers-recent       | List of places in recent results with whose likers you want to interact.  | `[ hashtag1, hashtag2 ]` |
+| place-post-top            | List of places in top results with whose posts you want to interact. | `[ place1, place2 ]` |
+| place-place-recent        | List of places in recent results with whose posts you want to interact. | `[ place1, place2 ]` |
+| interact-from-file        | Path to a text file of usernames that will be interacted with. | `usernames_list1.txt, usernames_list2.txt ` |
+| posts-from-file           | Path to a text file of posts that will be liked. More actions will come in the future. Useful for engagement groups. | `posts_list1.txt, posts_list2.txt` |
+| delete-interacted-users   | Not actually an action, but a option for `interact-from-file` and `posts-from-file` to remove users/urls from file after they are interacted with | ` ` |
 
 <br />
 
 ### Unfollow
 
-| Argument                   | Description | Example |
-|---                         |---          |---      |
-| unfollow                   | Unfollow at most the given number of users. Only users followed by this script will be unfollowed. | `10-20` |
-| unfollow-any               | Unfollow at most the given number of users. Any user is eligible to be unfollowed regardless of if this script followed them. | `10-20` |
-| unfollow-non-followers     | Unfollow at most the given number of users, that don't follow you back. Only users followed by this script will be unfollowed. | `10-20` |
-| unfollow-any-non-followers | Unfollow at most the given number of users, that don't follow you back. Any user is eligible to be unfollowed regardless of if this script followed them. | `10-20` |
+| Argument                    | Description | Example |
+|---------------------------- |---          |---      |
+| unfollow                    | Unfollow at most the given number of users. Only users followed by this script will be unfollowed. | `10-20` |
+| unfollow-any                | Unfollow at most the given number of users. Any user is eligible to be unfollowed regardless of if this script followed them. | `10-20` |
+| unfollow-non-followers      | Unfollow at most the given number of users, that don't follow you back. Only users followed by this script will be unfollowed. | `10-20` |
+| unfollow-any-non-followers  | Unfollow at most the given number of users, that don't follow you back. Any user is eligible to be unfollowed regardless of if this script followed them. | `10-20` |
+| unfollow-from-file          | Unfollow usernames from a list (.txt)  | `usernames_list1.txt, usernames_list2.txt ` |
+| sort-followers-newest-to-oldest   | Not actually an action, but a option for all unfollow type except the one from file to sort user from newest to oldest instead that oldest to newst which is the default choice | ` ` |
 
 <br />
 
@@ -63,24 +79,29 @@ What an "interaction" is depends on your [source limits](#source-limits), but ge
 
 | Argument  | Description | Example |
 |---        |---          |---      |
-| analytics | Generates a PDF analytics report of specified usernames session data | `username` |
+| analytics | Generates a PDF analytics report for current username session data | `options` |
 
 <br />
 
 ## Source Limits
 
 | Argument            | Description | Default |
-|---                  |---          |---      |
+|-------------------- |---          |---      |
 | interactions-count  | Number of interactions per source in each action. | `70` |
 | likes-count         | Number of likes for each interacted user. | `2` |
 | stories-count       | Number of stories for each interacted user. | `0` |
 | stories-percentage  | Chance of watching stories on a particular profile. Supported by plugins: hashtag-likers, hashtag-posts, blogger-followers. | `30` |
+| carousel-count      | Number of available carousel items to browse. | `0` |
+| carousel-percentage | Chance of browsing a carousel. | `0` |
+| max-comments-pro-user | Number of comments you can do for each user you interact. | `0` |
+| comments-percentage | Chance of commenting an user post. | `0` |
+| pm-percentage       | Chance of send a private message to an user you're interacting with. | `0` |
+| interact-percentage | Chance to interact with user/hashtag when applicable. Supported by plugins: hashtag-posts". | `50` |
 | follow-percentage   | Follow the given percentage of interacted users. | `0` |
-| follow-limit        | Limit on amount of follows per source in each action. |   |
+| follow-limit        | Limit on amount of follows per source in each action. | `0` |
 | skipped-list-limit  | Limit how many scrolls tried, with already interacted users, until we move to next source. Does not apply for unfollows. | `10-15` |
 | fling-when-skipped  | Fling (instead of scroll) after "X" many scrolls tried, with already interacted users. (not recommended - disabled by default) | `0` |
-| interact-percentage | Chance to interact with user/hashtag when applicable. Supported by plugins: hashtag-posts". | `50` |
-| min-following | Minimum amount of followings, after reaching this amount unfollowing stops | `0` |
+| min-following       | Minimum amount of followings, after reaching this amount unfollowing stops | `0` |
 
 <br />
 
@@ -93,6 +114,18 @@ What an "interaction" is depends on your [source limits](#source-limits), but ge
 | total-watches-limit                 | Limit on total amount of story watches during the session across all sources. | `50` |
 | total-successful-interactions-limit | Limit on total amount of successful interactions during the session across all sources. | `100` |
 | total-interactions-limit            | Limit on total amount of successful and non-sucessful interactions during the session across all sources. | `1000` |
+| total-comments-limit                | Limit on total amount of comments during the session across all sources. | `300` |
+| total-pm-limit                      | Limit on total amount of private-messages during the session across all sources. | `300` |
+| total-scraped-limit                 | Limit on total amount of scraped users you will collect during the session across all sources. | `300` |
+| total-crashes-limit                 | Limit on total amount of crashes during the session you are willing to accept. Reaching this limit will stop the bot. | `300` |
+
+<br />
+
+## Special modificators for jobs and sources
+
+| Argument | Description | Example |
+|---       |---          |---      |
+
 
 <br />
 
@@ -101,6 +134,8 @@ What an "interaction" is depends on your [source limits](#source-limits), but ge
 | Argument | Description | Example |
 |---       |---          |---      |
 | repeat   | Repeat the same session again after N minutes after completion, disabled by default. | `120-180` |
+| working-hours   | Scheduler for bot activity. You can specify the interval (one or more) of time in which you want the bot to run. You must use the time notation 0-24. You can use with the above argument `--repeat` for have a never stop bot.  | `[10.15-16.40, 18.15-22.46]` |
+| time-delta   | This is intended to be used with `working-hours` and allows to change the start and the end point of each interval. A random value, positive or negative, will be generated. | `10-15` |
 
 ### Argument Glossary
 

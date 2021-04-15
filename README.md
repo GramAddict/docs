@@ -4,7 +4,7 @@
   <br />
   <h1 style="text-align: center;">GramAddict</h1>
   <br />
-  <p style="text-align: center;">The best 100% free forever instagram bot. Grow your following and engagement by liking and following automatically with your Android phone/tablet/emulator. No root required.<p>
+  <p style="text-align: center;">The best 100% free forever instagram bot. Grow your following and engagement by liking, following and commenting automatically with your Android phone/tablet/emulator. No root required.<p>
   <p style="text-align: center;">
     <a href="https://github.com/gramaddict/bot/blob/master/LICENSE">
       <img src="https://img.shields.io/github/license/gramaddict/bot?style=flat" />
@@ -46,7 +46,7 @@
 
 ## Introduction
 
-Liking and following automatically on your Android phone/tablet. No root required: it works on [uiautomator2](https://github.com/openatx/uiautomator2), which is a faster and more efficient fork of the official Android UI testing framework [UI Automator](https://developer.android.com/training/testing/ui-automator). 
+This bot can do almost whaever you can do, but automatically. You don't need to root your phone: it works on [uiautomator2](https://github.com/openatx/uiautomator2), which is framework for testing apps behaviour in devices.
 
 This is a completely free and open source project that is forked from the freemium project [Insomniac](https://github.com/alexal1/Insomniac/) when they decided to do a controversial monetization strategy. Since then we've significantly improved their codebase in many ways. We've also been adding countless new features and other improvements. 
 
@@ -57,7 +57,10 @@ There already is [InstaPy](https://github.com/timgrossmann/InstaPy), which works
 
 There is also [Insomniac](https://github.com/alexal1/Insomniac/) which is the origin of this project, but there were issues that cropped up when the project organizers decided to monetize it. We wanted to keep this project completely free and open source so we forked it! Now this project is the better option. 😇
 
-Our objective is to make a free solution for mobile devices. Instagram can't distinguish bot from a human when it comes to your phone. However, even a human can reach limits when using the app, so make sure you are careful with your limits. Always set `--total-likes-limit` to 300 or less. Also it's better to use `--repeat` to act periodically for 2-3 hours, because Instagram keeps track of how long the app works.
+Our objective is to make a free solution for android mobile devices and emulators. Instagram can't distinguish bot from a human when it comes to your phone. However, even a human can reach limits when using the app, so make sure you are careful with your limits. 
+From version 2.0 there are a lot of limits and features you can set to avoid to get soft banned: for example we introduced a time scheluder that will helps you to set few intervals where you want to run the bot.
+Always set the total limits so you will be in a safe zone.
+We also provide a config example where you can find a starting point for your account.
 
 ## Features
 
@@ -65,16 +68,35 @@ Our objective is to make a free solution for mobile devices. Instagram can't dis
 - Works with both emulators and physical devices
 - Includes realistic random human-like delays and actions
 - (Optionally) Watches stories while interacting
+- Comment post with emoji
+- Send PM
+- Type as an human (letter by letter)
+- Browse carousels
+- Watch videos for a specific amount of time
+- Scheduler
 - Supports multiple actions in one session
 - Loads of customizable limits to keep your account safe from soft bans
 - Available interactions
-    - interact with a users followers
-    - interact with a top hashtag's post likers
-    - interact with a recent hashtag's post likers
+    - interact with a users followers or following
+    - interact with a top or recent hashtag's post likers
+    - interact with a top or recent hashtag post
+    - interact with a top or recent place's post likers
+    - interact with a top or recent place post
+    - interact with user post likers
+    - interact with a single blogger
+    - interact with your own feed
     - unfollow any followers
     - unfollow any followers, followed by bot
     - unfollow any followers, followed by bot, who don't follow you back
+    - unfollow from a list (*.txt)
+    - srape mode for collect usernames instead of interact with them (you will find more information about that in the doc)
+
 - Loads of available filters to customize who you interact with
+    - you can blacklist people in order to avoid to interact with them
+    - biography main characters
+    - private / pubblic
+    - number of posts / followers / following
+    - other more!
 
 ## Contributors
 
@@ -95,7 +117,7 @@ Thank you to everyone that supports us financially! 🙏 [[Become a backer](http
 ## Talk Botty With Us
 
 <p>
-  <a href="https://discord.gg/9MTjgs8g5R">
+  <a href="https://discord.gg/NK8PNEFGFF">
     <img hspace="3" alt="Join us on Discord" src="https://github.com/GramAddict/bot/raw/master/res/discord.png" height=84/>
   </a>
 </p>

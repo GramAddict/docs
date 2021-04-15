@@ -77,8 +77,8 @@ What an "interaction" is depends on your [source limits](#source-limits), but ge
 
 ### Post Processing
 
-| Argument  | Description | Example |
-|---        |---          |---      |
+| Argument      | Description                 | Example |
+|-------        |------------------           |---------      |
 | analytics | Generates a PDF analytics report for current username session data | `options` |
 
 <br />
@@ -270,7 +270,7 @@ We know that you want to make sure that you only interact with a specific set of
         You can also turn on/off commenting videos or photos.
 ```
 
-### Comments
+## Comments
 In order to comment post, you have also to set your comments_list.txt which is located inside the folder with your nickname. Every username has his own comments_list.txt file.
 I've dived that file in 3 sections: %PHOTO, %VIDEO and %CAROUSEL. The reason of that is for allow you to have 3 different type of comment in relation of what you're effectively commenting. A lot of time other bots commented on my videos with "nice photo!". In this way you will be less detectable.
 I also made possibile to use emoji [look here for emoji list supported](https://www.webfx.com/tools/emoji-cheat-sheet/).
@@ -291,7 +291,7 @@ I love that collection! :heart:
 When interacting a photo, for example, you will use one (randomly) of the comments you specified in the %PHOTO section.
 Ps. you can use emoji even for hashtag searches.
 
-### Private message
+## Private message
 You can send private message to people you're interacting with. You just have to set your pm_list.txt file, always in the folder with your nickname. Every username has his own pm_list.txt file. Emoji are supported.
 
 For example:

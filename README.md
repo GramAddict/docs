@@ -85,6 +85,8 @@ We also provide a config example where you can find a starting point for your ac
     - interact with user post likers
     - interact with a single blogger
     - interact with your own feed
+    - interact user from a list (*.txt)
+    - interact with post from links inside a list (*.txt)
     - unfollow any followers
     - unfollow any followers, followed by bot
     - unfollow any followers, followed by bot, who don't follow you back

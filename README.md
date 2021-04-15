@@ -55,7 +55,7 @@ Like what you see? Help us by [Contributing](contributing.md)!
 ## Why GramAddict?
 There already is [InstaPy](https://github.com/timgrossmann/InstaPy), which works on Instagram web version. Unfortunately, Instagram bots detection system has become very suspicious to browser actions. Now InstaPy and similar scripts work at most an hour, then Instagram blocks possibility to do any actions, and if you continue using InstaPy, it may ban your account. 
 
-There is also [Insomniac](https://github.com/alexal1/Insomniac/) which is the origin of this project, but there were issues that cropped up when the project organizers decided to monetize it. We wanted to keep this project completely free and open source so we forked it! Now this project is the better option. 😇
+There is also [Insomniac](https://github.com/alexal1/Insomniac/) which is the origin of this project, but there were issues that cropped up when the project organizers decided to monetize it. We wanted to keep this project completely free and open source so we forked it! Now this project is the better option. 😇 [Comparisation](Comparisation.md)
 
 Our objective is to make a free solution for android mobile devices and emulators. Instagram can't distinguish bot from a human when it comes to your phone. However, even a human can reach limits when using the app, so make sure you are careful with your limits. 
 From version 2.0 there are a lot of limits and features you can set to avoid to get soft banned: for example we introduced a time scheluder that will helps you to set few intervals where you want to run the bot.
@@ -85,7 +85,7 @@ We also provide a config example where you can find a starting point for your ac
     - interact with user post likers
     - interact with a single blogger
     - interact with your own feed
-    - interact user from a list (*.txt)
+    - interact users from a list (*.txt)
     - interact with post from links inside a list (*.txt)
     - unfollow any followers
     - unfollow any followers, followed by bot
@@ -96,9 +96,9 @@ We also provide a config example where you can find a starting point for your ac
 - Loads of available filters to customize who you interact with
     - you can blacklist people in order to avoid to interact with them
     - biography main characters
-    - private / pubblic
+    - private / pubblic / business / non business account
     - number of posts / followers / following
-    - other more!
+    - ... and more!
 
 ## Contributors
 

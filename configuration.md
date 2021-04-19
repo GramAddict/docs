@@ -52,10 +52,10 @@ What an "interaction" is depends on your [source limits](#source-limits), but ge
 | hashtag-likers-recent     | List of hashtags in recent results with whose likers you want to interact.  | `[ hashtag1, hashtag2 ]` |
 | hashtag-posts-top         | List of hashtags in top results with whose posts you want to interact. | `[ hashtag1, hashtag2 ]` |
 | hashtag-posts-recent      | List of hashtags in recent results with whose posts you want to interact. | `[ hashtag1, hashtag2 ]` |
-| place-likers-top          | List of places in top results with whose likers you want to interact. | `[ hashtag1, hashtag2 ]` |
-| place-likers-recent       | List of places in recent results with whose likers you want to interact.  | `[ hashtag1, hashtag2 ]` |
-| place-post-top            | List of places in top results with whose posts you want to interact. | `[ place1, place2 ]` |
-| place-place-recent        | List of places in recent results with whose posts you want to interact. | `[ place1, place2 ]` |
+| place-likers-top          | List of places in top results with whose likers you want to interact. | `[ place1, place2 ]` |
+| place-likers-recent       | List of places in recent results with whose likers you want to interact.  | `[place1, place22 ]` |
+| place-posts-top           | List of places in top results with whose posts you want to interact. | `[ place1, place2 ]` |
+| place-posts-recent        | List of places in recent results with whose posts you want to interact. | `[ place1, place2 ]` |
 | interact-from-file        | Path to a text file of usernames that will be interacted with. | `usernames_list1.txt, usernames_list2.txt ` |
 | posts-from-file           | Path to a text file of posts that will be liked. More actions will come in the future. Useful for engagement groups. | `posts_list1.txt, posts_list2.txt` |
 | delete-interacted-users   | Not actually an action, but a option for `interact-from-file` and `posts-from-file` to remove users/urls from file after they are interacted with | ` ` |

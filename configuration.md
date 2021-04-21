@@ -46,7 +46,7 @@ What an "interaction" is depends on your [source limits](#source-limits), but ge
 |-------------------------  |---          |---      |
 | blogger-followers         | List of usernames with whose followers you want to interact. | `[username1, username2]` |
 | blogger-following         | List of usernames with whose following you want to interact. | `[username1, username2]` |
-| blogger-post-likers       | List of usernames with whose post likers you want to interact. | `[username1, username2 ]` |
+| blogger-post-likers       | List of usernames with whose post likers you want to interact. | `[username1, username2]` |
 | blogger                   | List of usernames with whose you want to interact. | `[username1, username2]` |
 | hashtag-likers-top        | List of hashtags in top results with whose likers you want to interact. | `[hashtag1, hashtag2]` |
 | hashtag-likers-recent     | List of hashtags in recent results with whose likers you want to interact.  | `[hashtag1, hashtag2]` |
@@ -57,7 +57,7 @@ What an "interaction" is depends on your [source limits](#source-limits), but ge
 | place-posts-top           | List of places in top results with whose posts you want to interact. | `[place1, place2]` |
 | place-posts-recent        | List of places in recent results with whose posts you want to interact. | `[place1, place2]` |
 | interact-from-file        | Path to a text file of usernames that will be interacted with. | `[usernames_list1.txt, usernames_list2.txt]` |
-| posts-from-file           | Path to a text file of posts that will be liked. More actions will come in the future. Useful for engagement groups. | `[posts_list1.txt, posts_list2.txt`] |
+| posts-from-file           | Path to a text file of posts that will be liked. More actions will come in the future. Useful for engagement groups. | `[posts_list1.txt, posts_list2.txt]` |
 | delete-interacted-users   | Not actually an action, but a option for `interact-from-file` and `posts-from-file` to remove users/urls from file after they are interacted with | ` ` |
 
 <br />

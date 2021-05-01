@@ -58,7 +58,7 @@ What an "interaction" is depends on your [source limits](#source-limits), but ge
 | place-posts-recent        | List of places in recent results with whose posts you want to interact. | `[place1, place2]` |
 | interact-from-file        | Path to a text file of usernames that will be interacted with. | `[usernames_list1.txt, usernames_list2.txt]` |
 | posts-from-file           | Path to a text file of posts that will be liked. More actions will come in the future. Useful for engagement groups. | `[posts_list1.txt, posts_list2.txt]` |
-| delete-interacted-users   | Not actually an action, but a option for `interact-from-file` and `posts-from-file` to remove users/urls from file after they are interacted with | ` ` |
+| delete-interacted-users   | Not actually an action, but a option for `interact-from-file`, `posts-from-file` and `unfollow-from-file` to remove users/urls from file after they are interacted with | ` ` |
 
 <br />
 
@@ -113,6 +113,7 @@ What an "interaction" is depends on your [source limits](#source-limits), but ge
 |---                                  |---          |---      |
 | total-likes-limit                   | Limit on total amount of likes during the session across all sources. | `300` |
 | total-follows-limit                 | Limit on total amount of follows during the session across all sources. | `50` |
+| total-unfollows-limit               | Limit on total amount of unfollows during the session across all sources. | `50` |
 | total-watches-limit                 | Limit on total amount of story watches during the session across all sources. | `50` |
 | total-successful-interactions-limit | Limit on total amount of successful interactions during the session across all sources. | `100` |
 | total-interactions-limit            | Limit on total amount of successful and non-sucessful interactions during the session across all sources. | `1000` |
@@ -255,6 +256,7 @@ We know that you want to make sure that you only interact with a specific set of
   "comment_place_posts_top"
   "comment_place_posts_recent"
   "comment_blogger_followers"
+  "comment_blogger_followings"
   "comment_interact_usernames"
   "comment_blogger_post_likers"
   "comment_interact_from_file"
@@ -264,7 +266,6 @@ We know that you want to make sure that you only interact with a specific set of
         For example if you set your comments_list.txt with 
         text that fits place posts, you don't want to say 
         something about Rome in other circumstances.
-        
   "comment_photos":
   "comment_videos":
         You can also turn on/off commenting videos or photos.

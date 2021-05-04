@@ -2,7 +2,7 @@
 
 As of v1.2.0, GramAdict supports a configuration file and **it is 100% recommended**. Let me repeat, if you use GramAddict, you should be using a configuration file. You should not be using arguments anymore. *You technically can, but we up to 63 arguments now... so it's a lot easier if you use the configuration file.*
 
-To make it easy, to get started... we have a configuration file with every single option argument available in it. You just need to comment out any lines that you don't want to use with a `#`. You can [download that file here](https://raw.githubusercontent.com/GramAddict/bot/master/config-examples/all-parameters.yml). This file should be placed in a folder within your **GramAddict** folder, named after your username. e.g `username/config.yml` You can have multiple configuration files per user and are encouraged to do so. For example, I use one that is my normal "interaction" config and another that is a "clean up" config. e.g `username/interact.yml` and `username/unfollow.yml`.
+To make it easy, to get started... we have a configuration file with every single option argument available in it. You just need to comment out any lines that you don't want to use with a `#`. You can [download that file here](https://raw.githubusercontent.com/GramAddict/bot/master/config-examples/all-parameters.yml). This file should be placed in a folder within your **GramAddict** folder, named after your username which is inside accounts main folder (if you don't create that folder, the bot will do it for you at the first run). e.g `accounts/username/config.yml` You can have multiple configuration files per user and are encouraged to do so. For example, I use one that is my normal "interaction" config and another that is a "clean up" config. e.g `accounts/username/interact.yml` and `accounts/username/unfollow.yml`.
 
 <br/>
 
@@ -292,9 +292,10 @@ I love that collection! :heart:
 ```
 When interacting a photo, for example, you will use one (randomly) of the comments you specified in the %PHOTO section.
 Ps. you can use emoji even for hashtag searches.
+Pps. You can change that file even while the bot is running if you need to.
 
 ## Private message
-You can send private message to people you're interacting with. You just have to set your pm_list.txt file, always in the folder with your nickname. Every username has his own pm_list.txt file. Emoji are supported.
+You can send private message to people you're interacting with. You just have to set your pm_list.txt file, always in the folder with your nickname (accounts/yournickname/pm_list.txt). Every username has his own pm_list.txt file. Emoji are supported. [look here for emoji list supported](https://www.webfx.com/tools/emoji-cheat-sheet/)
 
 For example:
 ```
@@ -302,7 +303,8 @@ Hello there! I'm bla bla consider follow me! :smile:
 Sorry for bothering you, can you pls take part of my survey? 
 :fu:
 ```
-A random one will be picked each time.
+A random line will be picked each time. 
+Ps. You can change that file even while the bot is running if you need to.
 
 ### Argument Glossary
 

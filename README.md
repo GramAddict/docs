@@ -115,6 +115,9 @@ Thank you to everyone that supports us financially! 🙏 [[Become a backer](http
 <a href="https://opencollective.com/gramaddict#backers" target="_blank"><img src="https://opencollective.com/gramaddict/backers.svg?width=890"></a>
 
 <br />
+From version 1.2.3 this bot is maintained and supported only by me, for free.
+If you like my work consider making a small donation..
+<a  href="https://www.buymeacoffee.com/mastrolube"  target="_blank"><img  src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png"  hspace="10" alt="Buy Me A Coffee"  style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;"  ></a>
 
 ## Talk Botty With Us
 

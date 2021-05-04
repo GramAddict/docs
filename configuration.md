@@ -102,7 +102,7 @@ What an "interaction" is depends on your [source limits](#source-limits), but ge
 | skipped-list-limit  | Limit how many scrolls tried, with already interacted users, until we move to next source. Does not apply for unfollows. | `10-15` |
 | fling-when-skipped  | Fling (instead of scroll) after "X" many scrolls tried, with already interacted users. (not recommended - disabled by default) | `0` |
 | min-following       | Minimum amount of followings, after reaching this amount unfollowing stops | `0` |
-| blogger-post-limits | Limit of blogger post which likers you are interacting (`--blogger-post-likers`) before ending job. | `2` |
+| blogger-post-limits | Limit of blogger post which likers you are interacting (`--blogger-post-likers`) before ending job. **NOT YET DEVELOPED** | `2` |
 
 
 <br />
@@ -245,7 +245,8 @@ We know that you want to make sure that you only interact with a specific set of
         You can specify the minumum post number that an account 
         should have. 
         (e.g. "min_posts": 7)
-   
+  "pm_to_private_or_empty"
+        You can specify if you want to send PM also to private/empty accounts
   "comment_hashtag_likers_top"
   "comment_hashtag_likers_top"
   "comment_hashtag_likers_recent"

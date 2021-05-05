@@ -37,7 +37,7 @@ Getting started is easy. Follow the directions below to get GramAddict installed
 
 There are two ways to install GramAddict. Via `git` or via `pip`. If you plan on **modifying code**, **contributing**, **being a beta tester**, or otherwise **inspecting** the code. You should install GramAddict with `git`. Otherwise you should install it with `pip`. We recommend installing with `pip` for the average user. 
 
-Regardless of which method you user, if you are familiar with `virtualenv` or if you plan on using/developing other python scripts, we recommend that you set up a **virtual environment**.
+Regardless of which method you use, if you are familiar with `virtualenv` or if you plan on using/developing other python scripts, we recommend that you set up a **virtual environment**.
 
 ### Using `pip`
 
@@ -113,7 +113,7 @@ A0B1CD2345678901	device
 4. Proceed to set up your [configuration](configuration.md) (important).
 5. Finally, you can run the script from the location where you put the run.py file: 
 ```
-python3 run.py --config username/config.yml
+python3 run.py --config accounts/username/config.yml
 ```
 
 ### Subsequent Runs:
@@ -121,7 +121,7 @@ python3 run.py --config username/config.yml
 2. (optionally) If you installed the script with **virtualenv**, be sure to activate your environment before running: `source .venv/bin/activate`/`.venv\Scripts\activate.bat` (on windows)
 3. run the script: 
 ```
-python3 run.py --config username/config.yml
+python3 run.py --config accounts/username/config.yml
 ```
 
 > Note: If you have a screen lock pin or swipe, you will need to unlock the script before each use. Otherwise - the script will do it for you each run. Additionally, the script also handles opening Instagram for you and choosing the correct account among the ones logged into the app. Disable notifications will allow the bot to run smootly without interferences.

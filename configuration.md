@@ -96,7 +96,7 @@ What an "interaction" is depends on your [source limits](#source-limits), but ge
 | max-comments-pro-user | Number of comments you can do for each user you interact. | `0` |
 | comments-percentage | Chance of commenting an user post. | `0` |
 | pm-percentage       | Chance of send a private message to an user you're interacting with. | `0` |
-| interact-percentage | Chance to interact with user/hashtag when applicable. Supported by plugins: hashtag-posts". | `50` |
+| interact-percentage | Chance to interact with user/hashtag when applicable. Supported by plugins: hashtag/place-posts and feed". | `50` |
 | follow-percentage   | Follow the given percentage of interacted users. | `0` |
 | follow-limit        | Limit on amount of follows per source in each action. | `0` |
 | skipped-list-limit  | Limit how many scrolls tried, with already interacted users, until we move to next source. Does not apply for unfollows. | `10-15` |

@@ -115,6 +115,14 @@ A0B1CD2345678901	device
 ```
 python3 run.py --config accounts/username/config.yml
 ```
+Possible problems:
+- if you run the bot but nothing happens in console (you are able to write again..), you are using a wrong python alias (for example python3 run.py bla bla). Type `python -V` or `python3 -V` or `py -V` to find out the right one and then use it with the run.py
+- if uiautomator2/minicab install stucks, try the following: 
+```
+adb shell pkill atx-agent
+pip3 install uiautomator2 --upgrade
+```
+Wait until is finished and try to run the bot again.
 
 ### Subsequent Runs:
 1. Connect Android device to your computer with a USB cable

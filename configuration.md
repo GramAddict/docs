@@ -79,7 +79,7 @@ What an "interaction" is depends on your [source limits](#source-limits), but ge
 
 | Argument      | Description                 | Example |
 |-------        |------------------           |---------      |
-| analytics | Generates a PDF analytics report for current username session data | `options` |
+| analytics | Generates a PDF analytics report for current username session data | `true` |
 
 <br />
 

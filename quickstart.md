@@ -9,6 +9,7 @@ Getting started is easy. Follow the directions below to get GramAddict installed
 - ADB
 - Only devices with Android 4.4+ (SDK 19) are supported.
   There are few emulators you can use instead: google for them. e.g. Memu, LDPlayer, Android Studio and so on.
+- Your Instagram app must be in English https://help.instagram.com/111923612310997
 
 <br /><br />
 
@@ -103,6 +104,7 @@ If you have not already you should make sure you have [Developer options](https:
 
 
 ### First Run
+0. Make sure that your Instagram is in English https://help.instagram.com/111923612310997
 1. Connect Android device to your computer with a USB cable
 2. Device will ask you to allow computer connection. Press "Connect"
 3. Type `adb devices` in terminal. It will display attached devices. There should be exactly one device unless you have multiple attached:

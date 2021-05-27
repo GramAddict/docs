@@ -17,9 +17,9 @@ GramAddict can do many things and the list is constantly growing. This is a full
 | username         | Required | The username for which you are running the script | `None` |
 | device           | Optional | Device identifier. Should be used only when multiple devices are connected at once | `None` |
 | app-id           | Optional | Allows you to specify a custom app name for cloned apps | `com.instagram.android` |
-| screen-sleep     | Optional | Turns on the phone screen when the script is running and off when when it's ended or sleeping | `False` |
-| screen-record    | Optional | Record the screen while using the bot. This is intended only for debug purposes | `False` |
-| debug            | Optional | For troubleshooting. Debug is already sent to log file, this shows it in console | `False` |
+| screen-sleep     | Optional | Set to true to turn device screen off once script has finished | `false` |
+| screen-record    | Optional | Record the screen while using the bot. This is intended only for debug purposes | `false` |
+| debug            | Optional | For troubleshooting. Debug is already sent to log file, this shows it in console | `false` |
 | speed-multiplier | Optional | You can set the speed of the bot. > 1 will increase the speed, < 1 will slow down | `1` |
 | close-apps       | Optional | Whith that you can tell the bot to close all the background apps for avoid interferences | `true` |
 | disable-filters  | Optional | Instead of deleting/renaming your filter.json file, you can ignore it with that argument | `false` |

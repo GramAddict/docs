@@ -112,17 +112,69 @@ If you have not already you should make sure you have [Developer options](https:
 List of devices attached
 A0B1CD2345678901	device
 ```
-4. Proceed to set up your [configuration](configuration.md) (important).
-5. Finally, you can run the script from the location where you put the run.py file: 
+4. Initialize the uiautomator2 with this command: (It's also important when uiautomator2 gets updates) 
 ```
-python3 run.py --config accounts/username/config.yml
+python3 -m uiautomator2 init
 ```
+6. Proceed to set up your [configuration](configuration.md) (important).
+7. Finally, you can run the script from the location where run.py file is locaded.
+   For doing that open the console and move to the gramaddict location and type the following: 
+```
+python3 run.py --config accounts/yourusername/config.yml
+```
+**ATTENTION: run.py must be inside that folder because at start it moves almost all folders near it inside `accounts`!**
+
+For avoid problems, compare your situatation with that before starting:
+
+Tree of correct configuration for GIT:
+```                                    
+gramaddict/
+    GramAddict/
+        core/
+            __init__.py
+            ...
+        plugins/
+            __init__.py
+            ...
+        __init__.py
+        version.py
+    config-examples/
+        ...
+    res/
+        ...
+    setup.py
+    ...
+    accounts/
+        youraccountname/
+            config.yml
+            filter.json
+            whitelist.txt
+            blacklist.txt
+            comments_list.txt
+            pm_list.txt
+    run.py
+```
+Tree of correct configuration for PIP:
+```  
+gramaddict/
+    run.py
+    accounts/
+        youraccountname/
+            config.yml
+            filter.json
+            whitelist.txt
+            blacklist.txt
+            comments_list.txt
+            pm_list.txt
+```
+
 Possible problems:
 - if you run the bot but nothing happens in console (you are able to write again..), you are using a wrong python alias (for example python3 run.py bla bla). Type `python -V` or `python3 -V` or `py -V` to find out the right one and then use it with the run.py
 - if uiautomator2/minicab install stucks, try the following: 
 ```
 adb shell pkill atx-agent
 pip3 install uiautomator2 --upgrade
+python3 -m uiautomator2 init
 ```
 Wait until is finished and try to run the bot again.
 

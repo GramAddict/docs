@@ -23,7 +23,7 @@ Getting started is easy. Follow the directions below to get GramAddict installed
 4. (If prompted) Choose to "Disable path length limit".
 5. Test to make sure it's working. Open up **cmd** or **powershell** (if they are already open, close them first) and run `python –V` or `python3 –V`.
    (Multiple versions of Python can be installed alongside each other and which version of Python to use can be selected by the user. So refer to python/python3 according to the result of the version check above. Remember that the version must be 3.6+)
-7. Test to make sure **pip** is installed by running `pip3 -V`. If it is not installed, download the [get-pip.py](https://bootstrap.pypa.io/get-pip.py) file and run `python3 get-pip.py` from the folder that contains the file you just downloaded.
+7. Test to make sure **pip** is installed by running `pip3 -V`. If it is not installed, download the [get-pip.py](https://bootstrap.pypa.io/get-pip.py) file and run `python get-pip.py` from the folder that contains the file you just downloaded.
 
 
 ### Mac
@@ -33,6 +33,12 @@ Getting started is easy. Follow the directions below to get GramAddict installed
 3. Verify that python3 and pip3 are installed: `python3 –V` and `pip3 -V`
 
 <br /><br />
+
+### Linux
+
+On Linux Python is pre-installed. 
+For Raspberry the pre-installed version should be 3.6. Check this out by running this command: `python3 -V`
+If you have a over version of python, google for how to upgrade.
 
 ## Step 2: Install GramAddict
 

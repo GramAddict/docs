@@ -67,9 +67,15 @@ GramAddict.run()
 ## Step 3: Install `adb`
 
 1. Download and unzip [Android platform tools](https://developer.android.com/studio/releases/platform-tools), move them to a directory where you won't delete them accidentally, e.g.
+
+Using Shell (expert mode) 
 ```
 mkdir -p ~/Library/Android/sdk
 mv <path-to-downloads>/platform-tools/ ~/Library/Android/sdk
+```
+Using Mouse (noob mode)
+```
+Create a new folder somewhere, Unzip it inside that and remember his PATH! You will need it for the next step.
 ```
 2. Add platform-tools path to the PATH environment variable
 
@@ -82,7 +88,7 @@ Linux/macOS
 
 Windows
 
-    1. On the Windows desktop, right-click My Computer.
+    1. Open Windows Explorer and right-click "My Computer" on left side.
     2. In the pop-up menu, click Properties.
     3. In the System Properties window, click the Advanced tab, and then click Environment Variables.
     4. In the System Variables window, highlight Path, and click Edit.

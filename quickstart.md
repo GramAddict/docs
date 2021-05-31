@@ -25,20 +25,19 @@ Getting started is easy. Follow the directions below to get GramAddict installed
    (Multiple versions of Python can be installed alongside each other and which version of Python to use can be selected by the user. So refer to python/python3 according to the result of the version check above. Remember that the version must be 3.6+)
 7. Test to make sure **pip** is installed by running `pip3 -V`. If it is not installed, download the [get-pip.py](https://bootstrap.pypa.io/get-pip.py) file and run `python get-pip.py` from the folder that contains the file you just downloaded.
 
-
 ### Mac
 
 1. Start off by installing `brew` if it is not already installed: `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`.
 2. Install Python 3 with `brew install python`.
 3. Verify that python3 and pip3 are installed: `python3 –V` and `pip3 -V`
 
-<br /><br />
-
 ### Linux
 
 On Linux Python is pre-installed. 
 For Raspberry the pre-installed version should be 3.6. Check this out by running this command: `python3 -V`
 If you have a over version of python, google for how to upgrade.
+
+<br /><br />
 
 ## Step 2: Install GramAddict
 

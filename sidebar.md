@@ -4,6 +4,7 @@
 - [Example Configs](examples.md)
 - [Contributing](contributing.md)
 - [FAQ](faq.md)
+- [Use without PC(Termux)](termux.md)
 
 **Links**
 - [Discord](https://discord.gg/9MTjgs8g5R)

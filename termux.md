@@ -1,3 +1,4 @@
+
 # Use GramAddict without pc
 
 
@@ -15,7 +16,7 @@ https://f-droid.org/repo/com.termux_113.apk
 
 ## Step 2: Install gramAddict
 
-This procudure is slow use -vvv in pip if you want to see if everything istalling allright
+This procedure is slow use -vvv in pip if you want to see if everything installing alright
 	
 
     git clone https://github.com/patbengr/bot.git gramaddict
@@ -32,11 +33,12 @@ This procudure is slow use -vvv in pip if you want to see if everything istallin
 Read that article
 https://wiki.termux.com/wiki/Internal_and_external_storage
 
-The easiest solution is to downlaod an storage access framework compatible file manager like
+The easiest solution is to download an storage access framework compatible file manager like
 FX File Explorer: https://play.google.com/store/apps/details?id=nextapp.fx
-Then you can follow that instractions
+Then you can follow that instructions
 https://wiki.termux.com/images/e/e5/FX_Termux_Home.jpg
 
 Then you can edit and view gramaddict files.
     
+
 

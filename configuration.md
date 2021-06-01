@@ -15,7 +15,7 @@ GramAddict can do many things and the list is constantly growing. This is a full
 | Argument         | Type     | Description | Default |
 | -----------------| :------: | ---         |---      |
 | username         | Required | The username for which you are running the script | `None` |
-| device           | Optional | Device identifier. Should be used only when multiple devices are connected at once | `None` |
+| device           | Optional | Device identifier. Specifies which device should be used for the profile from `adb devices`. Use this argument only if you have multiple devices connected at the same time. | `None` |
 | app-id           | Optional | Allows you to specify a custom app name for cloned apps | `com.instagram.android` |
 | screen-sleep     | Optional | Set to true to turn device screen off once script has finished | `false` |
 | screen-record    | Optional | Record the screen while using the bot. This is intended only for debug purposes | `false` |

@@ -21,7 +21,7 @@ Getting started is easy. Follow the directions below to get GramAddict installed
   
    * As of the time of this writing, the latest version is [3.9.4.](https://www.python.org/downloads/release/python-394/)
 
-#### 2. Run downloaded setup file and make sure to __select these checkboxes__:
+#### 2. Run downloaded setup and make sure to __select these checkboxes__:
    * [x] Install launcher for all users
    * [x] Add Python 3.9 to PATH
    * [x] (*If prompted*) Disable path length limit
@@ -35,7 +35,7 @@ Getting started is easy. Follow the directions below to get GramAddict installed
    ```
    python3 –V
    ```
-   Your machine may have multiple versions of Python installed, depending on which is selected by default you would have to use `python` OR `python3` based on the results from the version check commands above. Remember that the version must be 3.6+
+   Your machine may have multiple versions of Python installed, depending on which is selected by default you would have to use `python` *OR* `python3` later on, based on the results of version check commands from the above. Remember that the version must be 3.6+
 
 #### 4. Verify that `pip3` is now installed - in CMD (PowerShell):
     

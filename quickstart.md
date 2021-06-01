@@ -123,6 +123,8 @@ If you have not already you should make sure you have [Developer options](https:
 List of devices attached
 A0B1CD2345678901	device
 ```
+This is the ID of your device, you should copy/paste it in your config file with the device paramether
+e.g: device: A0B1CD2345678901
 4. Initialize the uiautomator2 with this command: (It's also important when uiautomator2 gets updates) 
 ```
 python3 -m uiautomator2 init

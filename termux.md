@@ -10,5 +10,5 @@ https://f-droid.org/repo/com.termux_113.apk
     pkg upgrade -y
 	curl -LO https://its-pointless.github.io/setup-pointless-repo.sh
 	bash setup-pointless-repo.sh
-    pkg install android-tools python build-essential cmake libjpeg-turbo libpng python libxml2 libxslt freetype numpy -y
+    pkg install android-tools python build-essential libjpeg-turbo libpng libxml2 libxslt freetype numpy -y
 

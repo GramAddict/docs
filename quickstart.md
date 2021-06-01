@@ -17,19 +17,44 @@ Getting started is easy. Follow the directions below to get GramAddict installed
 
 ### Windows
 
-1. Open the Python website in your web browser and navigate to: [https://www.python.org/downloads/windows/](https://www.python.org/downloads/windows/).
-2. Download the latest Python 3 release. At this time, that release is [3.9.4](https://www.python.org/downloads/release/python-394/).
-3. Run the setup file. Make sure you select the "Install launcher for all users" option as well as "Add Python 3.9 to PATH" checkboxes.
-4. (If prompted) Choose to "Disable path length limit".
-5. Test to make sure it's working. Open up **cmd** or **powershell** (if they are already open, close them first) and run `python –V` or `python3 –V`.
-   (Multiple versions of Python can be installed alongside each other and which version of Python to use can be selected by the user. So refer to python/python3 according to the result of the version check above. Remember that the version must be 3.6+)
-7. Test to make sure **pip** is installed by running `pip3 -V`. If it is not installed, download the [get-pip.py](https://bootstrap.pypa.io/get-pip.py) file and run `python get-pip.py` from the folder that contains the file you just downloaded.
+#### 1. Download the [latest Python 3 release.](https://www.python.org/downloads/windows/)
+  
+   * As of the time of this writing, the latest version is [3.9.4.](https://www.python.org/downloads/release/python-394/)
+
+#### 2. Run downloaded setup file and make sure to __select these checkboxes__:
+   * [x] Install launcher for all users
+   * [x] Add Python 3.9 to PATH
+   * [x] (*If prompted*) Disable path length limit
+
+#### 3. Verify that `python3` and `pip3` are now installed - in CMD (PowerShell):
+
+   ```
+   python –V
+   ``` 
+   or
+   ```
+   python3 –V
+   ```
+   (Your machine may have multiple versions of Python installed, depending on one you have selected as a default you would have to use `python` OR `python3` based on the result of the version check from commands above. Remember that the version must be 3.6+)
+  * To make sure **pip** was installed properly, run `pip3 -V`. If it is not installed, download the [get-pip.py](https://bootstrap.pypa.io/get-pip.py) file and run `python get-pip.py` from the folder that contains the file you just downloaded.
 
 ### Mac
 
-1. Start off by installing `brew` if it is not already installed: `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`.
-2. Install Python 3 with `brew install python`.
-3. Verify that python3 and pip3 are installed: `python3 –V` and `pip3 -V`
+#### 1. Install `brew`:
+   ```
+   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+   ```
+#### 2. Install Python 3:
+  ```
+  brew install python
+  ```
+#### 3. Verify that `python3` and `pip3` are now installed:
+  ```
+  python3 –V
+  ```
+  ```
+  pip3 -V
+  ```
 
 ### Linux
 

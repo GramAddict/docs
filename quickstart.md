@@ -26,7 +26,7 @@ Getting started is easy. Follow the directions below to get GramAddict installed
    * [x] Add Python 3.9 to PATH
    * [x] (*If prompted*) Disable path length limit
 
-#### 3. Verify that `python3` is now installed - in CMD (PowerShell):
+#### 3. Verify that `python3` is now installed -> in CMD (or PowerShell):
 
    ```
    python –V

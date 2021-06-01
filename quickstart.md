@@ -26,7 +26,7 @@ Getting started is easy. Follow the directions below to get GramAddict installed
    * [x] Add Python 3.9 to PATH
    * [x] (*If prompted*) Disable path length limit
 
-#### 3. Verify that `python3` and `pip3` are now installed - in CMD (PowerShell):
+#### 3. Verify that `python3` is now installed - in CMD (PowerShell):
 
    ```
    python –V
@@ -35,8 +35,16 @@ Getting started is easy. Follow the directions below to get GramAddict installed
    ```
    python3 –V
    ```
-   (Your machine may have multiple versions of Python installed, depending on which is selected by default you would have to use `python` OR `python3` based on the results from the version check commands above. Remember that the version must be 3.6+)
-  * To make sure **pip** was installed properly, run `pip3 -V`. If it is not installed, download the [get-pip.py](https://bootstrap.pypa.io/get-pip.py) file and run `python get-pip.py` from the folder that contains the file you just downloaded.
+   Your machine may have multiple versions of Python installed, depending on which is selected by default you would have to use `python` OR `python3` based on the results from the version check commands above. Remember that the version must be 3.6+
+
+#### 4. Verify that `pip3` is now installed - in CMD (PowerShell):
+    
+   ``` 
+   pip3 -V
+   ```
+   If it is not installed, download [get-pip.py](https://bootstrap.pypa.io/get-pip.py) and run `python get-pip.py` from the same folder where you just downloaded the file.
+   
+<br />
 
 ### Mac
 
@@ -50,11 +58,10 @@ Getting started is easy. Follow the directions below to get GramAddict installed
   ```
 #### 3. Verify that `python3` and `pip3` are now installed:
   ```
-  python3 –V
+  python3 –V && pip3 -V
   ```
-  ```
-  pip3 -V
-  ```
+
+<br />
 
 ### Linux
 

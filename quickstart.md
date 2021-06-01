@@ -35,7 +35,7 @@ Getting started is easy. Follow the directions below to get GramAddict installed
    ```
    python3 –V
    ```
-   (Your machine may have multiple versions of Python installed, depending on one you have selected as a default you would have to use `python` OR `python3` based on the result of the version check from commands above. Remember that the version must be 3.6+)
+   (Your machine may have multiple versions of Python installed, depending on which is selected by default you would have to use `python` OR `python3` based on the results from the version check commands above. Remember that the version must be 3.6+)
   * To make sure **pip** was installed properly, run `pip3 -V`. If it is not installed, download the [get-pip.py](https://bootstrap.pypa.io/get-pip.py) file and run `python get-pip.py` from the folder that contains the file you just downloaded.
 
 ### Mac

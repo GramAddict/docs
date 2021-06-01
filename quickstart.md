@@ -21,7 +21,7 @@ Getting started is easy. Follow the directions below to get GramAddict installed
   
    * As of the time of this writing, the latest version is [3.9.4.](https://www.python.org/downloads/release/python-394/)
 
-#### 2. Run downloaded setup and make sure to __select these checkboxes__:
+#### 2. Run downloaded setup and make sure to __check these boxes__:
    * [x] Install launcher for all users
    * [x] Add Python 3.9 to PATH
    * [x] (*If prompted*) Disable path length limit

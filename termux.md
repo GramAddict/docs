@@ -13,6 +13,8 @@ https://f-droid.org/repo/com.termux_113.apk
     pkg install android-tools python build-essential cmake libjpeg-turbo libpng python libxml2 libxslt freetype git numpy -y
 
 ## Step 2: Install gramAddict
+
+This procudure is slow use -vvv in pip if you want to see if everything istalling allright
 	
 
     git clone https://github.com/patbengr/bot.git gramaddict

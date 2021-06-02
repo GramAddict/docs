@@ -53,7 +53,7 @@ This is a completely free and open source project that is forked from the freemi
 Like what you see? Help us by [Contributing](contributing.md)!
 
 ## Why GramAddict?
-There already is [InstaPy](https://github.com/timgrossmann/InstaPy), which works on the Instagram web version. Unfortunately, Instagram bots detection system has become very suspicious to browser actions. Now InstaPy and similar scripts work at most for an hour, then Instagram blocks possibility to do any further actions, and if you continue using InstaPy, it may ban your account. 
+There already is [InstaPy](https://github.com/timgrossmann/InstaPy), which works on the Instagram web version. Unfortunately, Instagram bots detection system has become very suspicious of browser actions. Now InstaPy and similar scripts work at most for an hour, then Instagram blocks possibility to do any further actions, and if you continue using InstaPy, it may ban your account. 
 
 There is also [Insomniac](https://github.com/alexal1/Insomniac/) which is the origin of this project, but there were issues that cropped up when the project organizers decided to monetize it. We wanted to keep this project completely free and open source so we forked it! Now this project is the better option. 😇 [Comparison](Comparison.md) (coming soon)
 

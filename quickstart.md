@@ -8,7 +8,7 @@ Getting started is easy. Follow the directions below to get GramAddict installed
 - PIP
 - ADB
 - Only devices with Android 4.4+ (SDK 19) are supported.
-  There are few emulators you can use instead: google for them. e.g. Memu, LDPlayer, Android Studio and so on.
+  There are a few emulators you can use instead: google for them. e.g. Memu, LDPlayer, Android Studio and so on.
 - Your Instagram app must be in English https://help.instagram.com/111923612310997
 
 <br /><br />
@@ -79,7 +79,7 @@ Regardless of which method you use, if you are familiar with `virtualenv` or if 
 
 ### Using `pip`
 
-1. Create a new folder in the directory of your choice. A reccomentation would be in your user folder or documents folder.
+1. Create a new folder in the directory of your choice. A recommendation would be in your user folder or documents folder.
 2. Go into that folder: `cd gramaddict`
 3. (Optionally) Use virtualenv or similar to make a virtual environment `virtualenv -p python3 .venv` and enter the virtual environment `source .venv/bin/activate`/`.venv\Scripts\activate.bat` (on windows)
 4. Install GramAddict with **pip**: `pip3 install gramaddict`
@@ -112,7 +112,7 @@ mv <path-to-downloads>/platform-tools/ ~/Library/Android/sdk
 ```
 Using Mouse (noob mode)
 ```
-Create a new folder somewhere, Unzip it inside that and remember his PATH! You will need it for the next step.
+Create a new folder somewhere, Unzip it inside that and remember this PATH! You will need it for the next step.
 ```
 2. Add platform-tools path to the PATH environment variable
 
@@ -143,7 +143,7 @@ If you do it correctly, terminal / command prompt command `adb devices` will pri
 
 Now that all of the prep work is done, we can just about start the script. 
 
-If you have not already you should make sure you have [Developer options](https://developer.android.com/studio/debug/dev-options#enable) turned on, **USB debugging** enabled, as well as **Install apps via USB** (if available) on your phone. 
+If you have not already, you should make sure you have [Developer options](https://developer.android.com/studio/debug/dev-options#enable) turned on, **USB debugging** enabled, as well as **Install apps via USB** (if available) on your phone. 
 
 
 ### First Run
@@ -162,7 +162,7 @@ e.g: device: A0B1CD2345678901
 python3 -m uiautomator2 init
 ```
 6. Proceed to set up your [configuration](configuration.md) (important).
-7. Finally, you can run the script from the location where run.py file is locaded.
+7. Finally, you can run the script from the location where run.py file is located.
    For doing that open the console and move to the gramaddict location and type the following: 
 ```
 python3 run.py --config accounts/yourusername/config.yml
@@ -215,18 +215,18 @@ gramaddict/
 
 Possible problems:
 - if you run the bot but nothing happens in console (you are able to write again..), you are using a wrong python alias (for example python3 run.py bla bla). Type `python -V` or `python3 -V` or `py -V` to find out the right one and then use it with the run.py
-- if uiautomator2/minicab install stucks, try the following: 
+- if uiautomator2/minicab install gets stuck, try the following: 
 ```
 adb shell pkill atx-agent
 pip3 install uiautomator2 --upgrade
 python3 -m uiautomator2 init
 ```
-Wait until is finished and try to run the bot again.
+Wait until it is finished and try to run the bot again.
 
 ### Subsequent Runs:
 1. Connect Android device to your computer with a USB cable
-2. (optionally) If you installed the script with **virtualenv**, be sure to activate your environment before running: `source .venv/bin/activate`/`.venv\Scripts\activate.bat` (on windows)
-3. run the script: 
+2. (Optionally) If you installed the script with **virtualenv**, be sure to activate your environment before running: `source .venv/bin/activate`/`.venv\Scripts\activate.bat` (on windows)
+3. Run the script: 
 ```
 python3 run.py --config accounts/username/config.yml
 ```

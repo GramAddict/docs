@@ -125,7 +125,7 @@ What an "interaction" is depends on your [source limits](#source-limits), but ge
 
 <br />
 
-## Special modificators for jobs and sources
+## Special modifiers for jobs and sources
 
 | Argument | Description | Example |
 |---       |---          |---      |

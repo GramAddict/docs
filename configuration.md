@@ -1,8 +1,8 @@
 # Configuration File
 
-As of v1.2.0, GramAdict supports a configuration file and **it is 100% recommended**. Let me repeat, if you use GramAddict, you should be using a configuration file. You should not be using arguments anymore. *You technically can, but we up to 63 arguments now... so it's a lot easier if you use the configuration file.*
+As of v1.2.0, GramAdict supports a configuration file and **it is 100% recommended**. Let me repeat, if you use GramAddict, you should be using a configuration file. You should not be using arguments anymore. *You technically can, but we have up to 63 arguments now... so it's a lot easier if you use the configuration file.*
 
-To make it easy, to get started... we have a configuration file with every single option argument available in it. You just need to comment out any lines that you don't want to use with a `#`. You can [download that file here](https://raw.githubusercontent.com/GramAddict/bot/master/config-examples/all-parameters.yml). This file should be placed in a folder within your **GramAddict** folder, named after your username which is inside accounts main folder (if you don't create that folder, the bot will do it for you at the first run). e.g `accounts/username/config.yml` You can have multiple configuration files per user and are encouraged to do so. For example, I use one that is my normal "interaction" config and another that is a "clean up" config. e.g `accounts/username/interact.yml` and `accounts/username/unfollow.yml`.
+To make it easy, to get started... we have a configuration file with every single option argument available in it. You just need to comment out any lines that you don't want to use with a `#`. You can [download that file here](https://raw.githubusercontent.com/GramAddict/bot/master/config-examples/all-parameters.yml). This file should be placed in a folder within your **GramAddict** folder, named after your username which is inside accounts main folder (if you don't create that folder, the bot will do it for you on the first run). e.g `accounts/username/config.yml` You can have multiple configuration files per user and are encouraged to do so. For example, I use one that is my normal "interaction" config and another that is a "clean up" config. e.g `accounts/username/interact.yml` and `accounts/username/unfollow.yml`.
 
 <br/>
 
@@ -21,9 +21,9 @@ GramAddict can do many things and the list is constantly growing. This is a full
 | screen-record    | Optional | Record the screen while using the bot. This is intended only for debug purposes | `false` |
 | debug            | Optional | For troubleshooting. Debug is already sent to log file, this shows it in console | `false` |
 | speed-multiplier | Optional | You can set the speed of the bot. > 1 will increase the speed, < 1 will slow down | `1` |
-| close-apps       | Optional | Whith that you can tell the bot to close all the background apps for avoid interferences | `true` |
-| disable-filters  | Optional | Instead of deleting/renaming your filter.json file, you can ignore it with that argument | `false` |
-| scrape-to-file   | Optional | The bot will no longer interact anyone, but it will collect and store in a file usernames that fits your filters. That is usually done by a fake account. The generated list will be used by your main account with the argument `--interact-from-file`  | `false` |
+| close-apps       | Optional | With this you can tell the bot to close all the background apps to avoid interferences | `true` |
+| disable-filters  | Optional | Instead of deleting/renaming your filter.json file, you can ignore it with this argument | `false` |
+| scrape-to-file   | Optional | The bot will no longer interact with anyone, but it will collect and store all the usernames that fit your filters in a file. This is usually done by a fake account. The generated list will be used by your main account with the argument `--interact-from-file`  | `false` |
 
 
 <br />
@@ -47,7 +47,7 @@ What an "interaction" is depends on your [source limits](#source-limits), but ge
 | blogger-followers         | List of usernames with whose followers you want to interact. | `[username1, username2]` |
 | blogger-following         | List of usernames with whose following you want to interact. | `[username1, username2]` |
 | blogger-post-likers       | List of usernames with whose post likers you want to interact. | `[username1, username2]` |
-| blogger                   | List of usernames with whose you want to interact. | `[username1, username2]` |
+| blogger                   | List of usernames with whom you want to interact. | `[username1, username2]` |
 | hashtag-likers-top        | List of hashtags in top results with whose likers you want to interact. | `[hashtag1, hashtag2]` |
 | hashtag-likers-recent     | List of hashtags in recent results with whose likers you want to interact.  | `[hashtag1, hashtag2]` |
 | hashtag-posts-top         | List of hashtags in top results with whose posts you want to interact. | `[hashtag1, hashtag2]` |
@@ -58,8 +58,8 @@ What an "interaction" is depends on your [source limits](#source-limits), but ge
 | place-posts-recent        | List of places in recent results with whose posts you want to interact. | `[place1, place2]` |
 | interact-from-file        | Path to a text file of usernames that will be interacted with. | `[usernames_list1.txt, usernames_list2.txt]` |
 | posts-from-file           | Path to a text file of posts that will be liked. More actions will come in the future. Useful for engagement groups. | `[posts_list1.txt, posts_list2.txt]` |
-| delete-interacted-users   | Not actually an action, but a option for `interact-from-file`, `posts-from-file` and `unfollow-from-file` to remove users/urls from file after they are interacted with | ` ` |
-| feed                      | Interact with your own feed. After that argument you can specify how many like you want to give. It accepts ranges | `2-5` |
+| delete-interacted-users   | Not actually an action, but an option for `interact-from-file`, `posts-from-file` and `unfollow-from-file` to remove users/urls from file after they are interacted with | ` ` |
+| feed                      | Interact with your own feed. After that argument you can specify how many likes you want to give. It accepts ranges | `2-5` |
 
 <br />
 
@@ -72,7 +72,7 @@ What an "interaction" is depends on your [source limits](#source-limits), but ge
 | unfollow-non-followers      | Unfollow at most the given number of users, that don't follow you back. Only users followed by this script will be unfollowed. | `10-20` |
 | unfollow-any-non-followers  | Unfollow at most the given number of users, that don't follow you back. Any user is eligible to be unfollowed regardless of if this script followed them. | `10-20` |
 | unfollow-from-file          | Unfollow usernames from a list (.txt)  | `[usernames_list1.txt, usernames_list2.txt]` |
-| sort-followers-newest-to-oldest   | Not actually an action, but a option for all unfollow type except the one from file to sort user from newest to oldest instead that oldest to newst which is the default choice | ` ` |
+| sort-followers-newest-to-oldest   | Not actually an action, but an option for all unfollow types except the one from file to sort users from newest to oldest instead of oldest to newest which is the default choice | ` ` |
 
 <br />
 
@@ -95,12 +95,12 @@ What an "interaction" is depends on your [source limits](#source-limits), but ge
 | carousel-count      | Number of available carousel items to browse. | `0` |
 | carousel-percentage | Chance of browsing a carousel. | `0` |
 | max-comments-pro-user | Number of comments you can do for each user you interact. | `0` |
-| comments-percentage | Chance of commenting an user post. | `0` |
-| pm-percentage       | Chance of send a private message to an user you're interacting with. | `0` |
+| comments-percentage | Chance of commenting on a user post. | `0` |
+| pm-percentage       | Chance of sending a private message to a user you're interacting with. | `0` |
 | interact-percentage | Chance to interact with user/hashtag when applicable. Supported by plugins: hashtag/place-posts and feed". | `50` |
 | follow-percentage   | Follow the given percentage of interacted users. | `0` |
 | follow-limit        | Limit on amount of follows per source in each action. | `0` |
-| skipped-list-limit  | Limit how many scrolls tried, with already interacted users, until we move to next source. Does not apply for unfollows. | `10-15` |
+| skipped-list-limit  | Limit how many scrolls tried, with already interacted users, until we move to the next source. Does not apply for unfollows. | `10-15` |
 | fling-when-skipped  | Fling (instead of scroll) after "X" many scrolls tried, with already interacted users. (not recommended - disabled by default) | `0` |
 | min-following       | Minimum amount of followings, after reaching this amount unfollowing stops | `0` |
 | blogger-post-limits | Limit of blogger post which likers you are interacting (`--blogger-post-likers`) before ending job. **NOT YET DEVELOPED** | `2` |
@@ -129,7 +129,7 @@ What an "interaction" is depends on your [source limits](#source-limits), but ge
 
 | Argument | Description | Example |
 |---       |---          |---      |
-| shuffle-jobs                  | Instead of follow the order of the jobs you write, that argument will allow the bot to shuffle the jobs | `300` |
+| shuffle-jobs                  | Instead of following the order of the jobs you write, this argument will allow the bot to shuffle the jobs | `300` |
 | truncate-sources              | If you have a lot of sources, with this argument you're able to pick n random from the list and interact only with them, for that session | `2-3` |
 | watch-video-time       | Instead of liking video without watching them, you can fake it and pause the bot for a given time (in seconds). Set to 0 to disable it. | `15-35` |
 
@@ -140,21 +140,21 @@ What an "interaction" is depends on your [source limits](#source-limits), but ge
 | Argument | Description | Example |
 |---       |---          |---      |
 | repeat   | Repeat the same session again after N minutes after completion, disabled by default. | `120-180` |
-| working-hours   | Scheduler for bot activity. You can specify the interval (one or more) of time in which you want the bot to run. You must use the time notation 0-24. You can use with the above argument `--repeat` for have a never stop bot.  | `[10.15-16.40, 18.15-22.46]` |
+| working-hours   | Scheduler for bot activity. You can specify the interval (one or more) of time in which you want the bot to run. You must use the time notation 0-24. You can use with the above argument `--repeat` to have a never stop bot.  | `[10.15-16.40, 18.15-22.46]` |
 | time-delta   | This is intended to be used with `working-hours` and allows to change the start and the end point of each interval. A random value, positive or negative, will be generated. | `10-15` |
 
 ## Available Filters
 
-We know that you want to make sure that you only interact with a specific set of users. When you leave it up to a bot, you never know what will happen. We try to make this easier for you by giving you a wide subset of filters to help weed out the undesirables. The full list is below, but if you need some inspiration - there is a filter.example file included with some sensible defaults. You can either rename this to `filter.json` and modify as desired or create a new file named `filter.json` and add only the disired filters in a json dictionary format.
+We know that you want to make sure that you only interact with a specific set of users. When you leave it up to a bot, you never know what will happen. We try to make this easier for you by giving you a wide subset of filters to help weed out the undesirables. The full list is below, but if you need some inspiration - there is a filter.example file included with some sensible defaults. You can either rename this to `filter.json` and modify as desired or create a new file named `filter.json` and add only the desired filters in a json dictionary format.
 
 ```
   "skip_business"             
-        If it is true, business acounts won't be interacted.
+        If it is true, business acounts won't be interacted with.
         (e.g. "skip_business": true)
 
   "skip_non_business"         
         If it is true, private accounts and public accounts 
-        won't be interacted.
+        won't be interacted with.
         (e.g. "skip_non_business": true)
   
   "skip_following"
@@ -171,25 +171,25 @@ We know that you want to make sure that you only interact with a specific set of
   "min_followers"             
         It is the lower follower bound for an account that can 
         be interacted. If an account has less followers than 
-        this amount, it wont be interacted. 
+        this amount, it wont be interacted with. 
         (e.g. "min_followers": 100)
 
   "max_followers"             
         It is the upper follower bound for an account that can 
         be interacted. If an account has more followers than 
-        this amount, it wont be interacted. 
+        this amount, it wont be interacted with. 
         (e.g "max_followers": 1000)
 
   "min_followings"            
         It is the lower following bound for an account that can 
         be interacted. If an account has less followings than 
-        this amount, it wont be interacted. 
+        this amount, it wont be interacted with. 
         (e.g. "min_followings": 300)
   
   "max_followings"            
         It is the upper following bound for an account that can 
         be interacted. If an account has more followings than 
-        this amount, it wont be interacted. 
+        this amount, it wont be interacted with. 
         (e.g. "max_followings": 800)
 
   "min_potency_ratio"         
@@ -274,9 +274,9 @@ We know that you want to make sure that you only interact with a specific set of
 ```
 
 ## Comments
-In order to comment post, you have also to set your comments_list.txt which is located inside the folder with your nickname. Every username has his own comments_list.txt file.
-I've dived that file in 3 sections: %PHOTO, %VIDEO and %CAROUSEL. The reason of that is for allow you to have 3 different type of comment in relation of what you're effectively commenting. A lot of time other bots commented on my videos with "nice photo!". In this way you will be less detectable.
-I also made possibile to use emoji [look here for emoji list supported](https://www.webfx.com/tools/emoji-cheat-sheet/).
+In order to comment post, you also have to set your comments_list.txt which is located inside the folder with your nickname. Every username has its own comments_list.txt file.
+I've divided that file into 3 sections: %PHOTO, %VIDEO and %CAROUSEL. The reason for that is to allow you to have 3 different types of comments in relation to what you're effectively commenting. A lot of time other bots commented on my videos with "nice photo!". In this way you will be less detectable.
+I also made it possibile to use emoji [look here for emoji list supported](https://www.webfx.com/tools/emoji-cheat-sheet/).
 
 For example:
 ```
@@ -296,12 +296,12 @@ Ps. you can use emoji even for hashtag searches.
 Pps. You can change that file even while the bot is running if you need to.
 
 ## Private message
-You can send private message to people you're interacting with. You just have to set your pm_list.txt file, always in the folder with your nickname (accounts/yournickname/pm_list.txt). Every username has his own pm_list.txt file. Emoji are supported. [look here for emoji list supported](https://www.webfx.com/tools/emoji-cheat-sheet/)
+You can send private message to people you're interacting with. You just have to set your pm_list.txt file, always in the folder with your nickname (accounts/yournickname/pm_list.txt). Every username has its own pm_list.txt file. Emoji are supported. [look here for emoji list supported](https://www.webfx.com/tools/emoji-cheat-sheet/)
 
 For example:
 ```
-Hello there! I'm bla bla consider follow me! :smile:
-Sorry for bothering you, can you pls take part of my survey? 
+Hello there! I'm bla bla consider following me! :smile:
+Sorry for bothering you, can you pls take part in my survey? 
 :fu:
 ```
 A random line will be picked each time. 
@@ -317,14 +317,14 @@ Because there are some words that have special meaning to GramAddict, here is a 
 - **Unsuccessful Interaction**: Any profile that was opened, but not actioned (e.g. like or follow) for a particular **source**
 
 - **Total Interactions**: Number of profiles with **successful interactions** or **unsuccessful interactions** across all **sources**
-- **Total Successful Interactions**: Number of profiles with **successful interactions** with across all **sources**
+- **Total Successful Interactions**: Number of profiles with **successful interactions** across all **sources**
 - **Other "Total" Limits**: Number of *item* done, across all **sources**
 
 ## Limit Logic
 
 When honoring limits, the bot uses the following priority:
 
-- **Total Interactions or Total Successful Interactions**:  If either of these are met, the current run will stop without interating through any additional sources. If no repeat is enabled, the script will stop.
+- **Total Interactions or Total Successful Interactions**:  If either of these are met, the current run will stop without interacting through any additional sources. If no repeat is enabled, the script will stop.
 - **Total *Type* Limit**: If a total *type* limit is met, no more of that *type* will be done. If possible, the bot will continue running.
 - **Individual Limits (e.g. interaction-count, unfollow, follow)**: If the limit is met, but the total limits are not met, the bot will continue on another source (if possible) or possibly continue until the other individual limits are met.
 
@@ -332,7 +332,7 @@ When honoring limits, the bot uses the following priority:
 
 As of v1.1.0, GramAddict can have multiple actions specified in one command. This means you can interact with @justinbieber's followers, following 50% of them. Then afterwards, unfollow the same amount of followers. All in the same session. This allows you to use the native repeat ability instead of building a custom cron job. 
 
-> Note: if you do the method outlined above, make sure you have a buffer of followers so you aren't unfollowing the people you just followed. Typically you want to wait at least a couple days before you unfollow to increase the chance people will follow you back.
+> Note: if you do the method outlined above, make sure you have a buffer of followers so you aren't unfollowing the people you just followed. Typically you want to wait at least a couple of days before you unfollow to increase the chance that people will follow you back.
 
 When using multi-action system, the actions are executed in the order they are specified in the command. Meaning in the above sequence your command would look similar to:
 

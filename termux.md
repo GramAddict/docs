@@ -16,15 +16,15 @@ or
     pkg install android-tools python build-essential cmake libjpeg-turbo libpng python libxml2 libxslt freetype git numpy -y
     pip install wheel
 
-## Step 2: Install GramAddict
+## Step 3: Install GramAddict
 
-This procedure is slow use -vvv in pip if you want to see if everything installing alright
+This procedure is slow, use -vvv in pip if you want to see if everything installing alright
 	
     git clone https://github.com/gramaddict/bot.git gramaddict
     cd gramaddict
     pip install -r requirements.txt
     
-## Step 3: Run
+## Step 4: Run
 	
     python -m uiautomator2 init
     python run.py

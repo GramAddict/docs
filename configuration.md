@@ -145,7 +145,7 @@ What an "interaction" is depends on your [source limits](#source-limits), but ge
 
 ## Available Filters
 
-We know that you want to make sure that you only interact with a specific set of users. When you leave it up to a bot, you never know what will happen. We try to make this easier for you by giving you a wide subset of filters to help weed out the undesirables. The full list is below, but if you need some inspiration - there is a filter.example file included with some sensible defaults. You can either rename this to `filter.json` and modify as desired or create a new file named `filter.json` and add only the desired filters in a json dictionary format.
+We know that you want to make sure that you only interact with a specific set of users. When you leave it up to a bot, you never know what will happen. We try to make this easier for you by giving you a wide subset of filters to help weed out the undesirables. The full list is below, but if you need some inspiration - there is a filter.example file included with some sensible defaults. You can either rename this to `filter.json` and modify as desired or create a new file named `filter.json` and add only the desired filters in a json dictionary format. In order to work, that file must be located in `accounts/yourusername` folder.
 
 ```
   "skip_business"             
@@ -241,6 +241,20 @@ We know that you want to make sure that you only interact with a specific set of
         biographys don't match your language.
         From version 2.0 you can set more then one.
         (e.g. "specific_alphabet": ["LATIN", "ARABIAN"])
+  
+   "biography_language"
+        As for specific_alphabet we are inspecting the biograpy
+        but this time we are looking for the language itself.
+        That's more powerful than the character_set but may be inconsistent if the bio is not a real text (such as a list of words without verbs). 
+        In any case the bot does a best of 5 (BO5) and take the most likely language.
+        for example: 'italian  and russian devops engineer ️guitarist nerd ' returns 'nl' instead of 'en' most of the time.
+        55 language are supported:
+        af, ar, bg, bn, ca, cs, cy, da, de, el, en, es, et, fa, fi, fr, gu, he,
+        hi, hr, hu, id, it, ja, kn, ko, lt, lv, mk, ml, mr, ne, nl, no, pa, pl,
+        pt, ro, ru, sk, sl, so, sq, sv, sw, ta, te, th, tl, tr, uk, ur, vi, zh-cn, zh-tw
+        Look there for more info: https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
+        You can also specify more then one.
+        (e.g. "biography_language": ["it", "en"]
 
   "min_posts"                 
         You can specify the minumum post number that an account 

@@ -192,6 +192,7 @@ gramaddict/
     accounts/
         youraccountname/
             config.yml
+            telegram.yml
             filter.json
             whitelist.txt
             blacklist.txt
@@ -206,6 +207,7 @@ gramaddict/
     accounts/
         youraccountname/
             config.yml
+            telegram.yml
             filter.json
             whitelist.txt
             blacklist.txt

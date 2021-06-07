@@ -78,9 +78,10 @@ What an "interaction" is depends on your [source limits](#source-limits), but ge
 
 ### Post Processing
 
-| Argument      | Description                 | Example |
-|-------        |------------------           |---------      |
-| analytics | Generates a PDF analytics report for current username session data | `true` |
+| Argument        | Description                 | Default       |
+|--------------   |--------------------------   |---------      |
+| analytics       | Generates a PDF analytics report for current username session data | `false` |
+| telegram-report | Generates a report for current username session data and send it to your telegram channel. <br /> For using this feature you have first to configure the file 'telegram.yml' in your account folder. <br /> [Instruction](# telegram-reports) | `true` |
 
 <br />
 
@@ -321,6 +322,23 @@ Sorry for bothering you, can you pls take part in my survey?
 A random line will be picked each time. 
 Ps. You can change that file even while the bot is running if you need to.
 
+## Telegram reports
+From version 2.2.0 you can have telegram reports of your activity and stats directly in your telegram channel. Reports will generated at the end of each session.
+For accomplish that you have to:
+* set telegram-report: true in config.yml
+* create your bot in telegram https://t.me/botfather, save your api-token in telegram.yml and invite it in your channel
+* in order to know the chat-id of your channel you can use this bot https://t.me/myidbot, it will tell you a number: copy paste inside your telegram.yml
+
+IMPORTANT: telegram.yml must be in your account folder!
+
+Example of how telegram.yml should looks like:
+```
+telegram-api-token: 123456789:ABCDEFGHILMNOPQRSTUVZ-1AB2CD3
+telegram-chat-id: -123456789
+```
+Don't forget the minus (-) in front of the chat-id!
+
+  
 ### Argument Glossary
 
 Because there are some words that have special meaning to GramAddict, here is a glossary to reference back to if you run into any questions while reading about the options. 

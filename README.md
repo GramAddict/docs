@@ -4,7 +4,7 @@
   <br />
   <h1 style="text-align: center;">GramAddict</h1>
   <br />
-  <p style="text-align: center;">The best 100% free forever Instagram automation bot. Grow your following and engagement by liking, following and commenting automatically with your Android phone/tablet/emulator. No root required.<p>
+  <p style="text-align: center;">The best 100% free forever Instagram automation bot. Grow your following and engagement by liking, following, commenting and sending PM automatically with your Android phone/tablet/emulator. No root required.<p>
   <p style="text-align: center;">
     <a href="https://github.com/gramaddict/bot/blob/master/LICENSE">
       <img src="https://img.shields.io/github/license/gramaddict/bot?style=flat" />
@@ -74,6 +74,7 @@ We also provide a config example file that you can use as a starting reference p
 - Browse carousels
 - Watch videos for a specific amount of time
 - Scheduler
+- Telegram reports
 - Supports multiple actions in one session
 - Loads of customizable limits to keep your account safe from soft bans
 - Available interactions

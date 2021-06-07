@@ -81,7 +81,7 @@ What an "interaction" is depends on your [source limits](#source-limits), but ge
 | Argument        | Description                 | Default       |
 |--------------   |--------------------------   |---------      |
 | analytics       | Generates a PDF analytics report for current username session data | `false` |
-| telegram-report | Generates a report for current username session data and send it to your telegram channel. <br /> For using this feature you have first to configure the file 'telegram.yml' in your account folder. <br /> [Instruction](# telegram-reports) | `true` |
+| telegram-report | Generates a report for current username session data and send it to your telegram channel. <br /> For using this feature you have first to configure the file 'telegram.yml' in your account folder. <br /> [Instruction](#telegram-reports) | `true` |
 
 <br />
 

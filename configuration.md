@@ -146,146 +146,161 @@ What an "interaction" is depends on your [source limits](#source-limits), but ge
 
 ## Available Filters
 
-We know that you want to make sure that you only interact with a specific set of users. When you leave it up to a bot, you never know what will happen. We try to make this easier for you by giving you a wide subset of filters to help weed out the undesirables. The full list is below, but if you need some inspiration - there is a filter.example file included with some sensible defaults. You can either rename this to `filter.json` and modify as desired or create a new file named `filter.json` and add only the desired filters in a json dictionary format. In order to work, that file must be located in `accounts/yourusername` folder.
+We know that you want to make sure that you only interact with a specific set of users. When you leave it up to a bot, you never know what will happen. We try to make this easier for you by giving you a wide subset of filters to help weed out the undesirables. The full list is below, but if you need some inspiration - there is a filter.example file included with some sensible defaults. You can copy/paste this file from config-example folder (available with git installation) in your account folder or [download it from here](ttps://raw.githubusercontent.com/GramAddict/bot/master/config-examples/filters.yml) and place in your account folder. 
+I'll repeat another time: in order to work, that file must be located in `accounts/yourusername` folder.
 
+The following is an exaustive explanation of what the filters are for:
 ```
-  "skip_business"             
-        If it is true, business acounts won't be interacted with.
-        (e.g. "skip_business": true)
+skip_business             
+      If it is true, business acounts won't be interacted with.
+      (e.g. skip_business: true)
 
-  "skip_non_business"         
-        If it is true, private accounts and public accounts 
-        won't be interacted with.
-        (e.g. "skip_non_business": true)
-  
-  "skip_following"
-        If it is true, accounts that you follow won't be interacted
-        with. 
-        (e.g. "skip_following": true)
-        
-  "skip_follower"
-        If it is true, accounts that follow you won't be interacted
-        with. Note, if you follow someone, the filter won't be able
-        to tell if that person follows you.
-        (e.g. "skip_following": true)
+skip_non_business       
+      If it is true, private accounts and public accounts 
+      won't be interacted with.
+      (e.g. skip_non_business: true)
 
-  "min_followers"             
-        It is the lower follower bound for an account that can 
-        be interacted. If an account has less followers than 
-        this amount, it wont be interacted with. 
-        (e.g. "min_followers": 100)
+skip_following
+      If it is true, accounts that you follow won't be interacted
+      with. 
+      (e.g. skip_following: true)
 
-  "max_followers"             
-        It is the upper follower bound for an account that can 
-        be interacted. If an account has more followers than 
-        this amount, it wont be interacted with. 
-        (e.g "max_followers": 1000)
+skip_follower
+      If it is true, accounts that follow you won't be interacted
+      with. Note, if you follow someone, the filter won't be able
+      to tell if that person follows you.
+      (e.g. skip_following: true)
 
-  "min_followings"            
-        It is the lower following bound for an account that can 
-        be interacted. If an account has less followings than 
-        this amount, it wont be interacted with. 
-        (e.g. "min_followings": 300)
-  
-  "max_followings"            
-        It is the upper following bound for an account that can 
-        be interacted. If an account has more followings than 
-        this amount, it wont be interacted with. 
-        (e.g. "max_followings": 800)
+min_followers             
+      It is the lower follower bound for an account that can 
+      be interacted. If an account has less followers than 
+      this amount, it wont be interacted with. 
+      (e.g. min_followers: 100)
 
-  "min_potency_ratio"         
-        If an account's followers/following ratio is not above 
-        this ratio, then they will not be interacted with. 
-        Combine with "max_potency_ratio" to specify a range.
-        Example: username has 500 followers and 1000 
-        followings. That means its ratio is 0.5 If you set your 
-        "min_potency_ratio": 0.2 it will be interacted with. 
-        (e.g. "min_potency_ratio": 1)
+max_followers             
+      It is the upper follower bound for an account that can 
+      be interacted. If an account has more followers than 
+      this amount, it wont be interacted with. 
+      (e.g. max_followers: 1000)
 
-  "max_potency_ratio"         
-        If an account's followers/following ratio is not below 
-        this ratio, then they will not be interacted with. 
-        Combine with "min_potency_ratio" to specify a range.
-        Example: username has 500 followers and 1000 
-        followings. That means its ratio is 0.5 If you set your 
-        "max_potency_ratio": 0.7 it will be interacted with.
-        (e.g. "max_potency_ratio": 2)
-                              
-  "follow_private_or_empty"   
-        If it is false, private accounts or public accounts 
-        that have no posts will not be interacted with. 
-        (e.g. "follow_private_or_empty": false)
+min_followings            
+      It is the lower following bound for an account that can 
+      be interacted. If an account has less followings than 
+      this amount, it wont be interacted with. 
+      (e.g. min_followings: 300)
 
-  "interact_only_private"     
-        If it is set to true, only private accounts will be    
-        interacted with. No public accounts will be interacted 
-        with.
-        (e.g. "interact_only_private": true)
-        
-  "blacklist_words"     
-        Checks a biography for specified words. If any one word 
-        is found in the bio, the user will not be interacted with.
-        Otherwise the user will be interacted with. 
-        (e.g. "blacklist": ["sex", "furry", "biden"])
-       
-  "mandatory_words"     
-        Checks a biography for specified words. If any one word 
-        is found in the bio, the user will be interacted with.
-        Otherwise the user will not be interacted with. 
-        (e.g. "mandatory_words": ["cat", "kitten", "meow"])
-        
-  "specific_alphabet"     
-        If a type is specified, the bio will be inspected and
-        the primary character type will be matched against the
-        one specified. If they do not match, you will not interact
-        with them. This is commonly used to avoid people whose
-        biographys don't match your language.
-        From version 2.0 you can set more then one.
-        (e.g. "specific_alphabet": ["LATIN", "ARABIAN"])
-  
-   "biography_language"
-        As for specific_alphabet we are inspecting the biograpy
-        but this time we are looking for the language itself.
-        That's more powerful than the character_set but may be inconsistent if the bio is not a real text (such as a list of words without verbs). 
-        In any case the bot does a best of 5 (BO5) and take the most likely language.
-        for example: 'italian  and russian devops engineer ️guitarist nerd ' returns 'nl' instead of 'en' most of the time.
-        55 language are supported:
-        af, ar, bg, bn, ca, cs, cy, da, de, el, en, es, et, fa, fi, fr, gu, he,
-        hi, hr, hu, id, it, ja, kn, ko, lt, lv, mk, ml, mr, ne, nl, no, pa, pl,
-        pt, ro, ru, sk, sl, so, sq, sv, sw, ta, te, th, tl, tr, uk, ur, vi, zh-cn, zh-tw
-        Look there for more info: https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
-        You can also specify more then one.
-        (e.g. "biography_language": ["it", "en"]
+max_followings            
+      It is the upper following bound for an account that can 
+      be interacted. If an account has more followings than 
+      this amount, it wont be interacted with. 
+      (e.g. max_followings: 800)
 
-  "min_posts"                 
-        You can specify the minumum post number that an account 
-        should have. 
-        (e.g. "min_posts": 7)
-  "pm_to_private_or_empty"
-        You can specify if you want to send PM also to private/empty accounts
-  "comment_hashtag_likers_top"
-  "comment_hashtag_likers_top"
-  "comment_hashtag_likers_recent"
-  "comment_hashtag_posts_top"
-  "comment_hashtag_posts_recent"
-  "comment_place_likers_top"
-  "comment_place_likers_recent"
-  "comment_place_posts_top"
-  "comment_place_posts_recent"
-  "comment_blogger_followers"
-  "comment_blogger_followings"
-  "comment_interact_usernames"
-  "comment_blogger_post_likers"
-  "comment_interact_from_file"
-  "comment_feed"
-        You can specify for which job you want to comment.
-        Every interaction type has his own filter.
-        For example if you set your comments_list.txt with 
-        text that fits place posts, you don't want to say 
-        something about Rome in other circumstances.
-  "comment_photos":
-  "comment_videos":
-        You can also turn on/off commenting videos or photos.
+min_potency_ratio         
+      If an account's followers/following ratio is not above 
+      this ratio, then they will not be interacted with. 
+      Combine with "max_potency_ratio" to specify a range.
+      Example: username has 500 followers and 1000 
+      followings. That means its ratio is 0.5 If you set your 
+      "min_potency_ratio": 0.2 it will be interacted with. 
+      (e.g. min_potency_ratio: 1)
+
+max_potency_ratio         
+      If an account's followers/following ratio is not below 
+      this ratio, then they will not be interacted with. 
+      Combine with "min_potency_ratio" to specify a range.
+      Example: username has 500 followers and 1000 
+      followings. That means its ratio is 0.5.
+      If you set your max_potency_ratio: 0.7 it will be interacted with.
+      (e.g. max_potency_ratio: 2)
+
+follow_private_or_empty   
+      If it is false, private accounts or public accounts 
+      that have no posts will not be interacted with. 
+      (e.g. follow_private_or_empty: false)
+
+interact_only_private     
+      If it is set to true, only private accounts will be    
+      interacted with. No public accounts will be interacted 
+      with.
+      (e.g. interact_only_private: true)
+
+blacklist_words
+      Checks a biography for specified words. If any one word 
+      is found in the bio, the user will not be interacted with.
+      Otherwise the user will be interacted with. 
+      (e.g. blacklist: [sex, furry, santa])
+
+mandatory_words     
+      Checks a biography for specified words. If any one word 
+      is found in the bio, the user will be interacted with.
+      Otherwise the user will not be interacted with. 
+      (e.g. mandatory_words: [cat, kitten, meow])
+
+specific_alphabet
+      If a type is specified, the bio will be inspected and
+      the primary character type will be matched against the
+      one specified. If they do not match, you will not interact
+      with them. This is commonly used to avoid people whose
+      biographys don't match your language.
+      From version 2.0 you can set more then one.
+      (e.g. specific_alphabet: [LATIN, ARABIAN])
+
+ biography_language
+      As for specific_alphabet we are inspecting the biograpy
+      but this time we are looking for the language itself.
+      That's more powerful than the character_set but may be inconsistent if the bio is not a real text (such as a list of words without verbs). 
+      In any case the bot does a best of 5 (BO5) and take the most likely language.
+      for example: 'italian  and russian devops engineer ️guitarist nerd ' returns 'nl' instead of 'en' most of the time.
+      55 language are supported:
+      af, ar, bg, bn, ca, cs, cy, da, de, el, en, es, et, fa, fi, fr, gu, he,
+      hi, hr, hu, id, it, ja, kn, ko, lt, lv, mk, ml, mr, ne, nl, no, pa, pl,
+      pt, ro, ru, sk, sl, so, sq, sv, sw, ta, te, th, tl, tr, uk, ur, vi, zh-cn, zh-tw
+      Look there for more info: https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
+      You can also specify more then one.
+      (e.g. biography_language: [it, en]
+
+min_posts                 
+      You can specify the minumum post number that an account 
+      should have. 
+      (e.g. min_posts: 7)
+pm_to_private_or_empty
+      You can specify if you want to send PM also to private/empty accounts
+      (e.g. pm_to_private_or_empty: false)
+comment_hashtag_likers_top
+comment_hashtag_likers_top
+comment_hashtag_likers_recent
+comment_hashtag_posts_top
+comment_hashtag_posts_recent
+comment_place_likers_top
+comment_place_likers_recent
+comment_place_posts_top
+comment_place_posts_recent
+comment_blogger_followers
+comment_blogger_followings
+comment_interact_usernames
+comment_blogger_post_likers
+comment_interact_from_file
+comment_feed
+      You can specify for which job you want to comment.
+      Every interaction type has his own filter.
+      For example if you set your comments_list.txt with 
+      text that fits place posts, you don't want to say 
+      something about Rome in other circumstances.
+      (e.g. comment_place_likers: false)
+comment_photos:
+comment_videos:
+      You can also turn on/off commenting videos or photos.
+      (e.g. comment_photos: true)
+```
+*If you don't want to use a specific filter, you can comment it by putting a '#' in front of it!
+For example, if you don't want to skip people by checking theit followers count your filters.yml will look like this:*
+```
+...
+# min_followers: 50
+# max_followers: 2500
+min_followings: 50
+max_followings: 2500
+...
 ```
 
 ## Comments

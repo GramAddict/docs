@@ -142,7 +142,7 @@ What an "interaction" is depends on your [source limits](#source-limits), but ge
 |---       |---          |---      |
 | repeat   | Repeat the same session again after N minutes after completion, disabled by default. | `120-180` |
 | working-hours   | Scheduler for bot activity. You can specify the interval (one or more) of time in which you want the bot to run. You must use the time notation 0-24. You can use with the above argument `--repeat` to have a never stop bot.  | `[10.15-16.40, 18.15-22.46]` |
-| time-delta   | This is intended to be used with `working-hours` and allows to change the start and the end point of each interval. A random value, positive or negative, will be generated. | `10-15` |
+| time-delta   | This is intended to be used with `working-hours` and allows to change the start and the end point of each interval. A random value, positive or negative, will be generated. Math example: `bot-will-run-at = working-hours ± ΔT` | `10-15` |
 
 ## Available Filters
 
@@ -339,7 +339,7 @@ telegram-chat-id: -123456789
 Don't forget the minus (-) in front of the chat-id!
 
   
-### Argument Glossary
+## Argument Glossary
 
 Because there are some words that have special meaning to GramAddict, here is a glossary to reference back to if you run into any questions while reading about the options. 
 

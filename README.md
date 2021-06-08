@@ -96,10 +96,12 @@ We also provide a config example file that you can use as a starting reference p
 
 - Loads of available filters to customize who you interact with
     - you can blacklist people in order to avoid interacting with them
-    - biography main characters
+    - you can whitelist people in order to not remove them when you unfollow people
+    - biography main characters and language
+    - profile name main characters
     - private / public / business / non business account
     - number of posts / followers / following
-    - ... and more!
+    ... and more!
 
 ## Contributors
 

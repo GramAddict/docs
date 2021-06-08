@@ -146,7 +146,7 @@ What an "interaction" is depends on your [source limits](#source-limits), but ge
 
 ## Available Filters
 
-We know that you want to make sure that you only interact with a specific set of users. When you leave it up to a bot, you never know what will happen. We try to make this easier for you by giving you a wide subset of filters to help weed out the undesirables. The full list is below, but if you need some inspiration - there is a filter.example file included with some sensible defaults. You can copy/paste this file from config-example folder (available with git installation) in your account folder or [download it from here](ttps://raw.githubusercontent.com/GramAddict/bot/master/config-examples/filters.yml) and place in your account folder. 
+We know that you want to make sure that you only interact with a specific set of users. When you leave it up to a bot, you never know what will happen. We try to make this easier for you by giving you a wide subset of filters to help weed out the undesirables. The full list is below, but if you need some inspiration - there is a filter.example file included with some sensible defaults. You can copy/paste this file from config-example folder (available with git installation) in your account folder or [download it from here](https://raw.githubusercontent.com/GramAddict/bot/master/config-examples/filters.yml) and place in your account folder. 
 I'll repeat another time: in order to work, that file must be located in `accounts/yourusername` folder.
 
 The following is an exaustive explanation of what the filters are for:

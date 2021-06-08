@@ -325,7 +325,7 @@ Ps. You can change that file even while the bot is running if you need to.
 ## Telegram reports
 From version 2.2.0 you can have telegram reports of your activity and stats directly in your telegram channel. Reports will generated at the end of each session.
 For accomplish that you have to:
-* set telegram-report: true in config.yml
+* set telegram-reports: true in config.yml
 * create your bot in telegram https://t.me/botfather, save your api-token in telegram.yml and invite it in your channel
 * in order to know the chat-id of your channel you can use this bot https://t.me/myidbot, it will tell you a number: copy paste inside your telegram.yml
 

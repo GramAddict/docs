@@ -146,7 +146,7 @@ What an "interaction" is depends on your [source limits](#source-limits), but ge
 
 ## Available Filters
 
-We know that you want to make sure that you only interact with a specific set of users. When you leave it up to a bot, you never know what will happen. We try to make this easier for you by giving you a wide subset of filters to help weed out the undesirables. The full list is below, but if you need some inspiration - there is a filter.example file included with some sensible defaults. You can copy/paste this file from config-example folder (available with git installation) in your account folder or download it from [there](http://) and place in your account folder. 
+We know that you want to make sure that you only interact with a specific set of users. When you leave it up to a bot, you never know what will happen. We try to make this easier for you by giving you a wide subset of filters to help weed out the undesirables. The full list is below, but if you need some inspiration - there is a filter.example file included with some sensible defaults. You can copy/paste this file from config-example folder (available with git installation) in your account folder or [download it from here](ttps://raw.githubusercontent.com/GramAddict/bot/master/config-examples/filters.yml) and place in your account folder. 
 I'll repeat another time: in order to work, that file must be located in `accounts/yourusername` folder.
 
 The following is an exaustive explanation of what the filters are for:
@@ -293,7 +293,7 @@ comment_videos:
       (e.g. comment_photos: true)
 ```
 *If you don't want to use a specific filter, you can comment it by putting a '#' in front of it!
-For example, if you don't want to skip people by checking they followers count your filters.yml will look like this:*
+For example, if you don't want to skip people by checking theit followers count your filters.yml will look like this:*
 ```
 ...
 # min_followers: 50

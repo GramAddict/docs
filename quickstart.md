@@ -42,7 +42,7 @@ Getting started is easy. Follow the directions below to get GramAddict installed
    ``` 
    pip3 -V
    ```
-   If it is not installed, download [get-pip.py](https://bootstrap.pypa.io/get-pip.py) and run `python get-pip.py` from the same folder where you just downloaded the file.
+   If it is not installed, download [get-pip.py](https://bootstrap.pypa.io/get-pip.py) (right click on the link -> save as) and run `python get-pip.py` from the same folder where you just downloaded the file.
    
 <br />
 
@@ -83,7 +83,7 @@ Regardless of which method you use, if you are familiar with `virtualenv` or if 
 2. Go into that folder: `cd gramaddict`
 3. (Optionally) Use virtualenv or similar to make a virtual environment `virtualenv -p python3 .venv` and enter the virtual environment `source .venv/bin/activate`/`.venv\Scripts\activate.bat` (on windows)
 4. Install GramAddict with **pip**: `pip3 install gramaddict`
-5. Create a file named `run.py` with the following content in it (or [download it here](https://raw.githubusercontent.com/GramAddict/bot/master/run.py)): 
+5. Create a file named `run.py` with the following content in it (or [download it here](https://raw.githubusercontent.com/GramAddict/bot/master/run.py) (right click on the link -> save as)): 
 
 ```
 import GramAddict

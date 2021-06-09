@@ -340,9 +340,15 @@ Ps. You can change that file even while the bot is running if you need to.
 ## Telegram reports
 From version 2.2.0 you can have telegram reports of your activity and stats directly in your telegram channel. Reports will generated at the end of each session.
 For accomplish that you have to:
-* set telegram-reports: true in config.yml
-* create your bot in telegram https://t.me/botfather, save your api-token in telegram.yml and invite it in your channel
-* in order to know the chat-id of your channel you can use this bot https://t.me/myidbot, it will tell you a number: copy paste inside your telegram.yml
+1. set telegram-reports: true in config.yml
+2. create your bot in telegram https://t.me/botfather
+   * at the end of process, open the chat with it and press START (or command /start)
+   * save the bot api-token in your telegram.yml 
+   * invite it in your channel
+3. in order to know the chat-id of your channel you can use this bot https://t.me/myidbot
+   * invite it in your channel
+   * use the command /getgroupid for getting your channel id (you will get something like '-123456789')
+   * save the chat-id in your telegram.yml (don't forget the minus (-) in front of the chat-id!)
 
 IMPORTANT: telegram.yml must be in your account folder!
 
@@ -351,7 +357,6 @@ Example of how telegram.yml should looks like:
 telegram-api-token: 123456789:ABCDEFGHILMNOPQRSTUVZ-1AB2CD3
 telegram-chat-id: -123456789
 ```
-Don't forget the minus (-) in front of the chat-id!
 
   
 ## Argument Glossary

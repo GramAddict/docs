@@ -1,8 +1,8 @@
 # Configuration File
 
-As of v1.2.0, GramAdict supports a configuration file and **it is 100% recommended**. Let me repeat, if you use GramAddict, you should be using a configuration file. You should not be using arguments anymore. *You technically can, but we have up to 63 arguments now... so it's a lot easier if you use the configuration file.*
+As of v1.2.0, GramAdict supports a configuration file and **it is 100% recommended**. Let me repeat, if you use GramAddict, you should be using a configuration file. You should not be using arguments anymore. *You technically can, but we have up to 66 arguments now... so it's a lot easier if you use the configuration file.*
 
-To make it easy, to get started... we have a configuration file with every single option argument available in it. You just need to comment out any lines that you don't want to use with a `#`. You can [download that file here](https://raw.githubusercontent.com/GramAddict/bot/master/config-examples/all-parameters.yml). This file should be placed in a folder within your **GramAddict** folder, named after your username which is inside accounts main folder (if you don't create that folder, the bot will do it for you on the first run). e.g `accounts/username/config.yml` You can have multiple configuration files per user and are encouraged to do so. For example, I use one that is my normal "interaction" config and another that is a "clean up" config. e.g `accounts/username/interact.yml` and `accounts/username/unfollow.yml`.
+To make it easy, to get started... we have a configuration file with every single option argument available in it. You just need to comment out any lines that you don't want to use with a `#`. You can [download that file here](https://raw.githubusercontent.com/GramAddict/bot/master/config-examples/all-parameters.yml) (right click on the link -> save as). This file should be placed in a folder within your **GramAddict** folder, named after your username which is inside accounts main folder (if you don't create that folder, the bot will do it for you on the first run). e.g `accounts/username/config.yml` You can have multiple configuration files per user and are encouraged to do so. For example, I use one that is my normal "interaction" config and another that is a "clean up" config. e.g `accounts/username/interact.yml` and `accounts/username/unfollow.yml`.
 
 <br/>
 
@@ -146,7 +146,7 @@ What an "interaction" is depends on your [source limits](#source-limits), but ge
 
 ## Available Filters
 
-We know that you want to make sure that you only interact with a specific set of users. When you leave it up to a bot, you never know what will happen. We try to make this easier for you by giving you a wide subset of filters to help weed out the undesirables. The full list is below, but if you need some inspiration - there is a filter.example file included with some sensible defaults. You can copy/paste this file from config-example folder (available with git installation) in your account folder or [download it from here](https://raw.githubusercontent.com/GramAddict/bot/master/config-examples/filters.yml) and place in your account folder. 
+We know that you want to make sure that you only interact with a specific set of users. When you leave it up to a bot, you never know what will happen. We try to make this easier for you by giving you a wide subset of filters to help weed out the undesirables. The full list is below, but if you need some inspiration - there is a filter.example file included with some sensible defaults. You can copy/paste this file from config-example folder (available with git installation) in your account folder or [download it from here](https://raw.githubusercontent.com/GramAddict/bot/master/config-examples/filters.yml)(right click on the link -> save as) and place in your account folder. 
 I'll repeat another time: in order to work, that file must be located in `accounts/yourusername` folder.
 
 The following is an exhaustive explanation of what the filters are for:
@@ -350,7 +350,7 @@ For accomplish that you have to:
    * use the command /getgroupid for getting your channel id (you will get something like '-123456789')
    * save the chat-id in your telegram.yml (don't forget the minus (-) in front of the chat-id!)
 
-IMPORTANT: telegram.yml must be in your account folder!
+IMPORTANT: [telegram.yml](https://raw.githubusercontent.com/GramAddict/bot/master/config-examples/telegram.yml) (right click on the link -> save as) must be in your account folder!
 
 Example of how telegram.yml should looks like:
 ```

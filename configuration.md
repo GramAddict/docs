@@ -143,6 +143,7 @@ What an "interaction" is depends on your [source limits](#source-limits), but ge
 | repeat   | Repeat the same session again after N minutes after completion, disabled by default. | `120-180` |
 | working-hours   | Scheduler for bot activity. You can specify the interval (one or more) of time in which you want the bot to run. You must use the time notation 0-24. You can use with the above argument `--repeat` to have a never stop bot.  | `[10.15-16.40, 18.15-22.46]` |
 | time-delta   | This is intended to be used with `working-hours` and allows to change the start and the end point of each interval. A random value, positive or negative, will be generated. Math example: `bot-will-run-at = working-hours ± ΔT` | `10-15` |
+|total-sessions |  You can specify how many sessions you want to perform before the bot stops. By default it's infinite sessions. It works only if `repeat` argument is provided. | `3-4` | 
 
 ## Available Filters
 
@@ -287,10 +288,19 @@ comment_feed
       text that fits place posts, you don't want to say 
       something about Rome in other circumstances.
       (e.g. comment_place_likers: false)
-comment_photos:
-comment_videos:
+comment_photos
+comment_videos
       You can also turn on/off commenting videos or photos.
       (e.g. comment_photos: true)
+
+min_likers
+max_likers
+      You can specify the range of likers of a post you want to interact with. By default it's 1 to 1000000 likers
+      For using this feature you should activate like counts in your ig app: 
+      settings -> privacy -> posts -> Hide Like and View Counts -> OFF
+      It works with ..-likers-.. and ..-posts-.. jobs.
+      If there isn't any number but only "an_username and others" you will interact by default
+      (in this case we can't know how many likers are there)
 ```
 *If you don't want to use a specific filter, you can comment it by putting a '#' in front of it!
 For example, if you don't want to skip people by checking theit followers count your filters.yml will look like this:*

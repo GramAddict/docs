@@ -295,7 +295,8 @@ comment_videos
 
 min_likers
 max_likers
-      You can specify the range of likers of a post you want to interact with. By default it's 1 to 1000000 likers
+      You can specify the range of likers that a post must have for interact with it (or its likers). 
+      By default it's 1 to 1000000 likers.
       For using this feature you should activate like counts in your ig app: 
       settings -> privacy -> posts -> Hide Like and View Counts -> OFF
       It works with ..-likers-.. and ..-posts-.. jobs.

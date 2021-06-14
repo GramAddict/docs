@@ -23,6 +23,8 @@ This procedure is slow, use -vvv in pip if you want to see if everything install
     git clone https://github.com/gramaddict/bot.git gramaddict
     cd gramaddict
     pip install -r requirements.txt
+
+You can also install GramAddict using pip, but in that case you won't have the config-example folder ready to go.
     
 ## Step 4: Run
 	

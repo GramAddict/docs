@@ -81,7 +81,7 @@ What an "interaction" is depends on your [source limits](#source-limits), but ge
 | Argument        | Description                 | Default       |
 |--------------   |--------------------------   |---------      |
 | analytics       | Generates a PDF analytics report for current username session data. For using this feature you have to install the dependencies: `pip3 install gramaddict[analytics]`  | `false` |
-| telegram-report | Generates a report for current username session data and send it to your telegram channel. <br /> For using this feature you have first to configure the file 'telegram.yml' in your account folder. <br /> [Instruction](#telegram-reports). For using this feature you have to install the dependencies: `pip3 install gramaddict[telegram-reports]`| `true` |
+| telegram-report | Generates a report for current username session data and send it to your telegram channel. <br /> For using this feature you have first to configure the file `telegram.yml` in your account folder. <br /> [Instructions here](#telegram-reports). For using this feature you have to install the dependencies: `pip3 install gramaddict[telegram-reports]`| `true` |
 
 <br />
 
@@ -312,6 +312,23 @@ For example, if you don't want to skip people by checking theit followers count 
 min_followings: 50
 max_followings: 2500
 ...
+```
+## Blacklist and whitelist
+Inside the [config-example folder](https://github.com/GramAddict/bot/tree/master/config-examples) there are two important txt you should consider when you start the bot:
+* **blacklist.txt**
+      This file containes the usernames you don't want to interact with. Every interacting job will check this file before interacting. If someone is inside, it will get skipped.
+* **whitelist.txt**
+      This file is intendend for all kind of unfollow jobs. If someone is inside that list, it will not get unfollowed.
+
+So if you want to skip someone from bot activities, these files are made for this.
+Place them inside `accounts/yourusername/` and don't forget that each line should contains only an username.
+
+Example of white/blacklist.txt:
+```
+mybrotherusername
+myexgirlfriend
+therudeguyfromschool
+mybestfriend
 ```
 
 ## Comments

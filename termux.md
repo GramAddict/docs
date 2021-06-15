@@ -40,6 +40,13 @@ The easiest solution is to download an storage access framework compatible file 
 Then you can follow that instructions
 https://wiki.termux.com/images/e/e5/FX_Termux_Home.jpg
 
+## Possibile problems
+* if you type on termux `adb devices` and you get a blank list try the following:
+	* connect the phone to a PC and get sure you get your device ID in `adb devices` (from pc console)
+	* `adb tcpip 5555`
+	* `adb kill-server` and disconnect the cable
+	* get back on termux and write: `adb connect localhost:5555`
+	* now you should be able to see your device ID in `adb devices`
 Then you can edit and view GramAddict files.
 
 

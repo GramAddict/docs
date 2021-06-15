@@ -143,7 +143,10 @@ If you do it correctly, terminal / command prompt command `adb devices` will pri
 
 Now that all of the prep work is done, we can just about start the script. 
 
-If you have not already, you should make sure you have [Developer options](https://developer.android.com/studio/debug/dev-options#enable) turned on, **USB debugging** enabled, as well as **Install apps via USB** (if available) on your phone. 
+If you have not already, you should make sure you have [Developer options](https://developer.android.com/studio/debug/dev-options#enable) turned on, **USB debugging** enabled, as well as **Install apps via USB** (if available) on your phone.
+
+If you want to use an emulator and you're on Windows you can try with [Memu](https://www.memuplay.com/).
+After installing it and opening it, type that in console to open the connection: `adb connect localhost:21503`
 
 
 ### First Run
@@ -193,7 +196,7 @@ gramaddict/
         youraccountname/
             config.yml
             telegram.yml
-            filter.json
+            filters.yml
             whitelist.txt
             blacklist.txt
             comments_list.txt
@@ -208,14 +211,14 @@ gramaddict/
         youraccountname/
             config.yml
             telegram.yml
-            filter.json
+            filters.yml
             whitelist.txt
             blacklist.txt
             comments_list.txt
             pm_list.txt
 ```
 
-Possible problems:
+Troubleshooting:
 - if you run the bot but nothing happens in console (you are able to write again..), you are using a wrong python alias (for example python3 run.py bla bla). Type `python -V` or `python3 -V` or `py -V` to find out the right one and then use it with the run.py
 - if uiautomator2/minicab install gets stuck, try the following: 
 ```

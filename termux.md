@@ -39,15 +39,18 @@ The easiest solution is to download an storage access framework compatible file 
 [FX File Explorer](https://play.google.com/store/apps/details?id=nextapp.fx)
 Then you can follow that instructions
 https://wiki.termux.com/images/e/e5/FX_Termux_Home.jpg
+Then you can edit and view GramAddict files.
 
-## Possibile problems
+## Troubleshooting
 * if you type on termux `adb devices` and you get a blank list try the following:
 	* connect the phone to a PC and get sure you get your device ID in `adb devices` (from pc console)
 	* `adb tcpip 5555`
 	* `adb kill-server` and disconnect the cable
 	* get back on termux and write: `adb connect localhost:5555`
 	* now you should be able to see your device ID in `adb devices`
-Then you can edit and view GramAddict files.
+* when I start the bot it looks like it freezes after opening IG and termux shell has been closed
+	* edit your `accounts/yourusername/config.yml` file and set `close-apps: false`
+	
 
 
 

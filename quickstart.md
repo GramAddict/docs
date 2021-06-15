@@ -230,7 +230,7 @@ Wait until it is finished and try to run the bot again.
 2. (Optionally) If you installed the script with **virtualenv**, be sure to activate your environment before running: `source .venv/bin/activate`/`.venv\Scripts\activate.bat` (on windows)
 3. Run the script: 
 ```
-python3 run.py --config accounts/username/config.yml
+python3 run.py --config accounts/yourusername/config.yml
 ```
 
 > Note: If you have a screen lock pin or swipe, you will need to unlock the script before each use. Otherwise - the script will do it for you each run. Additionally, the script also handles opening Instagram for you and choosing the correct account among the ones logged into the app. Disable notifications will allow the bot to run smootly without interferences.

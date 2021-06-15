@@ -218,7 +218,7 @@ gramaddict/
             pm_list.txt
 ```
 
-Troubleshooting:
+#### Troubleshooting:
 - if you run the bot but nothing happens in console (you are able to write again..), you are using a wrong python alias (for example python3 run.py bla bla). Type `python -V` or `python3 -V` or `py -V` to find out the right one and then use it with the run.py
 - if uiautomator2/minicab install gets stuck, try the following: 
 ```

@@ -91,6 +91,7 @@ What an "interaction" is depends on your [source limits](#source-limits), but ge
 |-------------------- |---          |---      |
 | interactions-count  | Number of interactions per source in each action. | `70` |
 | likes-count         | Number of likes for each interacted user. | `2` |
+| likes-percentage    | Chance of liking posts on a particular profile. |`100`|
 | stories-count       | Number of stories for each interacted user. | `0` |
 | stories-percentage  | Chance of watching stories on a particular profile. Supported by plugins: hashtag-likers, hashtag-posts, blogger-followers. | `30` |
 | carousel-count      | Number of available carousel items to browse. | `0` |
@@ -132,7 +133,8 @@ What an "interaction" is depends on your [source limits](#source-limits), but ge
 |---       |---          |---      |
 | shuffle-jobs                  | Instead of following the order of the jobs you write, this argument will allow the bot to shuffle the jobs | `300` |
 | truncate-sources              | If you have a lot of sources, with this argument you're able to pick n random from the list and interact only with them, for that session | `2-3` |
-| watch-video-time       | Instead of liking video without watching them, you can fake it and pause the bot for a given time (in seconds). Set to 0 to disable it. | `15-35` |
+| watch-video-time       | Instead of liking videos without watching them, you can fake it and pause the bot for a given time (in seconds). Set to 0 to disable it. | `15-35` |
+| watch-photo-time       | Instead of liking photos without looking them, you can fake it and pause the bot for a given time (in seconds). Set to 0 to disable it. | `3-4` |
 
 <br />
 

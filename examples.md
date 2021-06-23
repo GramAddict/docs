@@ -2,4 +2,4 @@
 
 #todo
 
-[example configs](examples.mdhttps://github.com/GramAddict/bot/tree/master/config-examples)
+[example configs](https://github.com/GramAddict/bot/tree/master/config-examples)

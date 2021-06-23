@@ -368,16 +368,16 @@ A random line will be picked each time.
 Ps. You can change that file even while the bot is running if you need to.
 
 ## Telegram reports
-From version 2.2.0 you can have telegram reports of your activity and stats directly in your telegram channel. Reports will generated at the end of each session.
+From version 2.2.0 you can have telegram reports of your activity and stats directly in your telegram group. Reports will generated at the end of each session.
 For accomplish that you have to:
 1. set telegram-reports: true in config.yml
 2. create your bot in telegram https://t.me/botfather
-   * at the end of process, open the chat with it and press START (or command /start)
-   * save the bot api-token in your telegram.yml 
-   * invite it in your channel
-3. in order to know the chat-id of your channel you can use this bot https://t.me/myidbot
-   * invite it in your channel
-   * use the command /getgroupid for getting your channel id (you will get something like '-123456789')
+   * at the end of process, open the chat with it (press on <span>t.me</span>/yourbotname from botfather) and press START (or command /start)
+   * save the bot api-token in your telegram.yml
+   * crate a group and invite your bot inside it
+3. in order to know the chat-id of your group you can use this bot https://t.me/myidbot
+   * invite it in the group you created before, at this time your should be in 3 there
+   * use the command /getgroupid for getting your group id (you will get something like '-123456789')
    * save the chat-id in your telegram.yml (don't forget the minus (-) in front of the chat-id!)
 
 IMPORTANT: [telegram.yml](https://raw.githubusercontent.com/GramAddict/bot/master/config-examples/telegram.yml) (right click on the link -> save as) must be in your account folder!

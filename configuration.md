@@ -135,6 +135,7 @@ What an "interaction" is depends on your [source limits](#source-limits), but ge
 | truncate-sources              | If you have a lot of sources, with this argument you're able to pick n random from the list and interact only with them, for that session | `2-3` |
 | watch-video-time       | Instead of liking videos without watching them, you can fake it and pause the bot for a given time (in seconds). Set to 0 to disable it. | `15-35` |
 | watch-photo-time       | Instead of liking photos without looking them, you can fake it and pause the bot for a given time (in seconds). Set to 0 to disable it. | `3-4` |
+| can-reinteract-after   | With that feature you can re-interact someone who has already interacted. You have to specify the amount of hours that have to pass from the last interaction | `36` or even fractions `5.5` |
 
 <br />
 

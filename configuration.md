@@ -127,6 +127,15 @@ What an "interaction" is depends on your [source limits](#source-limits), but ge
 
 <br />
 
+### What's the difference between total-interactions-limit and total-successful-interactions-limit?
+- total-interactions-limit
+>every time you open a profile, it counts as an interaction, even if you don't interact
+
+- total-successful-interactions-limit
+>when you open a profile and perform an action such as a like, follow, comment, PM or watch a story, this counts as a successful interaction
+
+
+
 ## Special modifiers for jobs and sources
 
 | Argument | Description | Example |
@@ -396,8 +405,8 @@ Because there are some words that have special meaning to GramAddict, here is a 
 
 - **Source**: The *thing* being interacted with, primarily usernames or hashtags 
 - **Interaction**: Any profile that is interacted with for a particular **source** (successful or unsuccessful)
-- **Successful Interaction**: Any profile that was actioned (e.g. like or follow) for a particular **source**
-- **Unsuccessful Interaction**: Any profile that was opened, but not actioned (e.g. like or follow) for a particular **source**
+- **Successful Interaction**: Any profile that was actioned (e.g. like, follow, PM, watch stories, commented) for a particular **source**
+- **Unsuccessful Interaction**: Any profile that was opened, but not actioned (e.g. like, follow, PM, watch stories, commented) for a particular **source**
 
 - **Total Interactions**: Number of profiles with **successful interactions** or **unsuccessful interactions** across all **sources**
 - **Total Successful Interactions**: Number of profiles with **successful interactions** across all **sources**
@@ -436,20 +445,20 @@ As an added note, you can also do things like interact with multiple followers a
         actions, 300 by default
 
   --total-follows-limit 50
-        limit on total amount of likes during the session across all
+        limit on total amount of follows during the session across all
         actions, 50 by default
 
   --total-watches-limit 50
-        limit on total amount of likes during the session across all
+        limit on total amount of watches during the session across all
         actions, 50 by default
 
   --total-successful-interactions-limit 100
-        limit on total amount of likes during the session across all
-        actions, 100 by default
+        when you open a profile and perform an action such as a like,
+        follow, comment, PM or watch a story, this counts as a successful action
 
   --total-interactions-limit 1000
-        limit on total amount of likes during the session across all
-        actions, 1000 by default
+        every time you open a profile, it counts as an interaction, 
+        even if you don't interact, 1000 by default
 ```
 
 So if you wanted to interact with multiple bloggers, multiple hashtags, unfollow followers, and generate a report after - you can do a command similar to below:

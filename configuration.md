@@ -346,7 +346,8 @@ mybestfriend
 ## Comments
 In order to comment post, you also have to set your comments_list.txt which is located inside the folder with your nickname. Every username has its own comments_list.txt file.
 I've divided that file into 3 sections: %PHOTO, %VIDEO and %CAROUSEL. The reason for that is to allow you to have 3 different types of comments in relation to what you're effectively commenting. A lot of time other bots commented on my videos with "nice photo!". In this way you will be less detectable.
-I also made it possibile to use emoji [look here for emoji list supported](https://www.webfx.com/tools/emoji-cheat-sheet/).
+I also made it possibile to use emoji [look here for emoji list supported.](https://www.webfx.com/tools/emoji-cheat-sheet/).
+From version 2.7.0 comments support spintax! 
 
 For example:
 ```
@@ -366,7 +367,7 @@ Ps. you can use emoji even for hashtag searches.
 Pps. You can change that file even while the bot is running if you need to.
 
 ## Private message
-You can send private message to people you're interacting with. You just have to set your pm_list.txt file, always in the folder with your nickname (accounts/yournickname/pm_list.txt). Every username has its own pm_list.txt file. Emoji are supported. [look here for emoji list supported](https://www.webfx.com/tools/emoji-cheat-sheet/)
+You can send private message to people you're interacting with. You just have to set your pm_list.txt file, always in the folder with your nickname (accounts/yournickname/pm_list.txt). Every username has its own pm_list.txt file. Emoji are supported. [Look here for emoji list supported.](https://www.webfx.com/tools/emoji-cheat-sheet/)
 
 For example:
 ```
@@ -376,6 +377,60 @@ Sorry for bothering you, can you pls take part in my survey?
 ```
 A random line will be picked each time. 
 Ps. You can change that file even while the bot is running if you need to.
+
+## Spintax support
+From version 2.7.0 this bot support spintax (thanks to an [external module](https://github.com/AceLewis/spintax), no needs to reinvent the whell...)
+
+An extract from their documentation:
+
+Spintax (also known as spin syntax) is a way to create random strings that have the same or similar meaning.
+Spintax is very useful as it can be used in programs such as chat bots or video game character speach, it allows the dialog to not sound so repetitive and robotic.
+
+### The syntax
+Spintax replaces braces (also known as curly brackets, {}) containing text with a random predefined string. The random string is defined withing the braces by using a pipe | as a seperator.
+
+##### Simple example:
+
+    "{Hey|Hello|Hi} this is {spin syntax|spintax}{.|!|}"
+
+##### Can produce:
+* Hey this is spintax.
+* Hi this is spin syntax
+* Hello this is spintax
+* Hi this is spintax!
+
+Unlike other modules, you can escape the special characters used in spintax by placing an odd number of "\\"'s before the character.
+
+##### Example:
+
+    r"""{Hey|Hello|Hi}{,|} this is {spin syntax|spintax}{.|!|}
+    To use {this module|spintax} enclose \{your|words\} in {those brackets|braces} and use {a \||the \||a pipe (\|)} to separate them
+    """
+
+##### Can produce:
+
+ - Hi this is spintax!
+
+   To use spintax enclose {your|words} in braces and use the | to separate them
+
+ - Hi, this is spin syntax
+
+   To use this module enclose {your|words} in those brackets and use a | to separate them
+
+
+ - Hello this is spintax.
+
+   To use spintax enclose {your|words} in those brackets and use a pipe (|) to separate them
+
+##### Example of Nested Spintax:
+
+       "This is nested {{s|S}pintax|spin syntax}"
+
+##### Can produce:
+
+  - This is nested Spintax
+  - This is nested spin syntax
+  - This is nested spintax
 
 ## Telegram reports
 From version 2.2.0 you can have telegram reports of your activity and stats directly in your telegram group. Reports will generated at the end of each session.

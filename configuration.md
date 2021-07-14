@@ -379,7 +379,7 @@ A random line will be picked each time.
 Ps. You can change that file even while the bot is running if you need to.
 
 ## Spintax support
-From version 2.7.0 this bot support spintax (thanks to an [external module](https://github.com/AceLewis/spintax), no needs to reinvent the whell...)
+From version 2.7.0 this bot support spintax (thanks to an [external module](https://github.com/AceLewis/spintax), no needs to reinvent the wheel...)
 
 An extract from their documentation:
 

@@ -4,7 +4,7 @@
   <br />
   <h1 style="text-align: center;">GramAddict</h1>
   <br />
-  <p style="text-align: center;">The best 100% free forever Instagram automation bot. Grow your following and engagement by liking, following, commenting and sending PM automatically with your Android phone/tablet/emulator. No root required.<p>
+  <p align="center">Looking for Instagram automation? I'm proud to present you a <b>100% free and open source Instagram bot</b>. This bot will allow you to grow your following and engagement by liking, following, commenting and sending PM automatically with your Android phone/tablet/emulator. <b>No root required.</b> <p>
   <p style="text-align: center;">
     <a href="https://github.com/gramaddict/bot/blob/master/LICENSE">
       <img src="https://img.shields.io/github/license/gramaddict/bot?style=flat" />

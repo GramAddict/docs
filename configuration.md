@@ -23,6 +23,7 @@ GramAddict can do many things and the list is constantly growing. This is a full
 | speed-multiplier | Optional | You can set the speed of the bot. > 1 will increase the speed, < 1 will slow down | `1` |
 | close-apps       | Optional | With this you can tell the bot to close all the background apps to avoid interferences | `true` |
 | disable-filters  | Optional | Instead of deleting/renaming your filter.yml file, you can ignore it with this argument | `false` |
+| detect-block     | Optional | You can disable the detection of action block by putting this paramether to `false` | `true` |
 | scrape-to-file   | Optional | The bot will no longer interact with anyone, but it will collect and store all the usernames that fit your filters in a file. This is usually done by a fake account. The generated list will be used by your main account with the argument `--interact-from-file`  | `false` |
 
 

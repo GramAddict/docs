@@ -20,7 +20,7 @@ GramAddict can do many things and the list is constantly growing. This is a full
 | screen-sleep     | Optional | Set to true to turn device screen off once script has finished | `false` |
 | screen-record    | Optional | Record the screen while using the bot. This is intended only for debug purposes | `false` |
 | debug            | Optional | For troubleshooting. Debug is already sent to log file, this shows it in console | `false` |
-| speed-multiplier | Optional | You can set the speed of the bot. > 1 will increase the speed, < 1 will slow down | `1` |
+| speed-multiplier | Optional | You can set the speed of the bot. > 1 will increase the speed, < 1 will slow down. It can also be a fraction: for example 1.3 | `1` |
 | close-apps       | Optional | With this you can tell the bot to close all the background apps to avoid interferences | `true` |
 | disable-filters  | Optional | Instead of deleting/renaming your filter.yml file, you can ignore it with this argument | `false` |
 | disable-block-detection | Optional | You can disable the detection of action block by putting this paramether to `true` | `false` |
@@ -146,7 +146,8 @@ What an "interaction" is depends on your [source limits](#source-limits), but ge
 | watch-video-time       | Instead of liking videos without watching them, you can fake it and pause the bot for a given time (in seconds). Set to 0 to disable it. | `15-35` |
 | watch-photo-time       | Instead of liking photos without looking them, you can fake it and pause the bot for a given time (in seconds). Set to 0 to disable it. | `3-4` |
 | can-reinteract-after   | With that feature you can re-interact someone who has already interacted. You have to specify the amount of hours that have to pass from the last interaction | `36` or even fractions `5.5` |
-
+| pre-script | Specify the pre script file path to be executed | `pre_file.bat` |
+| post-script | Specify the post script file path to be executed | `post_file.bat` |
 <br />
 
 ## Scheduling
@@ -184,6 +185,11 @@ skip_follower
       with. Note, if you follow someone, the filter won't be able
       to tell if that person follows you.
       (e.g. skip_following: true)
+
+skip_if_link_in_bio
+      If it is true, you will skip accounts if they have a link in bio
+      (It's located under the biography)
+      (e.g. skip_if_link_in_bio: true)
 
 min_followers             
       It is the lower follower bound for an account that can 
@@ -277,6 +283,11 @@ min_posts
       You can specify the minumum post number that an account 
       should have. 
       (e.g. min_posts: 7)
+      
+mutual_friends
+      You can specify how many mutual friends that the target account should have to be interracted
+      (e.g mutual_friends: 3)
+
 pm_to_private_or_empty
       You can specify if you want to send PM also to private/empty accounts
       (e.g. pm_to_private_or_empty: false)

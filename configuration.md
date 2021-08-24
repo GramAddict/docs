@@ -72,6 +72,7 @@ What an "interaction" is depends on your [source limits](#source-limits), but ge
 | unfollow-any                | Unfollow at most the given number of users. Any user is eligible to be unfollowed regardless of if this script followed them. | `10-20` |
 | unfollow-non-followers      | Unfollow at most the given number of users, that don't follow you back. Only users followed by this script will be unfollowed. | `10-20` |
 | unfollow-any-non-followers  | Unfollow at most the given number of users, that don't follow you back. Any user is eligible to be unfollowed regardless of if this script followed them. | `10-20` |
+| unfollow-any-followers  | Unfollow at most the given number of users, that follow you back. Any user is eligible to be unfollowed regardless of if this script followed them. | `10-20` |
 | unfollow-from-file          | Unfollow usernames from a list (.txt)  | `[usernames_list1.txt, usernames_list2.txt]` |
 | sort-followers-newest-to-oldest   | Not actually an action, but an option for all unfollow types except the one from file to sort users from newest to oldest instead of oldest to newest which is the default choice | ` ` |
 
@@ -104,6 +105,7 @@ What an "interaction" is depends on your [source limits](#source-limits), but ge
 | follow-percentage   | Follow the given percentage of interacted users. | `0` |
 | follow-limit        | Limit on amount of follows per source in each action. | `0` |
 | skipped-list-limit  | Limit how many scrolls tried, with already interacted users, until we move to the next source. Does not apply for unfollows. | `10-15` |
+| skipped-post-limit | Control how many skips in jobs with posts (e.g.: hashtag-post-top) are allowed before moving to another source / job       | `5` |
 | fling-when-skipped  | Fling (instead of scroll) after "X" many scrolls tried, with already interacted users. (not recommended - disabled by default) | `0` |
 | min-following       | Minimum amount of followings, after reaching this amount unfollowing stops | `0` |
 | blogger-post-limits | Limit of blogger post which likers you are interacting (`--blogger-post-likers`) before ending job. **NOT YET DEVELOPED** | `2` |
@@ -278,8 +280,10 @@ specific_alphabet
       WARNING: as long as yaml files considers `no` as a false, you have to single quote it!
       Look there for more info: https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
       You can also specify more then one.
-      (e.g. biography_language: [it, en, 'no']
-      
+      (e.g. biography_language: [it, en, 'no'])
+ biography_banned_language
+      As the paramether above, but for specifying banned list of languages.
+      (e.g. biography_banned_language: [es, de, fr])
 
 min_posts                 
       You can specify the minumum post number that an account 

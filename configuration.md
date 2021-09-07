@@ -266,13 +266,14 @@ specific_alphabet
       biographys don't match your language.
       From version 2.0 you can set more then one.
       (e.g. specific_alphabet: [LATIN, ARABIAN])
+      -> What are alphabets? https://www.quora.com/What-are-the-different-types-of-alphabets
 
  biography_language
       As for specific_alphabet we are inspecting the biograpy
       but this time we are looking for the language itself.
       That's more powerful than the character_set but may be inconsistent if the bio is not a real text (such as a list of words without verbs). 
       In any case the bot does a best of 5 (BO5) and take the most likely language.
-      for example: 'italian  and russian devops engineer ️guitarist nerd ' returns 'nl' instead of 'en' most of the time.
+      For example: 'italian  and russian devops engineer ️guitarist nerd ' returns 'nl' instead of 'en' most of the time.
       55 language are supported:
       af, ar, bg, bn, ca, cs, cy, da, de, el, en, es, et, fa, fi, fr, gu, he,
       hi, hr, hu, id, it, ja, kn, ko, lt, lv, mk, ml, mr, ne, nl, no, pa, pl,
@@ -281,6 +282,7 @@ specific_alphabet
       Look there for more info: https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
       You can also specify more then one.
       (e.g. biography_language: [it, en, 'no'])
+      
  biography_banned_language
       As the paramether above, but for specifying banned list of languages.
       (e.g. biography_banned_language: [es, de, fr])
@@ -470,7 +472,7 @@ Example of how telegram.yml should looks like:
 telegram-api-token: 123456789:ABCDEFGHILMNOPQRSTUVZ-1AB2CD3
 telegram-chat-id: -123456789
 ```
-
+If you get errors sending the report, please refer to this: https://core.telegram.org/api/errors
   
 ## Argument Glossary
 

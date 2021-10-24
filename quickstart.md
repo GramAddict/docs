@@ -4,7 +4,7 @@ Getting started is easy. Follow the directions below to get GramAddict installed
 
 ## Requirements
 
-- Python 3.6+
+- Python 3.6+ (3.10 currently not supported!)
 - PIP
 - ADB
 - Only devices with Android 4.4+ (SDK 19) are supported.
@@ -17,9 +17,9 @@ Getting started is easy. Follow the directions below to get GramAddict installed
 
 ### Windows
 
-#### 1. Download the [latest Python 3 release.](https://www.python.org/downloads/windows/)
+#### 1. Download the [latests supported Python 3 release.](https://www.python.org/downloads/release/python-397/)
   
-   * As of the time of this writing, the latest version is [3.9.4.](https://www.python.org/downloads/release/python-394/)
+   * As of the time of this writing, the latest version is [3.9.7.](https://www.python.org/downloads/release/python-397/)
 
 #### 2. Run downloaded setup and make sure to __check these boxes__:
    * [x] Install launcher for all users

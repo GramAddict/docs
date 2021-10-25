@@ -4,7 +4,7 @@
 
 ## Step 1: Download and Install Termux
 
-[Apk from f-droid](https://f-droid.org/repo/com.termux_113.apk)
+[Apk from f-droid](https://f-droid.org/it/packages/com.termux/)
 or
 [Official PlayStore](https://play.google.com/store/apps/details?id=com.termux)
 

@@ -228,6 +228,9 @@ python3 -m uiautomator2 init
 ```
 Wait until it is finished and try to run the bot again.
 
+- Exception: -32001 Jsonrpc error: <java.lang.SecurityException> data: java.lang.SecurityException: Injecting to another application requires INJECT_EVENTS permission
+You forget to allow debugging activities in developing settings
+
 ### Subsequent Runs:
 1. Connect Android device to your computer with a USB cable
 2. (Optionally) If you installed the script with **virtualenv**, be sure to activate your environment before running: `source .venv/bin/activate`/`.venv\Scripts\activate.bat` (on windows)

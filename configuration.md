@@ -152,6 +152,19 @@ What an "interaction" is depends on your [source limits](#source-limits), but ge
 | post-script | Specify the post script file path to be executed | `post_file.bat` |
 <br />
 
+## Ending Session Conditions
+From v2.10.0 you can customise when a session should end.
+<br>
+| Argument | Description | Example |
+| -------- | ---------- | --- |
+| end-if-likes-limit-reached | the session will end when likes limit has been reached | `true`
+| end-if-follows-limit-reached | the session will end when follows limit has been reached | `false`
+| end-if-watches-limit-reached | the session will end when watches limit has been reached | `false`
+| end-if-comments-limit-reached | the session will end when comments limit has been reached | `false`
+| end-if-pm-limit-reached | the session will end when pm limit has been reached | `false`
+> ATTENTION: session will end in any case if `total-successful-interactions-limit` or `total-interactions-limit` have been reached!
+<br />
+
 ## Scheduling
 
 | Argument | Description | Example |

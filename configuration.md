@@ -345,7 +345,7 @@ Because there are some words that have special meaning to GramAddict, here is a 
 
 You can specify which are the limits that makes the bot stop his activity.
 Only two limits can't be changed: the `total-successful-interactions-limit` and `total-interactions-limit`. When the bot reach them, it will stop. No matter what.
-Refer to [Ending Session Conditions section](##Ending Session Conditions) for learn about ending conditions.
+Refer to [this section](##ending-session-conditions) to learn about ending conditions.
 
 # Multiple Action Support
 

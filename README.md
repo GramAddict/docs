@@ -1,8 +1,8 @@
 
 <p style="text-align: center;">
-  <img alt="GramAddict Logo"  src="logo.png" width="150">
+  <img alt="GramAddict Logo"  src=https://raw.githubusercontent.com/GramAddict/bot/master/res/logo.png>
   <br />
-  <h1 style="text-align: center;">GramAddict</h1>
+	<h1 style="text-align: center">GramAddict</h1>
   <br />
   <p align="center">Looking for Instagram automation? I'm proud to present you a <b>100% free and open source Instagram bot</b>. This bot will allow you to grow your following and engagement by liking, following, commenting and sending PM automatically with your Android phone/tablet/emulator. <b>No root required.</b> <p>
   <p style="text-align: center;">
@@ -24,7 +24,7 @@
     <a href="https://github.com/GramAddict/bot/stargazers">
 	    <img src="https://img.shields.io/github/stars/gramaddict/bot?style=flat">
     </a>
-    <a href="https://img.shields.io/github/last-commit/gramaddict/bot/develop?style=flat">
+    <a href="https://img.shields.io/github/last-commit/gramaddict/bot/master?style=flat">
 	    <img src="https://img.shields.io/github/last-commit/gramaddict/bot/develop?style=flat">
     </a>
     <a href="https://github.com/GramAddict/bot#backers">

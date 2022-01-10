@@ -25,7 +25,7 @@
 	    <img src="https://img.shields.io/github/stars/gramaddict/bot?style=flat">
     </a>
     <a href="https://img.shields.io/github/last-commit/gramaddict/bot/master?style=flat">
-	    <img src="https://img.shields.io/github/last-commit/gramaddict/bot/develop?style=flat">
+	    <img src="https://img.shields.io/github/last-commit/gramaddict/bot/master?style=flat">
     </a>
     <a href="https://github.com/GramAddict/bot#backers">
 	    <img src="https://img.shields.io/opencollective/backers/gramaddict?style=flat">

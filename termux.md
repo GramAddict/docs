@@ -2,15 +2,20 @@
 # Use GramAddict without pc
 
 
-## Step 1a: If you don't have Termux installed
+## Step 0: If you don't have Termux installed
 
 You can download Termux from f-droid or the Google Play store. Get the f-droid version, since the Play store version does not support some features.  
 
 [Apk from f-droid](https://f-droid.org/it/packages/com.termux/)
 
-## Step 1b: If you have Termux installed
+After installation you can skip to __step 2__.
 
-To get this to work, we need to delete all pip packages and python
+## Step 1: Only if you already have Termux installed
+
+_Skip this step if you just installed Termux_
+
+Some packages cause things to clash and not install properly, so let's clean up our Termux. 
+Delete all pip packages and python:
 
 ```
 # Remove all python packages
@@ -39,7 +44,11 @@ pkg install build-essential clang make pkg-config
 curl -LO https://its-pointless.github.io/setup-pointless-repo.sh
 bash setup-pointless-repo.sh
 pkg install android-tools cmake libcompiler-rt pytz cython setuptools libjpeg-turbo libpng libxml2 libxslt freetype git libtiff -y
+```
 
+If you want telegram reports, you should follow these extra steps
+
+```
 # install numpy and scipy with pkg NOT with pip
 
 pkg install numpy
@@ -53,6 +62,7 @@ export LDFLAGS=" -lm -lcompiler_rt"
 # install Pandas, this can take hours, depends on your device (I don't recommend doing this over ssh)
 
 pip install pandas
+
 ```
 
 ## Step 3: Install GramAddict
@@ -81,7 +91,10 @@ cd gramaddict
 # I don't recommend doing this over ssh
 
 pip install -r requirements.txt
+```
 
+If you want telegram reports, you should follow this extra step:
+```
 pip install GramAddict[telegram-reports]
 ```
     
@@ -106,7 +119,7 @@ nano accounts/[your-account-name]/config.yml
 
 nano accounts/[your-account-name]/filters.yml
 
-nano accounts/[your-account-name]/telegram.yml
+nano accounts/[your-account-name]/telegram.yml # if you're using telegram reports
 
 # etc
 ```

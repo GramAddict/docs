@@ -59,7 +59,7 @@ pkg install numpy
 
 pkg install scipy
 
-xport CFLAGS=" -Wno-deprecated-declarations -Wno-unreachable-code"
+export CFLAGS=" -Wno-deprecated-declarations -Wno-unreachable-code"
 
 export LDFLAGS=" -lm -lcompiler_rt"
 

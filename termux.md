@@ -43,7 +43,7 @@ pkg upgrade -y
 pkg install build-essential clang make pkg-config
 curl -LO https://its-pointless.github.io/setup-pointless-repo.sh
 bash setup-pointless-repo.sh
-pkg install android-tools cmake libcompiler-rt libjpeg-turbo libpng libxml2 libxslt freetype git libtiff -y
+pkg install android-tools python cmake libcompiler-rt libjpeg-turbo libpng libxml2 libxslt freetype git libtiff -y
 ```
 
 If you want telegram reports, you should follow these extra steps

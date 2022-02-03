@@ -59,9 +59,9 @@ What an "interaction" is depends on your [source limits](#source-limits), but ge
 | place-likers-recent     | List of places in recent results with whose likers you want to interact.                                                                                                 | `[place1, place2]`                                   |
 | place-posts-top         | List of places in top results with whose posts you want to interact.                                                                                                     | `[place1, place2]`                                   |
 | place-posts-recent      | List of places in recent results with whose posts you want to interact.                                                                                                  | `[place1, place2]`                                   |
-| interact-from-file      | Path to a text file of usernames that will be interacted with.                                                                                                           | `[usernames_list1.txt 10-15, usernames_list2.txt] 3` |
+| interact-from-file      | Path to a text file of usernames that will be interacted with.                                                                                                           | `[usernames_list1.txt 10-15, usernames_list2.txt 3]` |
 | posts-from-file         | Path to a text file of posts that will be liked. More actions will come in the future. Useful for engagement groups.                                                     | `[posts_list1.txt, posts_list2.txt]`                 |
-| delete-interacted-users | Not actually an action, but an option for `interact-from-file`, `posts-from-file` and `unfollow-from-file` to remove users/urls from file after they are interacted with | ` true `                                             |
+| delete-interacted-users | Not actually an action, but an option for `interact-from-file`, `posts-from-file` and `unfollow-from-file` to remove users/urls from file after they are interacted with | `true`                                               |
 | feed                    | Interact with your own feed. After that argument you can specify how many likes you want to give. It accepts ranges                                                      | `2-5`                                                |
 
 >Waning: from version 3.0.0 you gain control over how many users have to be processed in the `interact-from-file` job. Just specify that number after the *.txt.
@@ -95,26 +95,26 @@ What an "interaction" is depends on your [source limits](#source-limits), but ge
 
 ## Source Limits
 
-| Argument              | Description                                                                                                                    | Default   |
-|-----------------------|--------------------------------------------------------------------------------------------------------------------------------|-----------|
-| interactions-count    | Number of interactions per source in each action.                                                                              | `70`      |
-| likes-count           | Number of likes for each interacted user.                                                                                      | `2`       |
-| likes-percentage      | Chance of liking posts on a particular profile.                                                                                | `100`     |
-| stories-count         | Number of stories for each interacted user.                                                                                    | `0`       |
-| stories-percentage    | Chance of watching stories on a particular profile. Supported by plugins: hashtag-likers, hashtag-posts, blogger-followers.    | `30`      |
-| carousel-count        | Number of available carousel items to browse.                                                                                  | `0`       |
-| carousel-percentage   | Chance of browsing a carousel.                                                                                                 | `0`       |
-| max-comments-pro-user | Number of comments you can do for each user you interact.                                                                      | `0`       |
-| comments-percentage   | Chance of commenting on a user post.                                                                                           | `0`       |
-| pm-percentage         | Chance of sending a private message to a user you're interacting with.                                                         | `0`       |
-| interact-percentage   | Chance to interact with user/hashtag when applicable. Supported by plugins: hashtag/place-posts and feed".                     | `50`      |
-| follow-percentage     | Follow the given percentage of interacted users.                                                                               | `0`       |
-| follow-limit          | Limit on amount of follows per source in each action.                                                                          | `0`       |
-| skipped-list-limit    | Limit how many scrolls tried, with already interacted users, until we move to the next source. Does not apply for unfollows.   | `10-15`   |
-| skipped-post-limit    | Control how many skips in jobs with posts (e.g.: hashtag-post-top) are allowed before moving to another source / job           | `5`       |
-| fling-when-skipped    | Fling (instead of scroll) after "X" many scrolls tried, with already interacted users. (not recommended - disabled by default) | `0`       |
-| min-following         | Minimum amount of followings, after reaching this amount unfollowing stops                                                     | `0`       |
-| blogger-post-limits   | Limit of blogger post which likers you are interacting (`--blogger-post-likers`) before ending job. **NOT YET DEVELOPED**      | `2`       |
+| Argument              | Description                                                                                                                    | Default |
+|-----------------------|--------------------------------------------------------------------------------------------------------------------------------|---------|
+| interactions-count    | Number of interactions per source in each action.                                                                              | `70`    |
+| likes-count           | Number of likes for each interacted user.                                                                                      | `2`     |
+| likes-percentage      | Chance of liking posts on a particular profile.                                                                                | `100`   |
+| stories-count         | Number of stories for each interacted user.                                                                                    | `0`     |
+| stories-percentage    | Chance of watching stories on a particular profile. Supported by plugins: hashtag-likers, hashtag-posts, blogger-followers.    | `30`    |
+| carousel-count        | Number of available carousel items to browse.                                                                                  | `0`     |
+| carousel-percentage   | Chance of browsing a carousel.                                                                                                 | `0`     |
+| max-comments-pro-user | Number of comments you can do for each user you interact.                                                                      | `0`     |
+| comments-percentage   | Chance of commenting on a user post.                                                                                           | `0`     |
+| pm-percentage         | Chance of sending a private message to a user you're interacting with.                                                         | `0`     |
+| interact-percentage   | Chance to interact with user/hashtag when applicable. Supported by plugins: hashtag/place-posts and feed".                     | `50`    |
+| follow-percentage     | Follow the given percentage of interacted users.                                                                               | `0`     |
+| follow-limit          | Limit on amount of follows per source in each action.                                                                          | `0`     |
+| skipped-list-limit    | Limit how many scrolls tried, with already interacted users, until we move to the next source. Does not apply for unfollows.   | `10-15` |
+| skipped-post-limit    | Control how many skips in jobs with posts (e.g.: hashtag-post-top) are allowed before moving to another source / job           | `5`     |
+| fling-when-skipped    | Fling (instead of scroll) after "X" many scrolls tried, with already interacted users. (not recommended - disabled by default) | `0`     |
+| min-following         | Minimum amount of followings, after reaching this amount unfollowing stops                                                     | `0`     |
+| blogger-post-limits   | Limit of blogger post which likers you are interacting (`blogger-post-likers`) before ending job. **NOT YET DEVELOPED**        | `2`     |
 
 
 <br />
@@ -325,6 +325,11 @@ min_followings: 50
 max_followings: 2500
 ...
 ```
+
+## Possible errors in your config.yml and filters.yml:
+- `found character '\t' that cannot start any token in "accounts/your-username/{config.yml|filters.yml}", line xx, column xx` means that in that line you have a TAB, rewrite that line to fix it
+- you wrote a parameter more than 1 time, in that case, the last entry will be used
+
 ## Blacklist and whitelist
 Inside the [config-example folder](https://github.com/GramAddict/bot/tree/master/config-examples) there are two important txt you should consider when you start the bot:
 * **blacklist.txt**

@@ -1,8 +1,8 @@
 # Contributing to GramAddict
 
-:+1::tada: First off, thanks for taking the time to contribute! :tada::+1:
+**First off, thanks for taking the time to contribute!**
 
-The following is a set of guidelines for contributing to GramAddict and its assocated repos, which are hosted in the [GramAddict Organization](https://github.com/gramaddict) on GitHub. These are mostly guidelines, not rules. Use your best judgment, and feel free to propose changes to this document in a pull request.
+The following is a set of guidelines for contributing to GramAddict and its associated repos, which are hosted in the [GramAddict Organization](https://github.com/gramaddict) on GitHub. These are mostly guidelines, not rules. Use your best judgment, and feel free to propose changes to this document in a pull request.
 
 #### Table Of Contents
 - [I don't want to read this whole thing, I just have a question!!!](#i-dont-want-to-read-this-whole-thing-i-just-have-a-question)
@@ -12,9 +12,8 @@ The following is a set of guidelines for contributing to GramAddict and its asso
   - [Suggesting Enhancements](#suggesting-enhancements)
   - [Your First Code Contribution](#your-first-code-contribution)
   - [Pull Requests](#pull-requests)
-- [Styleguides](#styleguides)
+  - [Styleguides](#styleguides)
   - [Git Commit Messages](#git-commit-messages)
-  - [Python Styleguide](#javascript-styleguide)
 
 <br />
 
@@ -32,6 +31,7 @@ If you can't find the answer or want to chat with other people using GramAddict;
     > **Note:** Even though Discord is a chat service, sometimes it takes several hours for community members to respond &mdash; please be patient!
     - Use the `#general` channel for general questions or discussion about GramAddict
     - Use the `#community-support` channel for help with issues or questions about running the bot
+    - Use the `#botting-on-termux` channel for help with termux
     - Use the `#development` channel for questions or discussion about writing or contributing to GramAddict packages
     - Use the `#lobby` channel for creating a ticket to share a crash report
     - There are other channels available as well, check the channel list
@@ -40,7 +40,7 @@ If you can't find the answer or want to chat with other people using GramAddict;
 
 ## Code of Conduct
 
-This project and everyone participating in it is governed by the [GramAddict Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code. Please report unacceptable behavior via the [Discord Server](https://discord.com/invite/9MTjgs8g5R). Please direct them to any of the project owners via DM.
+This project and everyone participates in it is governed by the [GramAddict Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code. Please report unacceptable behavior via the [Discord Server](https://discord.com/invite/9MTjgs8g5R). Please direct them to any of the project owners via DM.
 
 <br />
 
@@ -141,7 +141,7 @@ If you want to read about using GramAddict or developing packages in GramAddict,
 
 Example:
   ```
-      :cat2: Fixing an encoding bug with the logging system #31
+      fix: Fixing an encoding bug with the logging system #31
 
       - Without utf-8 encoding, certain logs cannot be written and will cause an exception
   ```
@@ -169,26 +169,10 @@ While the prerequisites above must be satisfied prior to having your pull reques
 
 ### Git Commit Messages
 
-* Use the present tense ("Add feature" not "Added feature")
-* Use the imperative mood ("Move cursor to..." not "Moves cursor to...")
-* Limit the first line to 72 characters or less
+* Limit the first line to 72 characters or fewer
 * Reference issues and pull requests liberally after the first line
-* Consider starting the commit message with an applicable emoji:
-    * :cat2: `:cat2:` when fixing or improving existing code
-    * :racehorse: `:racehorse:` when improving performance
-    * :memo: `:memo:` when writing docs
-    * :penguin: `:penguin:` when fixing something on Linux
-    * :apple: `:apple:` when fixing something on macOS
-    * :checkered_flag: `:checkered_flag:` when fixing something on Windows
-    * :bug: `:bug:` when fixing a bug
-    * :fire: `:fire:` when removing code or files
-    * :green_heart: `:green_heart:` when fixing the CI build
-    * :white_check_mark: `:white_check_mark:` when adding tests
-    * :lock: `:lock:` when dealing with security
-    * :arrow_up: `:arrow_up:` when upgrading dependencies
-    * :arrow_down: `:arrow_down:` when downgrading dependencies
-    * :gift: `:gift:` when adding a new feature
-    * :rage: `:rage:` when fixing something the linter complained about
+* For commits names use [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
+
 
 ### Python Styleguide
 

@@ -17,7 +17,7 @@ Getting started is easy. Follow the directions below to get GramAddict installed
 
 ### Windows
 
-#### 1. Download the [latests supported Python 3 release.](https://www.python.org/downloads/release/python-397/)
+#### 1. Download the [latest's supported Python 3 release.](https://www.python.org/downloads/release/python-397/)
   
    * As of the time of this writing, the latest version is [3.9.7.](https://www.python.org/downloads/release/python-397/)
 
@@ -65,15 +65,18 @@ Getting started is easy. Follow the directions below to get GramAddict installed
 
 ### Linux
 
-On Linux Python is pre-installed. 
+On Linux Python is pre-installed.
+
 For Raspberry the pre-installed version should be 3.6. Check this out by running this command: `python3 -V`
-If you have a over version of python, google for how to upgrade.
+If you have a lover version of Python, google for how to upgrade.
 
 <br /><br />
 
 ## Step 2: Install GramAddict
 
-There are two ways to install GramAddict. Via `git` or via `pip`. If you plan on **modifying code**, **contributing**, **being a beta tester**, or otherwise **inspecting** the code. You should install GramAddict with `git`. Otherwise you should install it with `pip`. We recommend installing with `pip` for the average user. 
+There are two ways to install GramAddict. Via `git` or via `pip`. If you plan on **modifying code**, **contributing**, **being a beta tester**, or otherwise **inspecting** the code. You should install GramAddict with `git`. Otherwise, you should install it with `pip`. 
+
+**We recommend installing with `pip` for the average user.**
 
 Regardless of which method you use, if you are familiar with `virtualenv` or if you plan on using/developing other python scripts, we recommend that you set up a **virtual environment**.
 
@@ -83,7 +86,7 @@ Regardless of which method you use, if you are familiar with `virtualenv` or if 
 2. Go into that folder: `cd gramaddict`
 3. (Optionally) Use virtualenv or similar to make a virtual environment `virtualenv -p python3 .venv` and enter the virtual environment `source .venv/bin/activate`/`.venv\Scripts\activate.bat` (on windows)
 4. Install GramAddict with **pip**: `pip3 install gramaddict`
-5. Create a file named `run.py` with the following content in it (or [download it here](https://raw.githubusercontent.com/GramAddict/bot/master/run.py) (right click on the link -> save as)): 
+5. **Optional!** Create a file named `run.py` with the following content in it (or [download it here](https://raw.githubusercontent.com/GramAddict/bot/master/run.py) (right-click on the link -> save as)): 
 
 ```
 import GramAddict
@@ -141,12 +144,13 @@ If you do it correctly, terminal / command prompt command `adb devices` will pri
 
 ## Step 4: Run GramAddict
 
-Now that all of the prep work is done, we can just about start the script. 
+Now that all the prep work is done, we can just about start the script. 
 
 If you have not already, you should make sure you have [Developer options](https://developer.android.com/studio/debug/dev-options#enable) turned on, **USB debugging** enabled, as well as **Install apps via USB** (if available) on your phone.
 
-If you want to use an emulator and you're on Windows you can try with [Memu](https://www.memuplay.com/).
+If you want to use an emulator, and you're on Windows you can try with [Memu](https://www.memuplay.com/).
 After installing it and opening it, type that in console to open the connection: `adb connect localhost:21503`
+>If you're using more than oen Memu emulator, the port are +10 form the previous one -> 21513, 21523 and so on.
 
 
 ### First Run
@@ -158,23 +162,28 @@ After installing it and opening it, type that in console to open the connection:
 List of devices attached
 A0B1CD2345678901	device
 ```
-This is the ID of your device, you should copy/paste it in your config file with the device paramether
+This is the ID of your device, you should copy/paste it in your config file with the device parameter
 e.g: device: A0B1CD2345678901
 4. Initialize the uiautomator2 with this command: (It's also important when uiautomator2 gets updates) 
 ```
 python3 -m uiautomator2 init
 ```
 6. Proceed to set up your [configuration](configuration.md) (important).
-7. Finally, you can run the script from the location where run.py file is located.
-   For doing that open the console and move to the gramaddict location and type the following: 
-```
-python3 run.py --config accounts/yourusername/config.yml
-```
+7. Finally, you can run the script from the location where run.py file is located or just by using `gramaddict run` shell script 
+   For doing that open the console and move to the gramaddict location and type the following:
+   - Solution with run.py
+    ```
+    python3 run.py --config accounts/yourusername/config.yml
+    ```
+   - Solution with shell script (available only with pip installation)
+    ```
+   gramaddict run --config accounts/yourusername/config.yml
+   ```
 **ATTENTION: run.py must be inside that folder because at start it moves almost all folders near it inside `accounts`!**
 
-For avoid problems, compare your situatation with that before starting:
+For avoid problems, compare your situation with that before starting:
 
-Tree of correct configuration for GIT:
+Tree of correct configuration for GIT (remember that you have to create the account folder paste the config-examples inside with your username):
 ```                                    
 gramaddict/
     GramAddict/
@@ -206,7 +215,6 @@ gramaddict/
 Tree of correct configuration for PIP:
 ```  
 gramaddict/
-    run.py
     accounts/
         youraccountname/
             config.yml
@@ -219,21 +227,22 @@ gramaddict/
 ```
 
 #### Troubleshooting:
-- if you run the bot but nothing happens in console (you are able to write again..), you are using a wrong python alias (for example python3 run.py bla bla). Type `python -V` or `python3 -V` or `py -V` to find out the right one and then use it with the run.py
+- if you run the bot but nothing happens in console (you are able to write again..), you are using a wrong Python alias (for example python3 run.py bla bla). Type `python -V` or `python3 -V` or `py -V` to find out the right one and then use it with the run.py
 - if uiautomator2/minicab install gets stuck, try the following: 
-```
-adb shell pkill atx-agent
-pip3 install uiautomator2 --upgrade
-python3 -m uiautomator2 init
-```
-Wait until it is finished and try to run the bot again.
+    ```
+    adb shell pkill atx-agent
+    pip3 install uiautomator2 --upgrade
+    python3 -m uiautomator2 init
+    ```
+    Wait until it is finished and try to run the bot again.
 
 - Exception: -32001 Jsonrpc error: <java.lang.SecurityException> data: java.lang.SecurityException: Injecting to another application requires INJECT_EVENTS permission
-You forget to allow debugging activities in developing settings
+
+    You forget to allow debugging activities in developing settings!
 
 ### Subsequent Runs:
 1. Connect Android device to your computer with a USB cable
-2. (Optionally) If you installed the script with **virtualenv**, be sure to activate your environment before running: `source .venv/bin/activate`/`.venv\Scripts\activate.bat` (on windows)
+2. (Optionally) If you installed the script with **virtualenv**, be sure to activate your environment before running: `source .venv/bin/activate`/`.venv\Scripts\activate.bat` (on Windows)
 3. Run the script: 
 ```
 python3 run.py --config accounts/yourusername/config.yml

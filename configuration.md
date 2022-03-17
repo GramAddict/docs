@@ -12,22 +12,23 @@ GramAddict can do many things and the list is constantly growing. This is a full
 
 ## General Configuration
 
-| Argument                |   Type   | Description                                                                                                                                                                                                                                                      | Default                 |
-|-------------------------|:--------:|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------|
-| username                | Required | The username for which you are running the script                                                                                                                                                                                                                | `None`                  |
-| device                  | Optional | Device identifier. Specifies which device should be used for the profile from `adb devices`. Use this argument only if you have multiple devices connected at the same time.                                                                                     | `None`                  |
-| app-id                  | Optional | Allows you to specify a custom app name for cloned apps                                                                                                                                                                                                          | `com.instagram.android` |
-| use-cloned-app          | Optional | if you have cloned app enabled in your device, a pop-up asking for which app to select could appear. With this parameter you can specify if use the cloned app instead of the original. (Works only on MUIU at this moment.)                                     | `false`                 |
-| screen-sleep            | Optional | Set to true to turn device screen off once script has finished                                                                                                                                                                                                   | `false`                 |
-| screen-record           | Optional | Record the screen while using the bot. This is intended only for debug purposes                                                                                                                                                                                  | `false`                 |
-| debug                   | Optional | For troubleshooting. Debug is already sent to log file, this shows it in console                                                                                                                                                                                 | `false`                 |
-| speed-multiplier        | Optional | You can set the speed of the bot. > 1 will increase the speed, < 1 will slow down. It can also be a fraction: for example 1.3                                                                                                                                    | `1`                     |
-| close-apps              | Optional | With this you can tell the bot to close all the background apps to avoid interferences                                                                                                                                                                           | `true`                  |
-| disable-filters         | Optional | Instead of deleting/renaming your filter.yml file, you can ignore it with this argument                                                                                                                                                                          | `false`                 |
-| disable-block-detection | Optional | You can disable the detection of action block by putting this parameter to `true`                                                                                                                                                                                | `false`                 |
-| dont-type               | Optional | Instead of typing, the bot will paste text                                                                                                                                                                                                                       | `false`                 |
-| scrape-to-file          | Optional | The bot will no longer interact with anyone, but it will collect and store all the usernames that fit your filters in a file. This is usually done by a fake account. The generated list will be used by your main account with the argument `interact-from-file` | `false`                 |
-| total-crashes-limit     | Optional | Limit on total amount of crashes during the session you are willing to accept. Reaching this limit will stop the bot.                                                                                                                                            | `5`                     |
+| Argument                   |   Type   | Description                                                                                                                                                                                                                                                       | Default                 |
+|----------------------------|:--------:|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------|
+| username                   | Required | The username for which you are running the script                                                                                                                                                                                                                 | `None`                  |
+| device                     | Optional | Device identifier. Specifies which device should be used for the profile from `adb devices`. Use this argument only if you have multiple devices connected at the same time.                                                                                      | `None`                  |
+| app-id                     | Optional | Allows you to specify a custom app name for cloned apps                                                                                                                                                                                                           | `com.instagram.android` |
+| use-cloned-app             | Optional | if you have cloned app enabled in your device, a pop-up asking for which app to select could appear. With this parameter you can specify if use the cloned app instead of the original. (Works only on MUIU at this moment.)                                      | `false`                 |
+| screen-sleep               | Optional | Set to true to turn device screen off once script has finished                                                                                                                                                                                                    | `false`                 |
+| screen-record              | Optional | Record the screen while using the bot. This is intended only for debug purposes                                                                                                                                                                                   | `false`                 |
+| debug                      | Optional | For troubleshooting. Debug is already sent to log file, this shows it in console                                                                                                                                                                                  | `false`                 |
+| speed-multiplier           | Optional | You can set the speed of the bot. > 1 will increase the speed, < 1 will slow down. It can also be a fraction: for example 1.3                                                                                                                                     | `1`                     |
+| close-apps                 | Optional | With this you can tell the bot to close all the background apps to avoid interferences                                                                                                                                                                            | `true`                  |
+| disable-filters            | Optional | Instead of deleting/renaming your filter.yml file, you can ignore it with this argument                                                                                                                                                                           | `false`                 |
+| disable-block-detection    | Optional | You can disable the detection of action block by putting this parameter to `true`                                                                                                                                                                                 | `false`                 |
+| dont-type                  | Optional | Instead of typing, the bot will paste text                                                                                                                                                                                                                        | `false`                 |
+| scrape-to-file             | Optional | The bot will no longer interact with anyone, but it will collect and store all the usernames that fit your filters in a file. This is usually done by a fake account. The generated list will be used by your main account with the argument `interact-from-file` | `false`                 |
+| total-crashes-limit        | Optional | Limit on total amount of crashes during the session you are willing to accept. Reaching this limit will stop the bot.                                                                                                                                             | `5`                     |
+| count-app-crashes          | Optional | You can tell the bot to count app crashes as a crash for `total-crashes-limit`                                                                                                                                                                                    | `false`                 |
 
 > Attention: the speed-multiplier has a [low limit](https://github.com/GramAddict/bot/blob/54ea82775a68956058c9bc3194a2772219d0892b/GramAddict/core/utils.py#L453) for the sleep time! 
 > That means that if you put 100 or 100000 it will go at the same speed. It was introduced in order not to crash the bot.
@@ -46,29 +47,37 @@ What an "interaction" is depends on your [source limits](#source-limits), but ge
 - Send a PM
 - Watch Stories
 
-### Interaction
+### Interaction (active Jobs)
 
-| Argument                | Description                                                                                                                                                              | Example                                              |
-|-------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------|
-| blogger-followers       | List of usernames with whose followers you want to interact.                                                                                                             | `[username1, username2]`                             |
-| blogger-following       | List of usernames with whose following you want to interact.                                                                                                             | `[username1, username2]`                             |
-| blogger-post-likers     | List of usernames with whose post likers you want to interact.                                                                                                           | `[username1, username2]`                             |
-| blogger                 | List of usernames with whom you want to interact.                                                                                                                        | `[username1, username2]`                             |
-| hashtag-likers-top      | List of hashtags in top results with whose likers you want to interact.                                                                                                  | `[hashtag1, hashtag2]`                               |
-| hashtag-likers-recent   | List of hashtags in recent results with whose likers you want to interact.                                                                                               | `[hashtag1, hashtag2]`                               |
-| hashtag-posts-top       | List of hashtags in top results with whose posts you want to interact.                                                                                                   | `[hashtag1, hashtag2]`                               |
-| hashtag-posts-recent    | List of hashtags in recent results with whose posts you want to interact.                                                                                                | `[hashtag1, hashtag2]`                               |
-| place-likers-top        | List of places in top results with whose likers you want to interact.                                                                                                    | `[place1, place2]`                                   |
-| place-likers-recent     | List of places in recent results with whose likers you want to interact.                                                                                                 | `[place1, place2]`                                   |
-| place-posts-top         | List of places in top results with whose posts you want to interact.                                                                                                     | `[place1, place2]`                                   |
-| place-posts-recent      | List of places in recent results with whose posts you want to interact.                                                                                                  | `[place1, place2]`                                   |
-| interact-from-file      | Path to a text file of usernames that will be interacted with.                                                                                                           | `[usernames_list1.txt 10-15, usernames_list2.txt 3]` |
-| posts-from-file         | Path to a text file of posts that will be liked. More actions will come in the future. Useful for engagement groups.                                                     | `[posts_list1.txt, posts_list2.txt]`                 |
-| delete-interacted-users | Not actually an action, but an option for `interact-from-file`, `posts-from-file` and `unfollow-from-file` to remove users/urls from file after they are interacted with | `true`                                               |
-| feed                    | Interact with your own feed. After that argument you can specify how many likes you want to give. It accepts ranges                                                      | `2-5`                                                |
+| Argument                   | Description                                                                                                          | Example                                              |
+|----------------------------|----------------------------------------------------------------------------------------------------------------------|------------------------------------------------------|
+| blogger-followers          | List of usernames with whose followers you want to interact.                                                         | `[username1, username2]`                             |
+| blogger-following          | List of usernames with whose following you want to interact.                                                         | `[username1, username2]`                             |
+| blogger-post-likers        | List of usernames with whose post likers you want to interact.                                                       | `[username1, username2]`                             |
+| blogger                    | List of usernames with whom you want to interact.                                                                    | `[username1, username2]`                             |
+| hashtag-likers-top         | List of hashtags in top results with whose likers you want to interact.                                              | `[hashtag1, hashtag2]`                               |
+| hashtag-likers-recent      | List of hashtags in recent results with whose likers you want to interact.                                           | `[hashtag1, hashtag2]`                               |
+| hashtag-posts-top          | List of hashtags in top results with whose posts you want to interact.                                               | `[hashtag1, hashtag2]`                               |
+| hashtag-posts-recent       | List of hashtags in recent results with whose posts you want to interact.                                            | `[hashtag1, hashtag2]`                               |
+| place-likers-top           | List of places in top results with whose likers you want to interact.                                                | `[place1, place2]`                                   |
+| place-likers-recent        | List of places in recent results with whose likers you want to interact.                                             | `[place1, place2]`                                   |
+| place-posts-top            | List of places in top results with whose posts you want to interact.                                                 | `[place1, place2]`                                   |
+| place-posts-recent         | List of places in recent results with whose posts you want to interact.                                              | `[place1, place2]`                                   |
+| interact-from-file         | Path to a text file of usernames that will be interacted with.                                                       | `[usernames_list1.txt 10-15, usernames_list2.txt 3]` |
+| posts-from-file            | Path to a text file of posts that will be liked. More actions will come in the future. Useful for engagement groups. | `[posts_list1.txt, posts_list2.txt]`                 |
+| feed                       | Interact with your own feed. After that argument you can specify how many likes you want to give. It accepts ranges. | `2-5`                                                |
 
 >Waning: from version 3.0.0 you gain control over how many users have to be processed in the `interact-from-file` job. Just specify that number after the *.txt.
 
+#### Modifier for Interaction jobs (active Jobs)
+ Argument                           | Description                                                                                                                                                    | Example    |
+|-----------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|------------|
+| shuffle-jobs                      | Instead of following the order of the jobs you write, this argument will allow the bot to shuffle the jobs.                                                    | `300`      |
+| truncate-sources                  | If you have a lot of sources, with this argument you're able to pick n random from the list and interact only with them, for that session.                     | `2-3`      |
+| watch-video-time                  | Instead of liking videos without watching them, you can fake it and pause the bot for a given time (in seconds). Set to 0 to disable it.                       | `15-35`    |
+| watch-photo-time                  | Instead of liking photos without looking them, you can fake it and pause the bot for a given time (in seconds). Set to 0 to disable it.                        | `3-4`      |
+| can-reinteract-after              | With that feature you can re-interact someone who has already interacted. You have to specify the amount of hours that have to pass from the last interaction. 
+| delete-interacted-users           | An option for jobs that involves a *.txt to remove users/urls from it after they have been interacted with.                                                    | `true`     |
 <br />
 
 ### Unfollow
@@ -81,11 +90,26 @@ What an "interaction" is depends on your [source limits](#source-limits), but ge
 | unfollow-any-non-followers      | Unfollow at most the given number of users, that don't follow you back. Any user is eligible to be unfollowed regardless of if this script followed them.                         | `10-20`                                              |
 | unfollow-any-followers          | Unfollow at most the given number of users, that follow you back. Any user is eligible to be unfollowed regardless of if this script followed them.                               | `10-20`                                              |
 | unfollow-from-file              | Unfollow usernames from a list (.txt)                                                                                                                                             | `[usernames_list1.txt 10-15, usernames_list2.txt 3]` |
-| sort-followers-newest-to-oldest | Not actually an action, but an option for all unfollow types except the one from file to sort users from newest to oldest instead of oldest to newest which is the default choice | ` false `                                            |
 
 >Waning: from version 3.0.0 you gain control over how many users have to be processed in the `unfollow-from-file` job. Just specify that number after the *.txt.
 
+#### Modifier for Unfollow jobs
+ Argument                           | Description                                                                                                                                                  | Example      |
+|-----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------|
+| sort-followers-newest-to-oldest   | An option for all unfollow types except the one from file to sort users from newest to oldest instead of oldest to newest which is the default choice        | ` false `    |                                                                                                                                                                                 |                                                      |
+| unfollow-by-date                  | With this option you can specify the number of days that have to have passed since the last interaction it work with `unfollow` and `unfollow-non-followers` | `10-20`      |
 <br />
+
+### Remove followers
+| Argument                   | Description                                                                     | Example                                        |
+|----------------------------|---------------------------------------------------------------------------------|------------------------------------------------|
+| remove-followers-from-file | Path to a text file of usernames that are following you and you want to remove. | `[remove_list1.txt 10-15, remove_list2.txt 3]` |
+
+#### Modifier for Remove followers
+
+| Argument                          | Description                                    | Example   |
+|-----------------------------------|------------------------------------------------|-----------|
+| delete-removed-follower-from-file | Remove from the *.txt the removed follower.    | `true`    |
 
 ### Post Processing
 
@@ -149,17 +173,12 @@ What an "interaction" is depends on your [source limits](#source-limits), but ge
 
 
 
-## Special modifiers for jobs and sources
+## Special actions
 
-| Argument             | Description                                                                                                                                                   | Example                      |
-|----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------|
-| shuffle-jobs         | Instead of following the order of the jobs you write, this argument will allow the bot to shuffle the jobs                                                    | `300`                        |
-| truncate-sources     | If you have a lot of sources, with this argument you're able to pick n random from the list and interact only with them, for that session                     | `2-3`                        |
-| watch-video-time     | Instead of liking videos without watching them, you can fake it and pause the bot for a given time (in seconds). Set to 0 to disable it.                      | `15-35`                      |
-| watch-photo-time     | Instead of liking photos without looking them, you can fake it and pause the bot for a given time (in seconds). Set to 0 to disable it.                       | `3-4`                        |
-| can-reinteract-after | With that feature you can re-interact someone who has already interacted. You have to specify the amount of hours that have to pass from the last interaction | `36` or even fractions `5.5` |
-| pre-script           | Specify the pre script file path to be executed                                                                                                               | `pre_file.bat`               |
-| post-script          | Specify the post script file path to be executed                                                                                                              | `post_file.bat`              |
+| Argument      | Description                                          | Example                         |
+|---------------|------------------------------------------------------|---------------------------------|
+| pre-script    | Specify the pre script file path to be executed.     | `pre_file.bat`, `pre_file.sh`   |
+| post-script   | Specify the post script file path to be executed.    | `post_file.bat`, `post_file.sh` |
 <br />
 
 ## Ending Session Conditions

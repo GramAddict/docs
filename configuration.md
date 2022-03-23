@@ -94,10 +94,10 @@ What an "interaction" is depends on your [source limits](#source-limits), but ge
 >Waning: from version 3.0.0 you gain control over how many users have to be processed in the `unfollow-from-file` job. Just specify that number after the *.txt.
 
 #### Modifier for Unfollow jobs
- Argument                           | Description                                                                                                                                                  | Example      |
-|-----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------|
-| sort-followers-newest-to-oldest   | An option for all unfollow types except the one from file to sort users from newest to oldest instead of oldest to newest which is the default choice        | ` false `    |                                                                                                                                                                                 |                                                      |
-| unfollow-by-date                  | With this option you can specify the number of days that have to have passed since the last interaction it work with `unfollow` and `unfollow-non-followers` | `10-20`      |
+ Argument                        | Description                                                                                                                                                  | Example      |
+|---------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------|
+| sort-followers-newest-to-oldest | An option for all unfollow types except the one from file to sort users from newest to oldest instead of oldest to newest which is the default choice        | ` false `    |                                                                                                                                                                                 |                                                      |
+| unfollow-delay                  | With this option you can specify the number of days that have to have passed since the last interaction it work with `unfollow` and `unfollow-non-followers` | `10-20`      |
 <br />
 
 ### Remove followers
@@ -107,9 +107,9 @@ What an "interaction" is depends on your [source limits](#source-limits), but ge
 
 #### Modifier for Remove followers
 
-| Argument                          | Description                                    | Example   |
-|-----------------------------------|------------------------------------------------|-----------|
-| delete-removed-follower-from-file | Remove from the *.txt the removed follower.    | `true`    |
+| Argument                 | Description                                    | Example   |
+|--------------------------|------------------------------------------------|-----------|
+| delete-removed-followers | Remove from the *.txt the removed follower.    | `true`    |
 
 ### Post Processing
 

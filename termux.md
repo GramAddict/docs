@@ -43,16 +43,15 @@ Then you can edit and view GramAddict files.
 
 ## Troubleshooting
 * if you type on termux `adb devices` and you get a blank list try the following:
-	* connect the phone to a PC and get sure you get your device ID in `adb devices` (from pc console)
-	* `adb tcpip 5555`
-	* `adb kill-server` and disconnect the cable
-	* get back on termux and write: `adb connect localhost:5555`
-	* now you should be able to see your device ID in `adb devices`
+    * connect the phone to a PC and get sure you get your device ID in `adb devices` (from pc console)
+    * `adb tcpip 5555`
+    * `adb kill-server` and disconnect the cable
+    * get back on termux and write: `adb connect localhost:5555`
+    * now you should be able to see your device ID in `adb devices`
 * when I start the bot it looks like it freezes after opening IG and termux shell has been closed
-	* edit your `accounts/yourusername/config.yml` file and set `close-apps: false`
-	
-
-
+    * edit your `accounts/yourusername/config.yml` file and set `close-apps: false`
+* [termux won't perform the next session scheduled](https://github.com/GramAddict/bot/issues/267#issuecomment-1122051966)
+    * the reason is that termux goes in deep sleep, this is how to prevent it: https://wiki.termux.com/wiki/Termux-wake-lock
 
 **All credits to [patbengr](https://github.com/patbengr)**
 

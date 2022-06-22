@@ -72,7 +72,7 @@ What an "interaction" is depends on your [source limits](#source-limits), but ge
 >Waning: from version 3.0.0 you gain control over how many users have to be processed in the `interact-from-file` job. Just specify that number after the *.txt.
 
 #### Modifier for Interaction jobs (active Jobs)
- Argument                           | Description                                                                                                                                                    | Example    |
+| Argument                           | Description                                                                                                                                                    | Example    |
 |-----------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|------------|
 | watch-video-time                  | Instead of liking videos without watching them, you can fake it and pause the bot for a given time (in seconds). Set to 0 to disable it.                       | `15-35`    |
 | watch-photo-time                  | Instead of liking photos without looking them, you can fake it and pause the bot for a given time (in seconds). Set to 0 to disable it.                        | `3-4`      |
@@ -94,7 +94,7 @@ What an "interaction" is depends on your [source limits](#source-limits), but ge
 >Waning: from version 3.0.0 you gain control over how many users have to be processed in the `unfollow-from-file` job. Just specify that number after the *.txt.
 
 #### Modifier for Unfollow jobs
- Argument                        | Description                                                                                                                                                  | Example      |
+| Argument                        | Description                                                                                                                                                  | Example      |
 |---------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------|
 | sort-followers-newest-to-oldest | An option for all unfollow types except the one from file to sort users from newest to oldest instead of oldest to newest which is the default choice        | ` false `    |                                                                                                                                                                                 |                                                      |
 | unfollow-delay                  | With this option you can specify the number of days that have to have passed since the last interaction it work with `unfollow` and `unfollow-non-followers` | `10-20`      |

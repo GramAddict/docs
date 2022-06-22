@@ -77,7 +77,7 @@ What an "interaction" is depends on your [source limits](#source-limits), but ge
 | watch-video-time                  | Instead of liking videos without watching them, you can fake it and pause the bot for a given time (in seconds). Set to 0 to disable it.                       | `15-35`    |
 | watch-photo-time                  | Instead of liking photos without looking them, you can fake it and pause the bot for a given time (in seconds). Set to 0 to disable it.                        | `3-4`      |
 | can-reinteract-after              | With that feature you can re-interact someone who has already interacted. You have to specify the amount of hours that have to pass from the last interaction. 
-| delete-interacted-users           | An option for jobs that involves a *.txt to remove users/urls from it after they have been interacted with.                                                    | `true`     |
+| delete-interacted-users           | An option for jobs that involves a \*.txt to remove users/urls from it after they have been interacted with.                                                    | `true`     |
 <br />
 
 ### Unfollow
@@ -89,7 +89,7 @@ What an "interaction" is depends on your [source limits](#source-limits), but ge
 | unfollow-non-followers          | Unfollow at most the given number of users, that don't follow you back. Only users followed by this script will be unfollowed.                                                    | `10-20`                                              |
 | unfollow-any-non-followers      | Unfollow at most the given number of users, that don't follow you back. Any user is eligible to be unfollowed regardless of if this script followed them.                         | `10-20`                                              |
 | unfollow-any-followers          | Unfollow at most the given number of users, that follow you back. Any user is eligible to be unfollowed regardless of if this script followed them.                               | `10-20`                                              |
-| unfollow-from-file              | Unfollow usernames from a list (.txt)                                                                                                                                             | `[usernames_list1.txt 10-15, usernames_list2.txt 3]` |
+| unfollow-from-file              | Unfollow usernames from a list (\*.txt)                                                                                                                                             | `[usernames_list1.txt 10-15, usernames_list2.txt 3]` |
 
 >Waning: from version 3.0.0 you gain control over how many users have to be processed in the `unfollow-from-file` job. Just specify that number after the *.txt.
 
@@ -109,7 +109,7 @@ What an "interaction" is depends on your [source limits](#source-limits), but ge
 
 | Argument                 | Description                                    | Example   |
 |--------------------------|------------------------------------------------|-----------|
-| delete-removed-followers | Remove from the *.txt the removed follower.    | `true`    |
+| delete-removed-followers | Remove from the \*.txt the removed follower.    | `true`    |
 
 ### Post Processing
 

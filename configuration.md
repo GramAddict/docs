@@ -416,7 +416,7 @@ From version 2.7.0 this bot support spintax (thanks to an [external module](http
 An extract from their documentation:
 
 Spintax (also known as spin syntax) is a way to create random strings that have the same or similar meaning.
-Spintax is very useful as it can be used in programs such as chatbots or video game character speach, it allows the dialog to not sound so repetitive and robotic.
+Spintax is very useful as it can be used in programs such as chatbots or video game character speech, it allows the dialog to not sound so repetitive and robotic.
 
 ### The syntax
 Spintax replaces braces (also known as curly brackets, {}) containing text with a random predefined string. The random string is defined withing the braces by using a pipe | as a seperator.

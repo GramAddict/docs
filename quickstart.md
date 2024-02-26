@@ -68,7 +68,7 @@ Getting started is easy. Follow the directions below to get GramAddict installed
 On Linux Python is pre-installed.
 
 For Raspberry the pre-installed version should be 3.6. Check this out by running this command: `python3 -V`
-If you have a lover version of Python, google for how to upgrade.
+If you have a lower version of Python, google for how to upgrade.
 
 <br /><br />
 

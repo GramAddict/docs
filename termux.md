@@ -2,34 +2,143 @@
 # Use GramAddict without pc
 
 
-## Step 1: Download and Install Termux
+## Step 0: If you don't have Termux installed
+
+You can download Termux from f-droid or the Google Play store. Get the f-droid version, since the Play store version does not support some features.  
 
 [Apk from f-droid](https://f-droid.org/it/packages/com.termux/)
-or
-[Official PlayStore](https://play.google.com/store/apps/details?id=com.termux)
+
+After installation you can skip to __step 2__.
+
+## Step 1: Only if you already have Termux installed
+
+_Skip this step if you just installed Termux_
+
+Some packages cause things to clash and not install properly, so let's clean up our Termux. 
+Delete all pip packages and python:
+
+```
+# Remove all python packages
+
+pip freeze > unins && pip uninstall -y -r unins && rm unins
+
+# Find the path of the cache for pip...
+
+pip cache dir
+
+# ... and clean it
+
+rm -rf /data/data/com.termux/files/home/.cache/pip
+
+# Delete python completely
+
+apt remove --purge python
+```
+
 
 ## Step 2: Install required packages
 
-    pkg upgrade -y
-	curl -LO https://its-pointless.github.io/setup-pointless-repo.sh
-	bash setup-pointless-repo.sh
-    pkg install android-tools python build-essential cmake libjpeg-turbo libpng libxml2 libxslt freetype git -y
-    pip install wheel
+```
+pkg upgrade -y
+pkg install build-essential clang make pkg-config
+curl -LO https://its-pointless.github.io/setup-pointless-repo.sh
+bash setup-pointless-repo.sh
+pkg install android-tools python cmake libcompiler-rt libjpeg-turbo libpng libxml2 libxslt freetype git libtiff -y
+```
+
+If you want telegram reports, you should follow these extra steps
+
+```
+pip install pytz cython
+
+pip install setuptools --upgrade
+
+# install numpy and scipy with pkg NOT with pip
+
+pkg install numpy
+
+pkg install scipy
+
+export CFLAGS=" -Wno-deprecated-declarations -Wno-unreachable-code"
+
+export LDFLAGS=" -lm -lcompiler_rt"
+
+# install Pandas, this can take hours, depends on your device (I don't recommend doing this over ssh)
+
+pip install pandas
+
+```
 
 ## Step 3: Install GramAddict
 
-This procedure is slow, use -vvv in pip if you want to see if everything installing alright
-	
-    git clone https://github.com/gramaddict/bot.git gramaddict
-    cd gramaddict
-    pip install -r requirements.txt
+Termux puts all your files in an emulated folder structure, which can be annoying. You can install GramAddict onto a normal folder:
 
-You can also install GramAddict using pip, but in that case you won't have the config-example folder ready to go.
+```
+# give Termux permission to access your device's storage
+
+termux-setup-storage
+
+# cd into the non-emulated /sdcard/ folder
+
+cd /sdcard
+```
+
+This procedure is slow, use -vvv in pip if you want to see if everything installing alright
+
+```
+# download and install GramAddict
+
+git clone https://github.com/gramaddict/bot.git gramaddict
+
+cd gramaddict
+
+# I don't recommend doing this over ssh
+
+pip install -r requirements.txt
+```
+
+If you want telegram reports, you should follow this extra step:
+```
+pip install GramAddict[telegram-reports]
+```
     
-## Step 4: Run
-	
-    python -m uiautomator2 init
-    python run.py
+## Step 4: Config
+
+```
+# make accounts folder and folder for your account
+
+mkdir accounts
+
+mkdir accounts/[your-account-name]
+
+# download the config examples and put them in the correct folder
+
+wget -O - https://github.com/GramAddict/bot/archive/master.tar.gz | tar -xz --strip=2 "bot-master/config-examples"
+
+mv -v config-examples/* accounts/[your-account-name]
+
+# edit the files using nano
+
+nano accounts/[your-account-name]/config.yml
+
+nano accounts/[your-account-name]/filters.yml
+
+nano accounts/[your-account-name]/telegram.yml # if you're using telegram reports
+
+# etc
+```
+
+## Step 5: Run
+
+```
+# enable wake lock to make sure your device does not go into deep sleep
+
+termux-wake-lock
+
+python -m uiautomator2 init
+
+python run.py
+```
     
 ## How can I access termux files?
 Read that article
@@ -50,6 +159,10 @@ Then you can edit and view GramAddict files.
 	* now you should be able to see your device ID in `adb devices`
 * when I start the bot it looks like it freezes after opening IG and termux shell has been closed
 	* edit your `accounts/yourusername/config.yml` file and set `close-apps: false`
+* I am connected, it says my device is not connected when I run GramAddict
+	* `adb devices`
+	* check the ID of your device, it might have changed to `emulator-5554`
+	* update the device ID in the config file
 	
 
 

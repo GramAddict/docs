@@ -150,7 +150,7 @@ If you have not already, you should make sure you have [Developer options](https
 
 If you want to use an emulator, and you're on Windows you can try with [Memu](https://www.memuplay.com/).
 After installing it and opening it, type that in console to open the connection: `adb connect localhost:21503`
->If you're using more than oen Memu emulator, the port are +10 form the previous one -> 21513, 21523 and so on.
+>If you're using more than one Memu emulator, the port are +10 form the previous one -> 21513, 21523 and so on.
 
 
 ### First Run
